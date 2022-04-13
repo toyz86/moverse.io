@@ -123,7 +123,7 @@
 										<input name="suit" id="faceCapOnly" value="Face Capture Only" type="checkbox" />
 										<span>Face Capture Only</span>
 									</label>
-								</p>								
+								</p>
 							</div>
 							
 						</div>
@@ -146,13 +146,13 @@
 							</p>
 
 							<p>
-									<div class="row">
+								<div class="row">
 									<label for="other_option" class="col s2">
 										<input name="duration" id="other_option" value="other" type="radio" required />
 										<span>Other</span>
 									</label>			
 									<div class="other col s10">
-										<input name="duration" id="other_option" value="" type="text" />
+										<input name="duration" id="other_option" value="" type="text" required />
 									</div>
 								</div>
 							</p>
@@ -166,7 +166,7 @@
 							<div class="date-input">
 								<label for="bookDate">
 									<i class="material-icons prefix">calendar_month</i>
-									<input id="date" name="bookDate" type="text" placeholder="Event Date" class="datepicker">
+									<input id="date" name="bookDate" type="text" placeholder="Event Date" class="datepicker" required>
 								</label>
 							</div>
 						</div>
@@ -253,11 +253,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		
 	<script>
-
-		// var fav = [];
-		// $.each($("input[name='suit']:checked"), function(){            
-		// 		fav.push($(this).val());
-		// });
 		
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbzgIM-HSdKxTfDxwwqWy0fhu90CRrr9TUWSuIvb-A8qMeprHVZicD-REHLGdlZWeppp/exec';
 		const form = document.forms['moverse-form-order'];

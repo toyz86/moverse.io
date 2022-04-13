@@ -4,6 +4,16 @@ $(document).ready(function(){
 	$('.datepicker').datepicker( {
 		format: 'mm/dd/yyyy'
 	});
+
+	$('input[name=duration]').click(function() {
+		if($("label #other_option").is(':checked')) { 
+				$('.other input').css({'display': 'block'});
+				console.log('checked')
+			} else {
+				$('.other input').css({'display': 'none'})
+				console.log('uncheceked')
+			}		
+	})
 });
 
 gsap.utils.toArray(".comparisonSection").forEach(section => {
