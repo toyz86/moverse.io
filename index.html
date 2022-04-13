@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<title>Moverse</title>
+
+	<link rel="stylesheet" href="style.css">
+
+	<link rel = "icon" href ="icon-01.png" type = "image/x-icon"> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>  	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h5>Hi, thank you for your interest in our product! <br> Please fill up the form below.</h5>
+
+			<div class="row">
+				<form name="moverse-form-order" class="col s12">
+
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">account_circle</i>
+							<input name="name" id="name" type="text" class="validate" required>
+							<label for="name">First Name</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">domain</i>
+							<input name="company" id="company" type="text" class="validate">
+							<label for="company">Company</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">email</i>
+							<input name="email" id="email" type="email" class="validate" required>
+							<label for="email">Email</label>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">phone</i>
+							<input name="phone" id="phone" type="tel" class="validate" required>
+							<label for="phone">Telephone</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s12">
+							<p class="form-title">Moverse Suite:</p>
+							<div class="suite-option">
+								<p>
+									<label for="fullSet_s">
+										<input name="suit" id="fullSet_s" value="Full Set - S" type="checkbox" />
+										<span>Full Set - S</span>
+									</label>
+								</p>
+								<p>
+									<label for="fullSet_m">
+										<input name="suit" id="fullSet_m" value="Full Set - M" type="checkbox" />
+										<span>Full Set - M</span>
+									</label>
+								</p>
+								<p>
+									<label for="fullSet_l">
+										<input name="suit" id="fullSet_l" value="Full Set - L" type="checkbox" />
+										<span>Full Set - L</span>
+									</label>
+								</p>
+								<p>
+									<label for="suitOnly_s">
+										<input name="suit" id="suitOnly_s" value="Suit Only - S" type="checkbox" />
+										<span>Suit Only - S</span>
+									</label>
+								</p>			
+								<p>
+									<label for="suitOnly_m">
+										<input name="suit" id="suitOnly_m" value="Suit Only - M" type="checkbox" />
+										<span>Suit Only - M</span>
+									</label>
+								</p>			
+								<p>
+									<label for="suitOnly_l">
+										<input name="suit" id="suitOnly_l" value="Suit Only - L" type="checkbox" />
+										<span>Suit Only - L</span>
+									</label>
+								</p>		
+								<p>
+									<label for="glovesOnly_s">
+										<input name="suit" id="glovesOnly_s" value="Gloves Only - S" type="checkbox" />
+										<span>Gloves Only - S</span>
+									</label>
+								</p>	
+								<p>
+									<label for="glovesOnly_m">
+										<input name="suit" id="glovesOnly_m" value="Gloves Only - M" type="checkbox" />
+										<span>Gloves Only - M</span>
+									</label>
+								</p>				
+								<p>
+									<label for="glovesOnly_l">
+										<input name="suit" id="glovesOnly_l" value="Gloves Only - L" type="checkbox" />
+										<span>Gloves Only - L</span>
+									</label>
+								</p>
+								<p>
+									<label for="faceCapOnly">
+										<input name="suit" id="faceCapOnly" value="Face Capture Only" type="checkbox" />
+										<span>Face Capture Only</span>
+									</label>
+								</p>								
+							</div>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<p class="form-title">Duration of Rental : *</p>		
+							<span style="font-size: 12px;margin-top: -5px;">*Get special price for rental more 2 days</span>					
+							<p>
+								<label for="oneday">
+									<input name="duration" id="oneday" value="1 Day" type="radio" required />
+									<span>1 Day</span>
+								</label>
+							</p>
+							<p>
+								<label for="twodays">
+									<input name="duration" id="twodays" value="2 Days" type="radio" required />
+									<span>2 Days</span>
+								</label>
+							</p>
+
+							<p>
+									<div class="row">
+									<label for="other_option" class="col s2">
+										<input name="duration" id="other_option" value="other" type="radio" required />
+										<span>Other</span>
+									</label>			
+									<div class="other col s10">
+										<input name="duration" id="other_option" value="" type="text" />
+									</div>
+								</div>
+							</p>
+
+						</div>							
+					</div>	
+
+					<div class="row">
+						<div class="col s6">
+							<p class="form-title">Event Date:</p>
+							<div class="date-input">
+								<label for="bookDate">
+									<i class="material-icons prefix">calendar_month</i>
+									<input id="date" name="bookDate" type="text" placeholder="Event Date" class="datepicker">
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">account_circle</i>
+							<input name="address" id="address" type="text" class="validate" required>
+							<label for="address">Event Address</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col s8">
+							<p class="form-title">Moverse Customer Aggrement *</p>
+							<span style="font-size: 12px;margin-top: -5px;">*******link aggrement</span>
+							<p>
+								<label for="agreement">
+									<input name="agreement" id="agreement" value="agree" type="checkbox" required />
+									<span class="agreement-desc">Check here to indicate that you have read and agree to the terms of Moverse Customer Aggrement</span>
+								</label>
+							</p>		
+						</div>
+					</div>
+					<div class="form-footer">
+						<button class="waves-effect waves-light btn-large btn-send" type="submit">Submit</button>
+						<div class="preloader-wrapper big active">
+							<div class="spinner-layer spinner-red-only btn-loading">
+								<div class="circle-clipper left">
+									<div class="circle"></div>
+								</div><div class="gap-patch">
+									<div class="circle"></div>
+								</div><div class="circle-clipper right">
+									<div class="circle"></div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		
+    </div>
+  </div>	
+
+	<section class="comparisonSection">
+		<div class="comparisonImage beforeImage">
+			<img src="https://assets.codepen.io/16327/before.jpg" alt="before">
+		</div>
+		<div class="comparisonImage afterImage">
+			<img src="https://assets.codepen.io/16327/after.jpg" alt="after">
+		</div>
+	</section>
+
+	<section class="homepage">
+		<div class="hero"></div>
+		<div class="btn-container">
+			<button data-target="modal1" class="btn modal-trigger">
+				<span class="text">Fill Out</span>
+				<div class="icon-container">
+					<div class="icon icon--left">
+						<svg>
+							<use xlink:href="#arrow-right"></use>
+						</svg>
+					</div>
+					<div class="icon icon--right">
+						<svg>
+							<use xlink:href="#arrow-right"></use>
+						</svg>
+					</div>
+				</div>
+			</button>
+		</div>
+		
+		<svg style="display: none;">
+			<symbol id="arrow-right" viewBox="0 0 20 10">
+				<path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>
+			</symbol>
+		</svg>
+
+	</section>	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		
+	<script>
+
+		// var fav = [];
+		// $.each($("input[name='suit']:checked"), function(){            
+		// 		fav.push($(this).val());
+		// });
+		
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbzgIM-HSdKxTfDxwwqWy0fhu90CRrr9TUWSuIvb-A8qMeprHVZicD-REHLGdlZWeppp/exec';
+		const form = document.forms['moverse-form-order'];
+		const btnSend = document.querySelector('.btn-send');
+		const btnLoad = document.querySelector('.btn-loading');
+	
+		form.addEventListener('submit', e => {
+			e.preventDefault()
+
+			btnLoad.classList.toggle('d-none');
+			btnSend.classList.toggle('d-none');
+			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => {
+					btnLoad.classList.toggle('d-none');
+					btnSend.classList.toggle('d-none');
+					M.toast({html: 'Data Berhasil dikirim!', classes: 'rounded red darken-1'});
+					form.reset();
+
+					console.log('Success!', response)
+				})
+				.catch(error => console.error('Error!', error.message))
+		})
+	</script>
+	
+	<script src="index.js"></script>
+</body>
+</html>
