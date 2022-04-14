@@ -17,6 +17,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>  	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+
 </head>
 <body>
 
@@ -33,6 +35,7 @@
 							<i class="material-icons prefix">account_circle</i>
 							<input name="name" id="name" type="text" class="validate" required>
 							<label for="name">First Name</label>
+							<span class="error-message" id="name-error-message"></span>
 						</div>
 					</div>
 
@@ -152,7 +155,7 @@
 										<span>Other</span>
 									</label>			
 									<div class="other col s10">
-										<input name="duration" id="other_option" value="" type="text" required />
+										<input name="duration" id="other_option" value="" type="text"  />
 									</div>
 								</div>
 							</p>
@@ -207,6 +210,7 @@
 						</div>
 
 					</div>
+					
 				</form>
 			</div>
 		
@@ -253,13 +257,31 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		
 	<script>
-		
+
+		function sendEmail() {
+			const mailBody = "<p>Thanks for filling out the form</p>"
+			"<p>We will contact you soon</p><br><p>Best Regard</p>"
+			"<strong>Moverse Team</strong>"
+			Email.send({
+				Host : "srv162.niagahoster.com",
+				Username : "ask@moverse.co.id",
+				Password : "mmk-studio",
+				To : document.getElementById('email').value,
+				From : "gatotprastyo@moverse.co.id",
+				Subject : "Thanks for participating",
+				Body : mailBody
+			}).then(
+				message => alert(message)
+			)
+		}
+
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbzgIM-HSdKxTfDxwwqWy0fhu90CRrr9TUWSuIvb-A8qMeprHVZicD-REHLGdlZWeppp/exec';
 		const form = document.forms['moverse-form-order'];
 		const btnSend = document.querySelector('.btn-send');
 		const btnLoad = document.querySelector('.btn-loading');
 	
 		form.addEventListener('submit', e => {
+			sendEmail();
 			e.preventDefault()
 
 			btnLoad.classList.toggle('d-none');

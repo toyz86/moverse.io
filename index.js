@@ -6,13 +6,21 @@ $(document).ready(function(){
 	});
 
 	$('input[name=duration]').click(function() {
-		if($("label #other_option").is(':checked')) { 
-				$('.other input').css({'display': 'block'});
+		if(!$("input#other_option").is(':checked')) { 
+				$('.other input').css({'display': 'none'});
 				console.log('checked')
 			} else {
-				$('.other input').css({'display': 'none'})
+				$('.other input').css({'display': 'block'})
 				console.log('uncheceked')
-			}		
+			}
+
+		// if($("label #oneday").is(':checked')) {
+		// 	$('.other input').css({'display': 'none'});
+		// }
+
+		// if($("label #twodays").is(':checked')) {
+		// 	$('.other input').css({'display': 'none'});
+		// }		
 	})
 });
 
