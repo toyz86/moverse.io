@@ -2,6 +2,7 @@ $(document).ready(function(){
   $('.modal').modal();
 	$('.spinner-layer').addClass('d-none');
 	$('.datepicker').datepicker( {
+		container: 'body',
 		format: 'mm/dd/yyyy'
 	});
 
@@ -13,14 +14,6 @@ $(document).ready(function(){
 				$('.other input').css({'display': 'block'})
 				console.log('uncheceked')
 			}
-
-		// if($("label #oneday").is(':checked')) {
-		// 	$('.other input').css({'display': 'none'});
-		// }
-
-		// if($("label #twodays").is(':checked')) {
-		// 	$('.other input').css({'display': 'none'});
-		// }		
 	})
 });
 

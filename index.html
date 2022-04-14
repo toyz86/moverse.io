@@ -196,18 +196,20 @@
 						</div>
 					</div>
 					<div class="form-footer">
-						<button class="waves-effect waves-light btn-large btn-send" type="submit">Submit</button>
-						<div class="preloader-wrapper big active">
-							<div class="spinner-layer spinner-red-only btn-loading">
-								<div class="circle-clipper left">
-									<div class="circle"></div>
-								</div><div class="gap-patch">
-									<div class="circle"></div>
-								</div><div class="circle-clipper right">
-									<div class="circle"></div>
+						<button class="btn-submit" type="submit">
+							<span>Submit</span>
+							<div class="preloader-wrapper big active">
+								<div class="spinner-layer spinner-blue-only btn-loading">
+									<div class="circle-clipper left">
+										<div class="circle"></div>
+									</div><div class="gap-patch">
+										<div class="circle"></div>
+									</div><div class="circle-clipper right">
+										<div class="circle"></div>
+									</div>
 								</div>
 							</div>
-						</div>
+						</button>
 
 					</div>
 					
@@ -259,25 +261,24 @@
 	<script>
 
 		function sendEmail() {
-			const mailBody = "<p>Thanks for filling out the form</p>"
-			"<p>We will contact you soon</p><br><p>Best Regard</p>"
-			"<strong>Moverse Team</strong>"
+			// const mailBody = "<p>Thanks for filling out the form</p><p>We will contact you soon</p><br><p>Best Regard</p><strong>Moverse Team</strong>"
 			Email.send({
 				Host : "srv162.niagahoster.com",
 				Username : "ask@moverse.co.id",
 				Password : "mmk-studio",
 				To : document.getElementById('email').value,
-				From : "gatotprastyo@moverse.co.id",
+				From : "ask@moverse.co.id",
 				Subject : "Thanks for participating",
-				Body : mailBody
+				Body : "<p>Thanks for filling out the form</p><p>We will contact you soon</p><br><p>Best Regard</p><strong>Moverse Team</strong>"
 			}).then(
-				message => alert(message)
+				message => console.log(message)
 			)
 		}
 
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbzgIM-HSdKxTfDxwwqWy0fhu90CRrr9TUWSuIvb-A8qMeprHVZicD-REHLGdlZWeppp/exec';
 		const form = document.forms['moverse-form-order'];
-		const btnSend = document.querySelector('.btn-send');
+		// const btnSend = document.querySelector('.btn-send');
+		const btnSend = document.querySelector('.btn-submit span');
 		const btnLoad = document.querySelector('.btn-loading');
 	
 		form.addEventListener('submit', e => {
@@ -285,11 +286,12 @@
 			e.preventDefault()
 
 			btnLoad.classList.toggle('d-none');
-			btnSend.classList.toggle('d-none');
+			btnSend.classList.toggle('btn-onload');
+			btnSend.style.transform = "translateX(-20px)";
 			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 				.then(response => {
 					btnLoad.classList.toggle('d-none');
-					btnSend.classList.toggle('d-none');
+					btnSend.classList.toggle('btn-onload');
 					M.toast({html: 'Data Berhasil dikirim!', classes: 'rounded red darken-1'});
 					form.reset();
 

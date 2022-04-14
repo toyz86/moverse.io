@@ -39,9 +39,45 @@ textarea.materialize-textarea {
 
 .modal {
   max-height: 90%;
-  background: #03101a !important;
+  background-color: #021425 !important;
   color: #fff;
   position: fixed;
+}
+
+.modal .btn-submit {
+  cursor: pointer;
+  padding: 10px 40px;
+  border: 1px solid rgba(144, 202, 249, 0.5);
+  border-radius: 5px;
+  background-color: transparent;
+  color: #90caf9;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.modal .btn-submit:hover {
+  background: rgba(144, 202, 249, 0.08);
+  border: 1px solid #90caf9;
+}
+
+.modal .btn-submit span {
+  text-transform: uppercase;
+}
+
+.modal .preloader-wrapper.active {
+  position: absolute;
+}
+
+.modal .preloader-wrapper.big {
+  width: 22px;
+  height: 22px;
+  top: 100.1rem;
+}
+
+.modal .spinner-blue, .modal .spinner-blue-only {
+  border-color: #90caf9;
 }
 
 .modal .modal-content h5 {
@@ -283,5 +319,13 @@ button.btn.modal-trigger:hover {
 
 .d-none {
   display: none;
+}
+
+.btn-onload {
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+  display: inline-block;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 /*# sourceMappingURL=style.css.map */

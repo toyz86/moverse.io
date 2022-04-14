@@ -38,9 +38,41 @@ textarea.materialize-textarea {
 
 .modal {
   max-height: 90%;
-  background: rgba(3, 16, 26, 1) !important;
+  // background: rgba(3, 16, 26, 1) !important;
+  background-color: #021425 !important;
   color: #fff;
   position: fixed;
+
+  .btn-submit {
+    cursor: pointer;
+    padding: 10px 40px;
+    border: 1px solid rgba(144, 202, 249, 0.5);
+    border-radius: 5px;
+    background-color: transparent;
+    color: rgb(144, 202, 249);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    &:hover {
+      background: rgba(144, 202, 249, 0.08);
+      border: 1px solid rgb(144, 202, 249);  
+    }
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  .preloader-wrapper.active {
+    position: absolute;
+  }
+
+  .preloader-wrapper.big {
+    width: 22px;
+    height: 22px;
+    top: 100.1rem;
+  }
+
+  .spinner-blue, .spinner-blue-only {
+    border-color: #90caf9;
+  }
   
   .modal-content {
     h5 {
@@ -254,4 +286,10 @@ button.btn.modal-trigger {
 
 .d-none {
   display: none;
+}
+
+.btn-onload {
+  transform: translateX(-20px);
+  display: inline-block;
+  transition: all 0.5s ease;
 }
