@@ -11,6 +11,7 @@
 
 	<link rel = "icon" href ="icon-01.png" type = "image/x-icon"> 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
@@ -198,16 +199,8 @@
 					<div class="form-footer">
 						<button class="btn-submit" type="submit">
 							<span>Submit</span>
-							<div class="preloader-wrapper big active">
-								<div class="spinner-layer spinner-blue-only btn-loading">
-									<div class="circle-clipper left">
-										<div class="circle"></div>
-									</div><div class="gap-patch">
-										<div class="circle"></div>
-									</div><div class="circle-clipper right">
-										<div class="circle"></div>
-									</div>
-								</div>
+							<div class="btn-loading">
+								<i class="fa-solid fa-circle-notch fa-spin"></i>
 							</div>
 						</button>
 
@@ -230,30 +223,9 @@
 
 	<section class="homepage">
 		<div class="hero"></div>
-		<div class="btn-container">
-			<button data-target="modal1" class="btn modal-trigger">
-				<span class="text">Fill Out</span>
-				<div class="icon-container">
-					<div class="icon icon--left">
-						<svg>
-							<use xlink:href="#arrow-right"></use>
-						</svg>
-					</div>
-					<div class="icon icon--right">
-						<svg>
-							<use xlink:href="#arrow-right"></use>
-						</svg>
-					</div>
-				</div>
+			<button data-target="modal1" class="btn-submit modal-trigger" type="submit">
+				<span>Fill Out</span>
 			</button>
-		</div>
-		
-		<svg style="display: none;">
-			<symbol id="arrow-right" viewBox="0 0 20 10">
-				<path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>
-			</symbol>
-		</svg>
-
 	</section>	
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -277,7 +249,6 @@
 
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbzgIM-HSdKxTfDxwwqWy0fhu90CRrr9TUWSuIvb-A8qMeprHVZicD-REHLGdlZWeppp/exec';
 		const form = document.forms['moverse-form-order'];
-		// const btnSend = document.querySelector('.btn-send');
 		const btnSend = document.querySelector('.btn-submit span');
 		const btnLoad = document.querySelector('.btn-loading');
 	
@@ -287,7 +258,7 @@
 
 			btnLoad.classList.toggle('d-none');
 			btnSend.classList.toggle('btn-onload');
-			btnSend.style.transform = "translateX(-20px)";
+			btnSend.style.transform = "translateX(-5px)";
 			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 				.then(response => {
 					btnLoad.classList.toggle('d-none');
