@@ -149,7 +149,7 @@ textarea.materialize-textarea {
 
 .homepage .hero {
   position: absolute;
-  background: url(/img/hero.png);
+  background: url("/img/hero.png");
   width: 500px;
   height: 100%;
   background-size: cover;
