@@ -1,0 +1,162 @@
+.form-container {
+  padding: 10px 20px 50px 10px;
+  // position: absolute;
+  background: #021425;
+  width: 600px;
+  // height: 650px;
+  height: 80%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: $grey;
+  border: 1px solid $tosca;
+  border-radius: 15px;
+}
+.link-to a {
+  color: #fff;
+  display: flex;
+  margin-top: 20px;
+  position: absolute;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 100;
+  transition: all 0.3 ease;
+  &:hover {
+    color: $orange;
+    transition: all 0.3s ease;
+  }
+  i {
+    font-size: 20px;
+    margin-left: 5px;
+    transition: all 0.2s ease;
+  }
+  &:hover {
+    i {
+      transform: scale(1.5) translateX(10px);
+      transition: all 0.2s ease;
+    }
+  }
+}
+
+.form-container::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+.form-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+}
+
+.form-container::-webkit-scrollbar-thumb {
+  background-color: $tosca;
+  outline: 1px solid $tosca;
+}
+
+.form-header {
+  // position: fixed;
+  // border-top-right-radius: 15px;
+  // border-top-left-radius: 15px;
+  // margin: -10px;
+  // width: 600px;
+  padding: 10px;
+  margin: -10px -25px 10px -10px;
+  height: 70px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(254, 180, 4, 0.94243) -24.94%, #00739F -24.94%, rgba(0, 46, 89, 0) 82.43%);
+}
+
+  /* label color */
+  // .input-field label {
+  //   color: #000;
+  // }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: $orange !important;
+  }
+  .input-field input[type=email]:focus + label {
+    color: $orange !important;
+  }
+  .input-field input[type=tel]:focus + label {
+    color: $orange !important;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid $orange !important;
+    box-shadow: 0 1px 0 0 $orange !important;
+  }
+  .input-field input[type=email]:focus {
+    border-bottom: 1px solid $orange !important;
+    box-shadow: 0 1px 0 0 $orange !important;  
+  }
+  .input-field input[type=tel]:focus {
+    border-bottom: 1px solid $orange !important;
+    box-shadow: 0 1px 0 0 $orange !important;  
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: $orange !important;
+  }
+
+  [type="checkbox"]:checked+span:not(.lever):before {
+    border-right: 2px solid #ff9800 !important;
+    border-bottom: 2px solid #ff9800 !important;
+  }
+
+  [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+    background-color: $orange !important;
+  }
+  [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border: 2px solid $orange !important;
+  }
+
+  .date-input {
+    label {
+      display: flex;
+    }
+
+    i {
+      top: 50px;
+      margin: 15px 20px auto 2px;
+    }
+
+    label {
+      display: flex;
+    }
+
+  }
+
+  .datepicker-date-display{
+    background-color: $orange !important;
+  }
+  .datepicker-table td.is-today {
+    color: $orange !important;
+  }
+  .datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+    color: $orange !important;
+  }
+  .datepicker-table td.is-selected {
+    background-color: $orange !important;
+  }
+
+  .datetime {
+    margin-top: 5px;
+    display: flex;
+    i {
+      transform: translate(-20px, 10px);
+    }
+    input {
+      font-family: 'Kanit', sans-serif;
+      font-weight: 100;    
+    }
+  }
+
+  // input.empty {
+  //   font-family: FontAwesome;
+  // }

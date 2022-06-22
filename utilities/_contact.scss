@@ -1,0 +1,77 @@
+.hero-wrapper {
+  width: 500px;
+  color: $grey;
+  position: relative;
+  
+  h1 {
+    font-family: font-bold;
+    font-size: 50px;
+    margin: 0;
+  }
+
+  p {
+    line-height: 2;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+  }
+
+}
+
+.work_contact {
+  width: 100%;
+  position: relative;
+}
+
+.work_step {
+  display: flex;
+  padding: 20px;
+  border-radius: 25px;
+  width: 550px;
+  color: $grey;
+  // cursor: pointer;
+  transition: all 0.5s ease;
+
+  &:hover {
+    // background: #021c35;
+    transition: all 0.5s ease;
+  }
+
+  // &.stepActive {
+  //   background: $dblue;
+  //   border: 1px solid $tosca;
+  // }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $navy2;
+    text-align: center;
+    flex: 1;
+
+    .fa-solid {
+      font-size: 35px;
+      transform: translateY(10px);
+      color: $lblue;
+    }
+  }
+
+  .step-desc {
+    margin-left: 20px;
+    font-size: 17px;
+    flex: 7;
+
+    h6 {
+      font-family: 'Kanit', sans-serif;
+      color: $orange;
+    }
+
+    p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+  }
+
+}

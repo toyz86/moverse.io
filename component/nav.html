@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+	
+  <link rel = "icon" href ="icon-01.png" type = "image/x-icon"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>  	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+  <title>Menu</title>
+</head>
+<body>
+  <header>
+		<label class="More">
+			<!-- <span class="More-text">More Options Toggle</span> -->
+			<div class="menu-dots">
+				<input class="More-checkbox" id="burger" type="checkbox" value="false">
+				<div class="More-dot More-dot--left"></div>
+				<div class="More-dot More-dot--center">
+					<svg class="More-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
+						<path d="M4.69,0L22,17.32,39.22,0,44,4.69,26.77,22,44,39.32,39.22,44,22,26.77,4.77,44,0,39.32,17.22,22,0,4.69Z"/>
+					</svg>
+				</div>
+				<div class="More-dot More-dot--right"></div>
+			</div>
+			<div class="menu-title">
+				<span>moverse</span>
+			</div>
+		</label>		
+	</header>
+  	<!-- BEGIN NAV MENU -->
+	<div class="nav-circle-body"></div>
+	
+	<div class="nav-body">
+		<ul class="nav-body__list">
+			<li class="nav-body__item">
+				<a href="/">Home</a>
+			</li>
+			<li class="nav-body__item">
+				<a href="/activation.html">Profile</a>
+			</li>
+			<li class="nav-body__item">
+				<div class="product-list">Product &nbsp<i class="fa-solid fa-caret-down"></i></div>					
+				<div class="nav-item-down">
+					<a href="#">Smartsuit</a>
+					<a href="#">Smart Gloves</a>
+					<a href="#">Face Capture</a>
+				</div>
+			</li>
+			<li class="nav-body__item">
+				<a href="/activation.html">Project</a>
+			</li>      
+			<li class="nav-body__item">
+				<a href="/contact.html">Contact</a>
+			</li>      
+		</ul>
+	</div>	
+	<!-- END NAV MENU -->  
+  <script src="index.js"></script>
+</body>
+</html>

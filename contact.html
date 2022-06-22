@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<title>Moverse</title>
+
+	<link rel="stylesheet" href="style.css">
+
+	<link rel = "icon" href ="icon-01.png" type = "image/x-icon"> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>  	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+	<script src="src/js/smtp.js"></script>
+
+</head>
+<body>
+	<div id="nav-placeholder"></div>
+
+	<section class="homepage">
+		<div class="row">
+			<div class="col s6">
+				<div class="hero-wrapper">
+					<h1 style="color: #F7941C;">Hi, thank you</h1><h1>for your interest in our product!</h1>
+					<p>After you fill out this order request, we will contact you to go over details and availability before the order is completed. If you would like faster service and direct information on current stock and pricing please contact us at Contact us at 0813 7717 7701 or ask@moverse.co.id</p>
+				</div>
+				
+				<div class="work_step stepActive">
+					<div class="step-icon">
+						<i class="fa-solid fa-book"></i>
+					</div>
+					<div class="step-desc">
+						<h6>Rental time</h6>
+						<p>9 working hours.</p>
+					</div>
+				</div>
+
+				<div class="work_step">
+					<div class="step-icon">
+						<i class="fa-solid fa-blender-phone"></i>
+					</div>
+					<div class="step-desc">
+						<h6>Term of Payment</h6>
+						<p>Down Payment 50% after quotation approval and Final Payment 50% after shooting (maximum 24 hours after shooting day).</p>
+					</div>
+				</div>
+				
+				<div class="work_step">
+					<div class="step-icon">
+						<i class="fa-solid fa-layer-group"></i>
+					</div>
+					<div class="step-desc">
+						<h6>Our Delivery</h6>
+						<p>Operator assistance on D day.</p>
+						<p>Payment  asset delivery maximum 3 days after full payment has been made.</p>
+					</div>
+				</div>		
+			</div>
+			<div class="col s6 hero">
+				<!-- <div class="list">
+					<img src="contact/img/hero.png">
+				</div>
+				<div class="list">
+					<img src="contact/img/hero.png">
+				</div>
+				<div class="list">
+					<img src="img/imghero.jpeg">
+				</div> -->
+				<div class="list">
+					<div class="form-container">
+						<div class="form-header">
+							<h6>Please fill up the form below</h6>
+						</div>
+						<form name="moverse-form-order" class="col s12">
+
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">account_circle</i>
+									<input name="name" id="name" type="text" class="validate" required>
+									<label for="name">First Name</label>
+									<span class="error-message" id="name-error-message"></span>
+								</div>
+							</div>
+		
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">domain</i>
+									<input name="company" id="company" type="text" class="validate">
+									<label for="company">Company</label>
+								</div>
+							</div>
+		
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">email</i>
+									<input name="email" id="email" type="email" class="validate" required>
+									<label for="email">Email</label>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">phone</i>
+									<input name="phone" id="phone" type="tel" class="validate" required>
+									<label for="phone">Telephone</label>
+								</div>
+							</div>
+		
+							<div class="row">
+								<div class="input-field col s12">
+									<p class="form-title">Moverse Suite:</p>
+									<div class="suite-option">
+										<p>
+											<label for="fullSet_s">
+												<input name="suit" id="fullSet_s" value="Full Set - S" type="checkbox" />
+												<span>Full set S (suit S, gloves S, Face capture)</span>
+											</label>
+										</p>
+										<p>
+											<label for="fullSet_m">
+												<input name="suit" id="fullSet_m" value="Full Set - M" type="checkbox" />
+												<span>Full set M (suit M, gloves M, Face capture)</span>
+											</label>
+										</p>
+										<p>
+											<label for="fullSet_l">
+												<input name="suit" id="fullSet_l" value="Full Set - L" type="checkbox" />
+												<span>Full set L (suit L, gloves L, Face capture)</span>
+											</label>
+										</p>
+										<p>
+											<label for="suitOnly_s">
+												<input name="suit" id="suitOnly_s" value="Suit Only - S" type="checkbox" />
+												<span>Suit S</span>
+											</label>
+										</p>			
+										<p>
+											<label for="suitOnly_m">
+												<input name="suit" id="suitOnly_m" value="Suit Only - M" type="checkbox" />
+												<span>Suit M</span>
+											</label>
+										</p>			
+										<p>
+											<label for="suitOnly_l">
+												<input name="suit" id="suitOnly_l" value="Suit Only - L" type="checkbox" />
+												<span>Suit L</span>
+											</label>
+										</p>		
+										<p>
+											<label for="faceCapOnly">
+												<input name="suit" id="faceCapOnly" value="Face Capture Only" type="checkbox" />
+												<span>Face Capture Only</span>
+											</label>
+										</p>
+									</div>
+									
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<p class="form-title">Duration of Rental : *</p>		
+									<span style="font-size: 12px;margin-top: -5px;">*Get special price for rental more 2 days</span>					
+									<div class="row">
+										<p class="col s2">
+											<label for="oneday">
+												<input name="duration" id="oneday" value="1 Day" type="radio" required />
+												<span>1 Day</span>
+											</label>
+										</p>
+										<!-- <div class="datetime col s5">
+											<input type="text" class="empty" placeholder="Select Date" id="datetime" required />
+											<i class="material-icons">calendar_month</i>
+										</div> -->
+									</div>
+						
+									<p>
+										<label for="twodays">
+											<input name="duration" id="twodays" value="2 Days" type="radio" required />
+											<span>2 Days</span>
+										</label>
+									</p>
+		
+									<p>
+										<div class="row">
+											<label for="other_option" class="col s2">
+												<input name="duration" id="other_option" value="other" type="radio" required />
+												<span>Other</span>
+											</label>			
+											<div class="other col s10">
+												<input name="duration" id="other_option" value="" type="text"  />
+											</div>
+										</div>
+									</p>
+		
+								</div>							
+							</div>	
+		
+							<div class="row">
+								<div class="col s6">
+									<p class="form-title">Event Date:</p>
+									<div class="date-input">
+										<label for="bookDate">
+											<i class="material-icons prefix">calendar_month</i>
+											<input id="date" name="bookDate" type="text" placeholder="Event Date" class="datepicker" required>
+										</label>
+									</div>
+								</div>							
+							</div>
+		
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">account_circle</i>
+									<input name="address" id="address" type="text" class="validate" required>
+									<label for="address">Event Address</label>
+								</div>
+							</div>
+
+							<!-- <div class="row">
+								<div class="col s8">
+									<p class="form-title">Moverse Customer Aggrement *</p>
+									<span style="font-size: 12px;margin-top: -5px;">*******link aggrement</span>
+									<p>
+										<label for="agreement">
+											<input name="agreement" id="agreement" value="agree" type="checkbox" required />
+											<span class="agreement-desc">Check here to indicate that you have read and agree to the terms of Moverse Customer Aggrement</span>
+										</label>
+									</p>		
+								</div>
+							</div> -->
+							<div class="form-footer">
+								<button class="btn-submit" type="submit">
+									<span>Submit</span>
+									<div class="btn-loading">
+										<i class="fa-solid fa-circle-notch fa-spin"></i>
+									</div>
+								</button>
+		
+							</div>
+							
+						</form>
+					</div>
+					<div class="link-to">
+						<a href="https://api.whatsapp.com/send?phone=6281377177701" target="_blank">If you have others inquiries reach us through<i class="material-icons">send</i></a>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</section>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		
+	<script>
+		function sendEmail() {
+			const name_input = document.getElementById('name').value;
+			Email.send({
+				SecureToken: "dad7c688-7522-4a1e-947c-ba18a4a12ceb",
+				To : document.getElementById('email').value,
+				From : "ask@moverse.co.id",
+				Subject : "Thanks for participating",
+				Body : "<p>Hi" + " " + name_input + " " + "thanks for filling out the form</p><p>We will contact you soon</p><br><p>Best Regard</p><strong>Moverse Team</strong>"
+			}).then(
+				message => console.log(message)
+			)
+		}
+
+		// const scriptURL = 'https://script.google.com/macros/s/AKfycbzgIM-HSdKxTfDxwwqWy0fhu90CRrr9TUWSuIvb-A8qMeprHVZicD-REHLGdlZWeppp/exec';
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbzgIM-HSdKxTfDxwwqWy0fhu90CRrr9TUWSuIvb-A8qMeprHVZicD-REHLGdlZWeppp/exec';
+		const form = document.forms['moverse-form-order'];
+		const btnSend = document.querySelector('.btn-submit span');
+		const btnLoad = document.querySelector('.btn-loading');
+	
+		form.addEventListener('submit', e => {
+			sendEmail();
+			e.preventDefault()
+
+			btnLoad.classList.toggle('d-none');
+			btnSend.classList.toggle('btn-onload');
+			btnSend.style.transform = "translateX(-5px)";
+			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => {
+					btnLoad.classList.toggle('d-none');
+					btnSend.classList.toggle('btn-onload');
+					M.toast({html: 'Data Sent!', classes: 'rounded red darken-1'});
+					form.reset();
+
+					console.log('Success!', response)
+				})
+				.catch(error => console.error('Error!', error.message))
+		})
+	</script>
+	
+	<script src="form.js"></script>
+	<script src="src/js/materializedatetimepicker.js"></script>
+</body>
+</html>

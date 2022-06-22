@@ -1,276 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Access-Control-Allow-Origin" content="*">
-	<title>Moverse</title>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<title>Moverse</title>
+	
+		<link rel="stylesheet" href="style.css">
+	
+		<link rel = "icon" href ="icon-01.png" type = "image/x-icon"> 
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>  	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollToPlugin.min.js"></script>
 
-	<link rel="stylesheet" href="style.css">
+		<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
 
-	<link rel = "icon" href ="icon-01.png" type = "image/x-icon"> 
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>  	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-	<!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
-	<script src="src/js/smtp.js"></script>
-
-</head>
+		<script src="src/js/smtp.js"></script>
+	
+	</head>
 <body>
+	<div id="loader" class="center">
+		<img src="/img/icon-01.png">
+	</div>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h5>Hi, thank you for your interest in our product! <br> Please fill up the form below.</h5>
-
-			<div class="row">
-				<form name="moverse-form-order" class="col s12">
-
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="material-icons prefix">account_circle</i>
-							<input name="name" id="name" type="text" class="validate" required>
-							<label for="name">First Name</label>
-							<span class="error-message" id="name-error-message"></span>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="material-icons prefix">domain</i>
-							<input name="company" id="company" type="text" class="validate">
-							<label for="company">Company</label>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="material-icons prefix">email</i>
-							<input name="email" id="email" type="email" class="validate" required>
-							<label for="email">Email</label>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="material-icons prefix">phone</i>
-							<input name="phone" id="phone" type="tel" class="validate" required>
-							<label for="phone">Telephone</label>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s12">
-							<p class="form-title">Moverse Suite:</p>
-							<div class="suite-option">
-								<p>
-									<label for="fullSet_s">
-										<input name="suit" id="fullSet_s" value="Full Set - S" type="checkbox" />
-										<span>Full Set - S</span>
-									</label>
-								</p>
-								<p>
-									<label for="fullSet_m">
-										<input name="suit" id="fullSet_m" value="Full Set - M" type="checkbox" />
-										<span>Full Set - M</span>
-									</label>
-								</p>
-								<p>
-									<label for="fullSet_l">
-										<input name="suit" id="fullSet_l" value="Full Set - L" type="checkbox" />
-										<span>Full Set - L</span>
-									</label>
-								</p>
-								<p>
-									<label for="suitOnly_s">
-										<input name="suit" id="suitOnly_s" value="Suit Only - S" type="checkbox" />
-										<span>Suit Only - S</span>
-									</label>
-								</p>			
-								<p>
-									<label for="suitOnly_m">
-										<input name="suit" id="suitOnly_m" value="Suit Only - M" type="checkbox" />
-										<span>Suit Only - M</span>
-									</label>
-								</p>			
-								<p>
-									<label for="suitOnly_l">
-										<input name="suit" id="suitOnly_l" value="Suit Only - L" type="checkbox" />
-										<span>Suit Only - L</span>
-									</label>
-								</p>		
-								<p>
-									<label for="glovesOnly_s">
-										<input name="suit" id="glovesOnly_s" value="Gloves Only - S" type="checkbox" />
-										<span>Gloves Only - S</span>
-									</label>
-								</p>	
-								<p>
-									<label for="glovesOnly_m">
-										<input name="suit" id="glovesOnly_m" value="Gloves Only - M" type="checkbox" />
-										<span>Gloves Only - M</span>
-									</label>
-								</p>				
-								<p>
-									<label for="glovesOnly_l">
-										<input name="suit" id="glovesOnly_l" value="Gloves Only - L" type="checkbox" />
-										<span>Gloves Only - L</span>
-									</label>
-								</p>
-								<p>
-									<label for="faceCapOnly">
-										<input name="suit" id="faceCapOnly" value="Face Capture Only" type="checkbox" />
-										<span>Face Capture Only</span>
-									</label>
-								</p>
-							</div>
-							
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12">
-							<p class="form-title">Duration of Rental : *</p>		
-							<span style="font-size: 12px;margin-top: -5px;">*Get special price for rental more 2 days</span>					
-							<p>
-								<label for="oneday">
-									<input name="duration" id="oneday" value="1 Day" type="radio" required />
-									<span>1 Day</span>
-								</label>
-							</p>
-							<p>
-								<label for="twodays">
-									<input name="duration" id="twodays" value="2 Days" type="radio" required />
-									<span>2 Days</span>
-								</label>
-							</p>
-
-							<p>
-								<div class="row">
-									<label for="other_option" class="col s2">
-										<input name="duration" id="other_option" value="other" type="radio" required />
-										<span>Other</span>
-									</label>			
-									<div class="other col s10">
-										<input name="duration" id="other_option" value="" type="text"  />
-									</div>
-								</div>
-							</p>
-
-						</div>							
-					</div>	
-
-					<div class="row">
-						<div class="col s6">
-							<p class="form-title">Event Date:</p>
-							<div class="date-input">
-								<label for="bookDate">
-									<i class="material-icons prefix">calendar_month</i>
-									<input id="date" name="bookDate" type="text" placeholder="Event Date" class="datepicker" required>
-								</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s12">
-							<i class="material-icons prefix">account_circle</i>
-							<input name="address" id="address" type="text" class="validate" required>
-							<label for="address">Event Address</label>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col s8">
-							<p class="form-title">Moverse Customer Aggrement *</p>
-							<span style="font-size: 12px;margin-top: -5px;">*******link aggrement</span>
-							<p>
-								<label for="agreement">
-									<input name="agreement" id="agreement" value="agree" type="checkbox" required />
-									<span class="agreement-desc">Check here to indicate that you have read and agree to the terms of Moverse Customer Aggrement</span>
-								</label>
-							</p>		
-						</div>
-					</div>
-					<div class="form-footer">
-						<button class="btn-submit" type="submit">
-							<span>Submit</span>
-							<div class="btn-loading">
-								<i class="fa-solid fa-circle-notch fa-spin"></i>
-							</div>
-						</button>
-
-					</div>
-					
-				</form>
+	<!-- HEADER -->
+	<header>
+		<div class="backDrop"></div>
+		<label class="More">
+			<!-- <span class="More-text">More Options Toggle</span> -->
+			<div class="menu-dots">
+				<input class="More-checkbox" id="burger" type="checkbox" value="false">
+				<div class="More-dot More-dot--left"></div>
+				<div class="More-dot More-dot--center">
+					<svg class="More-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
+						<path d="M4.69,0L22,17.32,39.22,0,44,4.69,26.77,22,44,39.32,39.22,44,22,26.77,4.77,44,0,39.32,17.22,22,0,4.69Z"/>
+					</svg>
+				</div>
+				<div class="More-dot More-dot--right"></div>
 			</div>
-		
-    </div>
-  </div>	
-
-	<section class="comparisonSection">
-		<div class="comparisonImage beforeImage">
-			<img src="https://assets.codepen.io/16327/before.jpg" alt="before">
+			<div class="menu-title">
+				<span>moverse</span>
+			</div>
+		</label>
+		<div class="logo-header">
+			<img src="img/moverse-logo.png" alt="logo">
 		</div>
-		<div class="comparisonImage afterImage">
-			<img src="https://assets.codepen.io/16327/after.jpg" alt="after">
+		<div class="socmed">
+			<a href="#">
+				<div class="socmed-link">
+					<i class="fa-brands fa-instagram"></i>
+				</div>
+			</a>
+			<a href="#">
+				<div class="socmed-link">
+					<i class="fa-brands fa-whatsapp"></i>
+				</div>
+			</a>
 		</div>
-	</section>
+	</header>
 
-	<section class="homepage">
-		<div class="hero"></div>
-			<button data-target="modal1" class="btn-submit modal-trigger" type="submit">
-				<span>Fill Out</span>
-			</button>
-	</section>	
+	<!-- BEGIN NAV MENU -->
+	<div class="nav-circle-body"></div>
+	
+	<div class="nav-body">
+		<ul class="nav-body__list">
+			<li class="nav-body__item">
+				<a href="/">Home</a>
+			</li>
+			<li class="nav-body__item">
+				<a href="/activation.html">Profile</a>
+			</li>
+			<li class="nav-body__item">
+				<div class="product-list">Product &nbsp<i class="fa-solid fa-caret-down"></i></div>					
+				<div class="nav-item-down">
+					<a href="#">Smartsuit</a>
+					<a href="#">Smart Gloves</a>
+					<a href="#">Face Capture</a>
+				</div>
+			</li>
+			<li class="nav-body__item">
+				<a href="/activation.html">Project</a>
+			</li>      
+			<li class="nav-body__item">
+				<a href="/contact.html">Contact</a>
+			</li>      
+		</ul>
+	</div>	
+	<!-- END NAV MENU -->
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- HOME SECTION -->
+	<main class="pofile-page">
+	<section class="bg-video-wrap comparisonSection">
+		<!-- Dashboard Slide 1 -->
+		<section class="beforeImage">
+			<div class="ring-wrapper">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 0 450 350" width="100%" height="100%" preserveAspectRatio="none">
+					<defs>
+						<filter id="glow">
+							<fegaussianblur class="blur" result="coloredBlur" stddeviation="3"></fegaussianblur>
+							<femerge>
+								<femergenode in="coloredBlur"></femergenode>
+								<femergenode in="coloredBlur"></femergenode>
+								<femergenode in="coloredBlur"></femergenode>
+								<femergenode in="SourceGraphic"></femergenode>
+							</femerge>
+						</filter>						
+						<linearGradient id="gradient">
+							<stop offset="0" style="stop-color:#FEB404"></stop>
+							<stop offset="0.5" style="stop-color:#F7941C"></stop>
+							<stop offset="1" style="stop-color:#C16005"></stop>
+						</linearGradient>
+					</defs>
+					<ellipse ry="110" rx="110" cy="110" cx="110" style="fill:none;stroke:url(#gradient);stroke-width:30;filter: url(#glow);"></ellipse>
+				</svg>
+			</div>
+			
+			<video src="img/moverse-video.mp4" loop muted autoplay></video>
+			<!-- Overlay video -->
+			<div class="overlay"></div>
+
+			<div class="main-wrapper">
+				<img src="img/moverse-logo.png" alt="logo moverse">
+			</div>
+
+			<div class="main-desc">
+				<h5 class="heading-bold">We Deliver Your Movement into the Metaverse.</h5>
+				<p>Creating your perfect character movement starts here</p>
+			</div>
+
+			<div class="btn-slide" onclick="onSlide()">
+				Learn <br> More
+			</div>
+
+		</section>
 		
+		<!-- Profile Slide 2 -->
+		<section class="comparisonImage afterImage" id="sec2">
+			<!-- <div class="video-test">
+				<video id="myVideo" autobuffer="autobuffer" preload="preload" muted>
+					<source src="/img/webm/Moverse push.webm" type="video/webm">
+					<source src="/img/mov/push.mov" type="video/mov">
+				</video>
+			</div> -->
+			
+			<div class="overlay2"></div>
+			<div class="character-wrapper">
+				<canvas id="hero-lightpass" />
+			</div>
+
+			<div class="row profile">
+				<div class="col s7 offset-s5">
+					<h2>Start Your Mocap with <b class="heading-bold">MOVERSE</b></h2>
+					<p>With Moverse, you can get a complete, ready-to-use motion capture suit for your metaverse character creation, which will save you time and money compared to searching for and buying each piece of equipment separately.
+						We aim to be the most complete and updated provider of motion capture equipment for rent in Indonesia. We are committed to supporting creators to make magic with the wide variety of products we provide. 
+						In Indonesia, there is still no good provider for motion capture suits. Most content creators have to buy or rent them from overseas providers for around $3,000 USD per unit.
+						This is where Moverse can offer an easier and more affordable solution for creators.
+						</p>
+				</div>
+			</div>
+			<!-- <div class="profile-wrapper">
+				<h2 style="color: #F7941C;">Lorem Ipsum</h2><h1>Dolor Sit Amet</h1>
+			</div> -->
+			<!-- <div class="intro-desc">
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic cupiditate quaerat, autem eligendi atque suscipit illo ad fugit, recusandae odit eaque rem, assumenda minus ex veritatis quae officiis explicabo voluptatibus.</p>
+			</div> -->
+			<img src="img/bg-profile.jpg" alt="after">
+		</section>		
+  </section>
+	<!-- BEGIN PRODUCT SECTION -->
+	<div class="product-section row">
+		<div class="col s5 image-left">
+			<img src="/img/suit-couple.png">
+		</div>
+		<div class="col s7">
+			<h2 class="gs_reveal">Our <br><b class="heading-bold">MovGear</b></h2>
+			<p class="gs_reveal">Moverse offers three tiers of motion capture solutions. We call it MovGear. From the motion capture suit, to gloves, to face capture, with our MovGear, creators can capture all body movement more accurately and easily. This is great news for animation, special effects or 3D game development.
+				If you don't have a big enough budget to buy motion capture equipment, you can rent a set of MovGear, because MovGear is able to capture all the scenes you need.
+				</p>
+			<div class="product-option">
+				<a href="/mov-suit.html" class="product-lists gs_reveal gs_reveal_fromLeft">
+					<h5>Mov-Suit</h5>
+					<span>Give Life to Your <br> Animation</span>
+					<div class="icon-product" style="margin: 20px;">
+						<img src="img/suit.svg" alt="">
+					</div>
+					<div class="logo-anim"></div>
+					<div class="image-option">
+						<img src="/img/smartsuit.png">
+					</div>
+				</a>
+				<a href="mov-g.html" class="product-lists gs_reveal">
+					<h5>Mov-G</h5>
+					<span>Let Your Fingers Do the Magic</span>
+					<div class="icon-product">
+						<img src="img/gloves.svg" alt="">
+					</div>
+					<div class="logo-anim"></div>
+					<div class="image-option">
+						<img src="/img/smartgloves.jpg">
+					</div>					
+				</a>
+				<a href="facesense.html" class="product-lists gs_reveal gs_reveal_fromRight">
+					<h5>FaceSense</h5>
+					<span>A High Sense of Facial Expression is in Your Range</span>
+					<div class="icon-product">
+						<img src="img/face-capture.svg" alt="">
+					</div>
+					<div class="logo-anim"></div>
+					<div class="image-option">
+						<img src="/img/smartgloves.jpg">
+					</div>						
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="project-section">
+		<div class="container">
+			<h2 class="gs_reveal">Check Out<br><b class="heading-bold">Our Project</b></h2>
+			<!-- <img class="gs_reveal" src="/img/imghero.jpeg"> -->
+
+			<!-- SLIDER -->
+			<div class="slider gs_reveal">
+				<ul class="slides">
+					<li>
+						<img src="img/imghero.jpeg"> <!-- random image -->
+						<!-- <div class="caption center-align">
+							<h3>This is our big Tagline!</h3>
+							<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+						</div> -->
+					</li>
+					<li>
+						<img src="img/banner.jpg"> <!-- random image -->
+						<!-- <div class="caption left-align">
+							<h3>Left Aligned Caption</h3>
+							<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+						</div> -->
+					</li>
+				</ul>
+			</div>		
+
+			<div class="viewAll">
+				<a href="#">
+					<span><i class="fa fa-plus" aria-hidden="true"></i> view</span>
+					<span class="circle-btn">all</span>
+				</a>
+			</div>
+			<h2 class="collaborate gs_reveal">Let's<br><b class="heading-bold">Collabrate!</b></h2>			
+			<div class="row address">
+				<div class="col s6">
+					<ul>
+						<li><b style="color: #FEB404;">MOVERSE</b></li>
+						<li>Jl. Kelapa Dua Raya No.01 Rt.04 Rw.03</li>
+						<li>Kelapa Dua, Kebon Jeruk</li>
+						<li>Jakarta Barat 11550</li> <br>
+						<li>Phone +62 21 2254 5010</li>
+						<li>Fax +62 21 2254 5011</li>
+						<li>Email ask@moverse.co.id</li>
+					</ul>
+				</div>
+				<div class="col s6">
+					<div class="quote-btn">
+						<span>Get Quote</span>
+						<!-- <img src="img/half-moon-01.svg" alt=""> -->
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="220" viewBox="0 -10 250 250">
+							<defs>
+								<filter id="sofGlow" height="300%" width="300%" x="-75%" y="-75%">
+									<!-- Thicken out the original shape -->
+									<feMorphology operator="dilate" radius="5" in="SourceAlpha" result="thicken" />
+							
+									<!-- Use a gaussian blur to create the soft blurriness of the glow -->
+									<feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
+							
+									<!-- Change the colour -->
+									<feFlood flood-color="#FEB404" result="glowColor" />
+							
+									<!-- Color in the glows -->
+									<feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
+							
+									<!--	Layer the effects together -->
+									<feMerge>
+										<feMergeNode in="softGlow_colored"/>
+										<feMergeNode in="SourceGraphic"/>
+									</feMerge>
+							
+								</filter>
+
+								<style>.cls-1{fill:url(#linear-gradient);}</style>
+								<linearGradient id="linear-gradient" x1="-176.69" y1="402.93" x2="-135.99" y2="169.28" gradientTransform="matrix(1, 0, 0, -1, 262, 374.5)" gradientUnits="userSpaceOnUse">
+									<stop offset="0" stop-color="#feb404"/><stop offset="0.55" stop-color="#f7941c"/><stop offset="1" stop-color="#bb5d05"/>
+								</linearGradient>
+							</defs>
+							<path class="cls-1" filter="url(#sofGlow)" d="M214.18,115.65l-1.18-.48c-1.7-24.23-16.28-52.84-47.6-74.32C125.79,13.69,66.64,25,39.68,64.89S23,159.14,62.59,186.3a86.31,86.31,0,0,0,106.85-7.22c2.95-2,8.55-4.15,13.07-.55,6.31,5,4.43,10.36.57,15a14.51,14.51,0,0,1-1.2,1.27,105.1,105.1,0,0,1-130.34,8.31C2.65,169.62-10,102.53,23.27,53.29a106.62,106.62,0,0,1,148.8-28.45C201.7,45.16,216.6,79,214.18,115.65Z"/>
+						</svg>						
+					</div>
+				</div>
+			</div>
+			<footer class="row">
+				<ul class="col s6 footer-menu">
+					<li>Home</li>
+					<li>Profile</li>
+					<li>Mov-Suit</li>
+					<li>Mov-G</li>
+					<li>FaceSense</li>
+					<li>Contact</li>
+				</ul>
+				<div class="col s6 right-align">
+					<span>Copyright © MMK Design Studio 2022</span>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+</main>
+	
 	<script>
+		
 
-		function sendEmail() {
-			// const mailBody = "<p>Thanks for filling out the form</p><p>We will contact you soon</p><br><p>Best Regard</p><strong>Moverse Team</strong>"
-			Email.send({
-				SecureToken: "dad7c688-7522-4a1e-947c-ba18a4a12ceb",
-				To : document.getElementById('email').value,
-				From : "ask@moverse.co.id",
-				Subject : "Thanks for participating",
-				Body : "<p>Thanks for filling out the form</p><p>We will contact you soon</p><br><p>Best Regard</p><strong>Moverse Team</strong>"
-			}).then(
-				message => console.log(message)
-			)
+		// window.onscroll=function(){
+		// 	if (window.pageYOffset || document.documentElement.scrollTop == 400) {
+		// 		gsap.fromTo(document.querySelector(".profile"), { yPercent: 20, opacity: 0 }, { yPercent: 0, opacity: 1 });
+		// 	}
+		// 	console.log( 
+		// 		'top: '  + (window.pageYOffset || document.documentElement.scrollTop) + ' ' +
+		// 		'left: ' + (window.pageXOffset || document.documentElement.scrollLeft)
+		// 	);
+		// }
+
+		document.onreadystatechange = function() {
+			if (document.readyState !== "complete") {
+				document.querySelector("body").style.visibility = "hidden";
+				document.querySelector("#loader").style.visibility = "visible";
+			} else {
+				document.querySelector("#loader").style.display = "none";
+				document.querySelector("body").style.visibility = "visible";
+			}
+		};
+
+		function onSlide() {
+			console.log('click')
+			const vid = document.getElementById("myVideo");
+			vid.play()
+			gsap.utils.toArray(".comparisonSection").forEach(section => {
+				gsap.to(window, {scrollTo: section.offsetWidth, duration: 4});	
+			})
 		}
 
-		const scriptURL = 'https://script.google.com/macros/s/AKfycbzgIM-HSdKxTfDxwwqWy0fhu90CRrr9TUWSuIvb-A8qMeprHVZicD-REHLGdlZWeppp/exec';
-		const form = document.forms['moverse-form-order'];
-		const btnSend = document.querySelector('.btn-submit span');
-		const btnLoad = document.querySelector('.btn-loading');
-	
-		form.addEventListener('submit', e => {
-			sendEmail();
-			e.preventDefault()
+		gsap.utils.toArray(".comparisonSection").forEach((section, i) => {
 
-			btnLoad.classList.toggle('d-none');
-			btnSend.classList.toggle('btn-onload');
-			btnSend.style.transform = "translateX(-5px)";
-			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => {
-					btnLoad.classList.toggle('d-none');
-					btnSend.classList.toggle('btn-onload');
-					M.toast({html: 'Data Berhasil dikirim!', classes: 'rounded red darken-1'});
-					form.reset();
+			const canvas = document.getElementById("hero-lightpass");
+			const context = canvas.getContext("2d");
 
-					console.log('Success!', response)
-				})
-				.catch(error => console.error('Error!', error.message))
-		})
+			canvas.width = 1080;
+			canvas.height = 1920;
+
+			const frameCount = 179;
+			const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
+			);
+
+			const images = []
+			const airpods = {
+				frame: 0
+			};
+
+			for (let i = 1; i < frameCount; i++) {
+				const img = new Image();
+				img.src = currentFrame(i);
+				images.push(img);
+			}						
+			let tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: section,
+					start: "center center",
+					// makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
+					end: () => "+=" + section.offsetWidth, 
+					scrub: true,
+					pin: true,
+					anticipatePin: 1,
+					markers: true,
+					onLeave: onleavePage,
+					onEnter: onEnterPage,
+					onEnterBack: onEnterBack,
+					onSnapComplete: onSnapComplete,
+				},
+				defaults: {ease: "none"}
+			});
+
+			gsap.to(airpods, {
+				frame: frameCount - 1,
+				snap: "frame",
+				scrollTrigger: {
+					scrub: 1,
+					trigger: section,
+					start: "center center",
+					end: () => "+=" + section.offsetWidth, 					
+					pin: true
+				},
+				onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
+			});			
+			images[0].onload = render;
+
+			function render() {
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.drawImage(images[airpods.frame], 0, 0); 
+			}			
+
+			function onSnapComplete() {
+				console.log('onSnapComplete');
+			}
+
+			function onleavePage() {
+				console.log('leave');
+			};
+
+			function onEnterBack() {
+				console.log('onEnterBack')
+			}						
+
+			function onEnterPage() {
+				console.log('enter');
+			}
+			// animate the container one way...
+			tl.fromTo(section.querySelector(".afterImage"), { xPercent: 100, x: 0}, {xPercent: 0})
+			// ...and the image the opposite way (at the same time)
+			.fromTo(section.querySelector(".afterImage img"), {xPercent: -100, x: 0}, {xPercent: 0}, 0);
+			tl.fromTo(section.querySelector(".profile"), {xPercent: -100, x: 0, y: 75, opacity: 0}, {xPercent: 0, y:0, opacity: 1}, 0)
+			.set({}, {}, "+=0.2");
+		});		
 	</script>
-	
-	<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="index.js"></script>
+
 </body>
 </html>
