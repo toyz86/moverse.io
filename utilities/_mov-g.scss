@@ -1,0 +1,148 @@
+.mov-g {
+  padding-top: 150px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  // height: 100vh;
+  margin: 0;
+  background: url('img/gloves.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 400px;
+
+  .backdrop_hero {
+    position: absolute;
+    background: linear-gradient(0deg, #000000 -18.71%, #000000 -0.84%, #000000 28.02%, rgba(0, 31, 61, 0.987368) 69.32%, #002E59 106.24%);
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    &:before {
+      content: "";
+      position: absolute;
+      background: url('img/mov-icon.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: -350px -120px;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.5;
+    }
+  }
+
+  // .circle_bg {
+  //   position: absolute;
+  //   background: url('img/mov-icon.png');
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   background-position: -350px -150px;
+  //   width: 100%;
+  //   height: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   opacity: 0.5;
+  //   z-index: -1;    
+  // }
+
+  .gloves-icon {
+    width: 100px;
+    height: 100px;
+    border: 2px solid $moverse;
+    border-radius: 50%;
+  }
+  .gloves-specs {
+    img {
+      width: 100px;
+    }
+  }
+  a {
+    color: #fff;
+  }
+
+  img {
+    &.img-blend {
+      width: 15%;
+      position: absolute;
+      top: 220px;
+      right: 220px;
+    }
+  }
+
+  .quote-btn {
+    position: absolute;
+    text-align: center;
+    bottom: 170px;
+    width: 150px;
+    height: auto;
+    // transform: translateX(150px);
+    cursor: pointer;
+    
+    span {
+      position: absolute;
+      transform: translate(75px, 100px);
+    }
+
+    svg {
+      position: relative; 
+      transform: rotate(0deg);
+      transition: all 0.3s ease;
+      defs {
+        feFlood {
+          flood-color: transparent;
+          transition: all 0.3s ease;
+        }
+      }
+      &:hover {
+        transform: rotate(20deg);
+        transition: all 0.3s ease;
+        defs {
+          filter {
+            feFlood {
+              flood-color: #FEB404;
+              transition: all 0.3s ease;
+            }
+          }
+        }
+      }
+    }
+
+    img {
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      img {
+        transform: rotate(45deg);
+        transition: all 0.3s ease;
+      }
+    }
+  }  
+
+  footer {
+    margin-top: 150px;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(114, 114, 114);
+    ul {
+      display: flex;
+      li {
+        margin-right: 20px;
+      }
+      &.footer-menu {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  } 
+  #gloves_guide {
+    margin-top: 50px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  } 
+}

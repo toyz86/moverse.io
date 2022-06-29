@@ -1,0 +1,125 @@
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  /* background: linear-gradient(341.86deg, rgba(0, 0, 0, 0) -57.23%, #000000 -32.28%, rgba(0, 0, 0, 0.96) 9.38%, rgba(0, 31, 61, 0.987368) 57.85%, #002E59 117.22%); */
+  width: 100%;
+  /* height: 100vh; */
+  overflow-x: hidden;
+  font-weight: lighter;
+  margin: auto;
+}
+
+h3 {
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.container {
+  padding: 50px 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0px 7px 15px rgba(20, 20, 20, 0.5);
+}
+
+.row {
+  display: flex;
+  margin-top: 50px;
+}
+
+.cards.ig {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);  ;
+}
+
+.cards.wa {
+  background: linear-gradient(180deg, rgba(25,205,0,1) 0%, rgba(59,187,62,1) 5%, rgba(2,129,35,1) 100%);
+}
+
+.cards.web {
+  background: linear-gradient(341.86deg, rgba(0, 0, 0, 0) -57.23%, #000000 -32.28%, rgba(0, 0, 0, 0.96) 9.38%, rgba(0, 31, 61, 0.987368) 57.85%, #002E59 117.22%);
+}
+
+a {
+  text-decoration: none;
+}
+
+a .cards {
+  color: #fff;
+}
+
+a .social_title p {
+  color: #000000;
+  font-weight: bold;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .row {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .container {
+    padding: 30px 5px;
+  }
+}
+
+/* Style the counter cards */
+.cards {
+  box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
+  padding: 30px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  /* border-top: 5px solid orange; */
+  margin-top: 20px;
+}
+
+.cards i {
+  font-size: 3em;
+}
+
+.cards p {
+  text-align: left;
+  font-weight: bold;
+}
+
+.cards h6 {
+  font-weight: bold;
+}

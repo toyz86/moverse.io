@@ -1,6 +1,9 @@
 // Utilities
 @import "utilities/variables";
 @import "utilities/home";
+@import "utilities/mov-suit";
+@import "utilities/mov-g";
+@import "utilities/facesense";
 @import "utilities/contact";
 @import "utilities/form";
 @import "utilities/footer";
@@ -52,7 +55,7 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', 'sans-serif';
   color: #fff;
-  // background: black;
+  background: #000000;
 }
 
 h2 {
@@ -68,7 +71,7 @@ h5 {
   color: #FEB404;
 }
 
-p {
+p, span {
   font-family: 'Inter', 'sans-serif';
 }
 

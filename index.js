@@ -1,5 +1,4 @@
 // const { default: gsap } = require("gsap");
-
 function animateFrom(elem, direction) {
   direction = direction || 1;
   var x = 0,
@@ -44,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 $(document).ready(function(){
-	
+	// $("#nav-placeholder").load("component/nav.html");  
 	$(".preload").fadeOut(2000, function() {
 		$(".content").fadeIn(1000);        
 	});
@@ -58,17 +57,17 @@ $(document).ready(function(){
 	$(document).scroll(function() {
 		var y = $(this).scrollTop();
 		if (y > 200 && y < 1200) {
-			$('.logo-header').fadeIn();
+			$('#logo-header').fadeIn();
 		} else {
-			$('.logo-header').fadeOut();
+			$('#logo-header').fadeOut();
 		}
 	});
+
+	$('.quote-btn').click(function(){
+		document.location.href='/contact.html';
+	})
 	
-	$("#headerMenu").load("component/nav.html");
 	// BEGIN NAV MENU
-	$('.nav-body__item a').css({'display': 'none'})
-	$('.nav-body__item .product-list').css({'display': 'none'})
-	$('.logo-header').css({'display': 'none'})
 	$('.backDrop').css({'display': 'none'})
 
 	$('.product-list').click(function() {
@@ -83,22 +82,22 @@ $(document).ready(function(){
 	})
 
 	$('.More').click(function() {
-		const tl = gsap.timeline({ 
-			// defaults: { ease: "power1.in" }, 
-		})
 
 		$('input.More-checkbox').text($('#burger').val());
 
 		$("#burger").on('change', function() {
+			const tl = gsap.timeline({});
 			if ($(this).is(':checked')) {
 				$(this).attr('value', 'true');
+				gsap.to('.nav-body', { display: 'block' });
 				gsap.to('.nav-circle-body', 1, { scale: 200, opacity: 1, delay: 0.3})
-				gsap.fromTo('.nav-body__item a', 0.5, { display: 'none', opacity: 0, y:50 }, { display: 'block', opacity: 1, y: 0, delay: '0.5' })
-				gsap.fromTo('.nav-body__item .product-list', 0.5, { display: 'none', opacity: 0, y:50 }, { display: 'block', opacity: 1, y: 0, delay: '0.5' })
+				gsap.fromTo('.nav-body__item a', 0.7, { display: 'none', opacity: 0, y:50 }, { display: 'block', opacity: 1, y: 0, delay: '0.7' })
+				gsap.fromTo('.nav-body__item .product-list', 0.7, { display: 'none', opacity: 0, y:50 }, { display: 'block', opacity: 1, y: 0, delay: '0.7' })
 				gsap.fromTo('.menu-title', {opacity: 1, y: 0}, {opacity: 0, y: -10})
 				console.log('check')
 			} else {
 				$(this).attr('value', 'false');
+				tl.to('.nav-body', { display: 'none' });
 				gsap.to('.nav-circle-body', 1, { scale: 1, opacity: 0, delay: 0.5 })
 				gsap.fromTo('.nav-body__item a', 0.5, { display: 'block', opacity: 1, y: 0 }, { display: 'none', opacity: 0, y: 50 })
 				gsap.fromTo('.nav-body__item .product-list', 0.5, { display: 'block', opacity: 1, y: 0 }, { display: 'none', opacity: 0, y: 50 })
@@ -109,30 +108,4 @@ $(document).ready(function(){
 		});
 	})
 	// END NAV MENU
-
-  // $('.modal').modal();
-	// $('.spinner-layer').addClass('d-none');
-	// $('.datepicker').datepicker( {
-	// 	container: 'body',
-	// 	format: 'mm/dd/yyyy'
-	// });
-
-	// $('input[name=duration]').click(function() {
-	// 	if(!$("input#other_option").is(':checked')) { 
-	// 			$('.other input').css({'display': 'none'});
-	// 			console.log('checked')
-	// 		} else {
-	// 			$('.other input').css({'display': 'block'})
-	// 			console.log('uncheceked')
-	// 		}
-	// })
-
-	// $(".hero .list").eq(0).nextAll().hide();
-	// $(".work_step").click(function(e){
-	// 	$(".work_step").removeClass('active');
-	// 	$(this).addClass('active');
-	// 	let index = $(this).index();
-	// 	$(".hero .list").eq(index).fadeIn(500).show().siblings().hide();
-	// 	console.log('image', index);
-	// });
 });

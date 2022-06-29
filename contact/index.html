@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moverse Form Order</title>
+  <link rel="stylesheet" href="form-order.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+  <div id="hero" class="hero_banner">
+    <img src="Moverse Logo (landscape).png" alt="logo moverse">
+  </div>
+  <div class="container">
+    <div class="text_wrapper">
+      <h1>Hi, thank you for your interest in our product!</h1>
+      <p style="font-weight: bold;">Please fill up the form below.</p>
+      <p>After you fill out this order request, we will contact you to go over details and availability before the order is completed. If you would like faster service and direct information on current stock and pricing please contact us at <a href="mailto:ask@moverse.co.id" target="_blank">ask@moverse.co.id</a></p>
+      <div class="row">
+        <div class="column">
+          <div class="cards">
+            <h6>Rental includes :</h6>
+            <p>Rental time :</p>
+            <ul>
+              <li>Rental 8 hours per day including set up.</li>
+              <li>1 Operator and 1 Runner.</li>
+              <li>Router connection for suits / gloves / face capture.</li>
+              <li>Laptop and software.</li>
+              <li>Iphone 13 for face capture.</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="cards">
+            <h6>Rental excludes :</h6>
+            <p>Rental time :</p>
+            <ul>
+              <li>Wifi connection on venue</li>
+              <li>TV 50” for preview</li>
+              <li>Avatar development</li>
+              <li>Animation development</li>
+              <li>Baselayer</li>
+              <li>Tables and chairs for operator</li>
+            </ul>
+          </div>
+        </div>
+      
+      </div>      
+      <div class="term">
+        <p>Term of Payment :</p>
+        <ul>
+          <li>Down Payment 50% after quotation approval</li>
+          <li>Final Payment 50% after shooting (maximum 24 hours after shooting day).</li>
+        </ul>
+        <br>
+        <span>* if needed we can provide a full production service with additional charges</span>
+      </div>
+    </div>
+
+    <hr>
+    <!-- <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScBg_AvADnzop84Hh5Ziz8V53lrzEQxj67iaIxbjDxEHyvQNQ/formResponse">       -->
+    <!-- <form>
+      <div class="form-element">
+        <span>Name</span>
+        <input type="text" name="entry.707949293" placeholder="Your Answer">
+      </div>
+
+      <div class="form-element">
+        <span>Company</span>
+        <input type="text" name="entry.1654822631" placeholder="Your Answer">
+      </div>
+
+      <div class="form-element">
+        <span>Email</span>
+        <input type="email" name="entry.750500432" placeholder="Your Answer">
+      </div>
+
+      <div class="form-element">
+        <span>Contact Number</span>
+        <input type="text" name="entry.423545161" placeholder="Your Answer">
+      </div>
+
+      <div class="form-element checkbox">
+        <span>Choose the equipment you need</span>
+        <div class="suit-option-hidden">
+          <label for="fullSet_S">
+            <input type="checkbox" name="entry.1915757839" id="fullSet_S" value="Full set S (suit S, gloves S, Face capture)">
+            <span>Full set S (suit S, gloves S, Face capture)</span>
+          </label>
+          <label for="fullSet_M">
+            <input type="checkbox" name="entry.1915757839" id="fullSet_M" value="Full set M (suit M, gloves M, Face capture)">
+            <span>Full set M (suit M, gloves M, Face capture)</span>
+          </label> 
+          <label for="suit_S">
+            <input type="checkbox" name="entry.1915757839" id="suit_S" value="Suit S">
+            <span>Suit S</span>
+          </label>
+          <label for="suit_M">
+            <input type="checkbox" name="entry.1915757839" id="suit_M" value="Suit M">
+            <span>Suit M</span>
+          </label> 
+          <label for="suit_L">
+            <input type="checkbox" name="entry.1915757839" id="suit_L" value="Suit L">
+            <span>Suit L</span>
+          </label>        
+          <label for="faceCap">
+            <input type="checkbox" name="entry.1915757839" id="faceCap" value="Face Capture">
+            <span>Face Capture</span>
+          </label>
+        </div>
+      </div>
+
+      <label for="full-s" class="number" id="lblRange">
+        <span class="minus-s">-</span>
+        <input class="counter" id="full-s" type="text" readonly data-max="2" data-min="0" value="0" aria-labelledby="lblRange"/>
+        <span class="plus-s">+</span>
+        <span class="item">Full set S (suit S, gloves S, Face capture)</span>
+      </label>
+      <label for="full-m" class="number">
+        <span class="minus-m">-</span>
+        <input class="counter" id="full-m" type="text" readonly data-max="2" data-min="0" value="0"/>
+        <span class="plus-m">+</span>
+        <span class="item">Full set M (suit M, gloves M, Face capture)</span>
+      </label>
+      <label for="suit-s" class="number">
+        <span class="minus_suitS">-</span>
+        <input class="counter" id="suit-s" type="text" readonly data-max="2" data-min="0" value="0"/>
+        <span class="plus_suitS">+</span>
+        <span class="item">Suit S</span>
+      </label>        
+      <label for="suit-m" class="number">
+        <span class="minus_suitM">-</span>
+        <input class="counter" id="suit-m" type="text" readonly data-max="2" data-min="0" value="0"/>
+        <span class="plus_suitM">+</span>
+        <span class="item">Suit M</span>
+      </label>     
+      <label for="suit-l" class="number">
+        <span class="minus_suitL">-</span>
+        <input class="counter" id="suit-l" type="text" readonly data-max="1" data-min="0" value="0"/>
+        <span class="plus_suitL">+</span>
+        <span class="item">Suit L</span>
+      </label>         
+      <label for="face_capture" class="number">
+        <span class="minus_face">-</span>
+        <input class="counter" id="face_capture" type="text" readonly data-max="3" data-min="0" value="0"/>
+        <span class="plus_face">+</span>
+        <span class="item">Face Capture</span>
+      </label>
+
+      <div class="form-element radio-buttons">
+        <span>Duration of Rental</span>
+        <label for="oneday">
+          <input type="radio" name="entry.205270334" id="oneday" value="1 Day">
+          <span>1 Day</span>
+        </label>
+        <label for="twodays">
+          <input type="radio" name="entry.205270334" id="twodays" value="2 Days">
+          <span>2 Days</span>
+        </label>    
+        <label class="otherOpt" for="__other_option__">
+          <input type="radio" name="entry.205270334" id="__other_option__" value="__other_option__">
+          <span>Other</span>
+          <input type="text" class="otherText" id="__other_option__" name="entry.205270334.other_option_response" value="">
+        </label>            
+      </div>    
+
+      <div class="date">
+        <span>Event Date</span>
+        <label for="eventDate">
+          <div class="row">
+            <p>Start&nbsp;&nbsp;:</p>
+            <input type="date" id="eventDate" name="entry.830872781" placeholder="mm/dd/yyyy">
+          </div>
+        </label>
+      </div>
+
+      <div class="time">
+        <span>Event Time</span>
+        <label for="dateTime">
+          <div class="row">
+            <p>Start&nbsp;&nbsp;:</p>
+            <input type="time" id="dateTime" name="entry.627096844" placeholder="--:-- --">
+          </div>
+        </label>
+      </div>
+
+      <div class="form-element">
+        <span>Address</span>
+        <input type="text" name="entry.923089773" placeholder="Your Answer">
+      </div>
+
+      <div class="form-element">
+        <a href="https://api.whatsapp.com/send?phone=6281377177701" target="_blank">If you have others inquiries reach us through&nbsp;<i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+      <div class="row center">
+        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form> -->
+
+    <form name="moverse-form-order">
+      <div class="form-element">
+        <span>Name</span>
+        <input type="text" name="name" id="name" placeholder="Your Answer" required>
+      </div>
+
+      <div class="form-element">
+        <span>Company</span>
+        <input type="text" name="company" id="company" placeholder="Your Answer">
+      </div>
+
+      <div class="form-element">
+        <span>Email</span>
+        <input type="email" name="email" id="email" placeholder="Your Answer" required>
+      </div>
+
+      <div class="form-element">
+        <span>Contact Number</span>
+        <input type="text" name="phone" id="phone" placeholder="Your Answer" required>
+      </div>
+
+      <div class="form-element checkbox">
+        <span>Choose the equipment you need</span>
+        <!-- Hidden element to trigger suit check google form -->
+        <div class="suit-option-hidden">
+          <label for="fullSet_S">
+            <input type="checkbox" name="suit-option" id="fullSet_S" value="Full set S (suit S, gloves S, Face capture)">
+            <span>Full set S (suit S, gloves S, Face capture)</span>
+            <input type="text" name="suit-option" id="qty1" value="">
+          </label>
+          <label for="fullSet_M">
+            <input type="checkbox" name="suit-option" id="fullSet_M" value="Full set M (suit M, gloves M, Face capture)">
+            <span>Full set M (suit M, gloves M, Face capture)</span>
+            <input type="text" name="suit-option" id="qty2" value="">
+          </label> 
+          <label for="suit_S">
+            <input type="checkbox" name="suit-option" id="suit_S" value="Suit S">
+            <span>Suit S</span>
+            <input type="text" name="suit-option" id="qty3" value="">
+          </label>
+          <label for="suit_M">
+            <input type="checkbox" name="suit-option" id="suit_M" value="Suit M">
+            <span>Suit M</span>
+            <input type="text" name="suit-option" id="qty4" value="">
+          </label> 
+          <label for="suit_L">
+            <input type="checkbox" name="suit-option" id="suit_L" value="Suit L">
+            <span>Suit L</span>
+            <input type="text" name="suit-option" id="qty5" value="">
+          </label>        
+          <label for="faceCap">
+            <input type="checkbox" name="suit-option" id="faceCap" value="Face Capture">
+            <span>Face Capture</span>
+            <input type="text" name="suit-option" id="qty6" value="">
+          </label>
+        </div>
+      </div>
+
+      <label for="full-s" class="number" id="lblRange">
+        <span class="minus-s">-</span>
+        <input class="counter" id="full-s" type="text" readonly data-max="2" data-min="0" value="0" aria-labelledby="lblRange"/>
+        <span class="plus-s">+</span>
+        <span class="item">Full set S (suit S, gloves S, Face capture)</span>
+      </label>
+      <label for="full-m" class="number">
+        <span class="minus-m">-</span>
+        <input class="counter" id="full-m" type="text" readonly data-max="2" data-min="0" value="0"/>
+        <span class="plus-m">+</span>
+        <span class="item">Full set M (suit M, gloves M, Face capture)</span>
+      </label>
+      <label for="suit-s" class="number">
+        <span class="minus_suitS">-</span>
+        <input class="counter" id="suit-s" type="text" readonly data-max="2" data-min="0" value="0"/>
+        <span class="plus_suitS">+</span>
+        <span class="item">Suit S</span>
+      </label>        
+      <label for="suit-m" class="number">
+        <span class="minus_suitM">-</span>
+        <input class="counter" id="suit-m" type="text" readonly data-max="2" data-min="0" value="0"/>
+        <span class="plus_suitM">+</span>
+        <span class="item">Suit M</span>
+      </label>     
+      <label for="suit-l" class="number">
+        <span class="minus_suitL">-</span>
+        <input class="counter" id="suit-l" type="text" readonly data-max="1" data-min="0" value="0"/>
+        <span class="plus_suitL">+</span>
+        <span class="item">Suit L</span>
+      </label>         
+      <label for="face_capture" class="number">
+        <span class="minus_face">-</span>
+        <input class="counter" id="face_capture" type="text" readonly data-max="3" data-min="0" value="0"/>
+        <span class="plus_face">+</span>
+        <span class="item">Face Capture</span>
+      </label>
+
+      <div class="form-element radio-buttons">
+        <span>Duration of Rental</span>
+        <label for="oneday">
+          <input type="radio" name="duration" id="oneday" value="1 Day">
+          <span>1 Day</span>
+        </label>
+        <label for="twodays">
+          <input type="radio" name="duration" id="twodays" value="2 Days">
+          <span>2 Days</span>
+        </label>    
+        <label class="otherOpt" for="__other_option__">
+          <input type="radio" name="duration" id="__other_option__" value="Other">
+          <span>Other</span>
+          <input type="text" class="otherText" id="__other_option__" name="duration" value="">
+        </label>            
+      </div>    
+
+      <div class="date">
+        <span>Event Date</span>
+        <label for="eventDate">
+          <div class="row">
+            <p>Start&nbsp;&nbsp;:</p>
+            <input type="date" id="eventDate" name="event-date" placeholder="mm/dd/yyyy" required>
+          </div>
+        </label>
+      </div>
+
+      <div class="time">
+        <span>Event Time</span>
+        <label for="dateTime">
+          <div class="row">
+            <p>Start&nbsp;&nbsp;:</p>
+            <input type="time" id="dateTime" name="event-time" placeholder="--:-- --" required>
+          </div>
+        </label>
+      </div>
+
+      <div class="form-element">
+        <span>Address</span>
+        <input type="text" name="address" placeholder="Your Answer" required>
+      </div>
+
+      <div class="form-element inquiries">
+        <!-- <a href="https://api.whatsapp.com/send?phone=6281377177701" target="_blank">If you have others inquiries reach us through&nbsp;<i class="fa-brands fa-whatsapp"></i></a> -->
+        <a href="/contact/social-link.html" target="_blank">If you have others inquiries reach us through&nbsp;<i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+      <div class="row center">
+        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
+          <!-- <i class="material-icons right">send</i> -->
+          <div class="btn-loading">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+          </div>
+        </button>
+      </div>
+    </form>    
+  </div>
+
+  <script>
+		function sendEmail() {
+			const name_input = document.getElementById('name').value;
+      const mail_input = document.getElementById('email').value;
+			Email.send({
+				SecureToken: "dad7c688-7522-4a1e-947c-ba18a4a12ceb",
+				To : mail_input,
+				From : "ask@moverse.co.id",
+				Subject : "Thank you for your interest",
+				Body : "<p>Hi" + " " + name_input + " " + "thanks for filling out the form</p><p>We will contact you soon</p><br><p>Best Regard</p><strong>Moverse Team</strong>"
+			}).then(function(response) {
+        if(response == "OK") {
+          Email.send({
+            SecureToken: "dad7c688-7522-4a1e-947c-ba18a4a12ceb",
+            To : "ask@moverse.co.id",
+            From : mail_input,
+            Subject : "Somebody Fill Your Form",
+            Body : name_input + " " + "fill the form</p><p>check it out to see the order</p><br><a href='https://docs.google.com/spreadsheets/d/1FZbJbftijVpDPmbSwaub7tMLH4f_-pmP3BeLmwS9WgA/edit#gid=0' target='_blank'>Moverse Order Update</a>"
+          })
+        }
+      })
+		}
+
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbz_VfX_U5W-A2JumE2kR8MRZDXZwagswpKpYLh-KcdCCgnzEekAHeBKtNKq3hBVhQZb/exec';
+		const form = document.forms['moverse-form-order'];
+		const btnSend = document.querySelector('.btn i.material-icons');
+		const btnLoad = document.querySelector('.btn-loading');
+	
+		form.addEventListener('submit', e => {
+			sendEmail();
+			e.preventDefault()
+
+			// btnLoad.classList.toggle('d-none');
+			// btnSend.classList.toggle('btn-onload');
+			// btnSend.style.transform = "translateX(-5px)";
+      btnLoad.style.display = "inline-block";
+			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => {
+					// btnLoad.classList.toggle('d-none');
+					// btnSend.classList.toggle('btn-onload');
+          btnLoad.style.display = "none";
+					M.toast({html: 'Data Sent!', classes: 'rounded red darken-1'});
+					form.reset();
+
+					console.log('Success!', response)
+				})
+				.catch(error => console.error('Error!', error.message))
+		})    
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="smtp.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

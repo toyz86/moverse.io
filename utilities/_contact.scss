@@ -1,77 +1,185 @@
-.hero-wrapper {
-  width: 500px;
-  color: $grey;
+.contact {
+  padding-top: 150px;
   position: relative;
-  
-  h1 {
-    font-family: font-bold;
-    font-size: 50px;
-    margin: 0;
-  }
-
-  p {
-    line-height: 2;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 100;
-    font-size: 18px;
-  }
-
-}
-
-.work_contact {
+  overflow: hidden;
   width: 100%;
-  position: relative;
-}
+  height: 100%;
+  margin: 0;
 
-.work_step {
-  display: flex;
-  padding: 20px;
-  border-radius: 25px;
-  width: 550px;
-  color: $grey;
-  // cursor: pointer;
-  transition: all 0.5s ease;
-
-  &:hover {
-    // background: #021c35;
-    transition: all 0.5s ease;
+  .circle_bg {
+    img {
+      width: 130%;
+      height: auto;
+      transform: translateY(-50px);
+    }
   }
 
-  // &.stepActive {
-  //   background: $dblue;
-  //   border: 1px solid $tosca;
-  // }
+  .step-wrapper {
+    display: flex;
+    margin-top: 20px;
+    .icon-step {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      padding: 10px;
+      background: #fff;
+      margin-right: 10px;
+      text-align: center;
+      border-radius: 50%;
+  
+      img {
+        // width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 
-  .step-icon {
-    width: 60px;
-    height: 60px;
+  .order-btn {
+    position: absolute;
+    top: 55%;
+    right: 24%;
+    background: $moverse;
+    padding: 10px 20px;
+    border-radius: 25px;
+  }
+
+  .main-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: url('img/wiresensor.jpg');
+    background-size: cover;
+    background-position-x: -400px;
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
+    z-index: -5;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(271.62deg, rgba(1, 1, 1, 0.8) 30%, rgba(1, 1, 1, 0) 40%);
+      background-position-x: -400px;
+    }
+  
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(0deg, #010101 5.74%, rgba(1, 1, 1, 0) 58.03%, rgba(1, 1, 1, 0.64) 100.28%);
+    }    
+  }
+
+  .backdrop_hero {
+    position: absolute;
+    background: linear-gradient(291.43deg, rgba(0, 0, 0, 0) -3.31%, rgba(0, 0, 0, 0) 10.7%, rgba(0, 0, 0, 0) 39.84%, rgba(0, 31, 61, 0.987368) 58.93%, #002E59 94.67%);
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+  
+  a {
+    color: #fff;
+  }
+
+  .suit-icon {
+    width: 100px;
+    height: 100px;
+    border: 2px solid $moverse;
     border-radius: 50%;
-    background: $navy2;
+  }
+
+  .suit-specs {
+    img {
+      &.suit {
+        width: 40%;
+        mix-blend-mode: lighten;
+      }
+      &.table-size {
+        object-fit: cover;
+        width: 80%;
+        height: auto;
+      }
+    }
+  }
+  img {
+    &.img_right {
+      width: 35%;
+      top: 50px;
+      right: 100px;
+      position: absolute;
+    }
+  }
+  .quote-btn {
+    position: absolute;
     text-align: center;
-    flex: 1;
+    bottom: 170px;
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    
+    span {
+      position: absolute;
+      transform: translate(75px, 100px);
+    }
 
-    .fa-solid {
-      font-size: 35px;
-      transform: translateY(10px);
-      color: $lblue;
+    svg {
+      position: relative; 
+      transform: rotate(0deg);
+      transition: all 0.3s ease;
+      defs {
+        filter {
+          feFlood {
+            flood-color: transparent;
+            transition: all 0.5s ease;
+          }
+        }
+      }
+      &:hover {
+        transform: rotate(20deg);
+        transition: all 0.3s ease;
+        defs {
+          filter {
+            feFlood {
+              flood-color: #FEB404;
+              transition: all 0.3s ease;
+            }
+          }
+        }
+      }
+    }
+
+    img {
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      img {
+        transform: rotate(45deg);
+        transition: all 0.3s ease;
+      }
+    }
+  }    
+  #suit_guide {
+    margin-top: 50px;
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
-
-  .step-desc {
-    margin-left: 20px;
-    font-size: 17px;
-    flex: 7;
-
-    h6 {
-      font-family: 'Kanit', sans-serif;
-      color: $orange;
-    }
-
-    p {
-      margin: 0;
-      font-size: 15px;
-    }
-
+  .modal-overlay {
+    opacity: 0.7 !important;
   }
-
 }

@@ -129,7 +129,7 @@
   color: #fff;
 }
 
-.bg-video-wrap .afterImage img {
+.bg-video-wrap .afterImage .profile img {
   -webkit-transform: translate(-100%, 0px);
           transform: translate(-100%, 0px);
 }
@@ -449,29 +449,81 @@ footer ul.footer-menu {
 
 .character-wrapper {
   position: relative;
-  z-index: 9999;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-  top: -150px;
-  left: -1050px;
+  z-index: 99999999999;
+  top: -100px;
+  -webkit-transform: scaleX(-1) translate3d(1060px, 0, 0);
+          transform: scaleX(-1) translate3d(1060px, 0, 0);
 }
 
 .character-wrapper canvas {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
   max-width: 100vw;
   max-height: 100vh;
 }
 
 .video-test video {
   position: absolute;
-  left: -61.7em;
-  width: 150%;
-  height: 150%;
+  left: -58em;
+  width: 145%;
+  height: 145%;
   z-index: 99999;
-  top: -400px;
+  top: -350px;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
+}
+
+.scroll-icon {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  z-index: 5;
+  text-align: center;
+}
+
+.scroll-icon .mouse {
+  margin: auto;
+  width: 30px;
+  height: 70px;
+  border: 1px solid white;
+  border-radius: 60px;
+}
+
+.scroll-icon .mouse::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: white;
+  border-radius: 50%;
+  opacity: 1;
+  animation: wheel 2s infinite;
+  -webkit-animation: wheel 2s infinite;
+}
+
+.scroll-icon span {
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
+  }
+}
+
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
+  }
 }
 
 /* Styles from the GreenSock website */
@@ -481,81 +533,654 @@ footer ul.footer-menu {
   will-change: transform, opacity;
 }
 
-.hero-wrapper {
-  width: 500px;
-  color: #C4C4C4;
+.transition-fade {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+.mov-suit {
+  padding-top: 150px;
   position: relative;
-}
-
-.hero-wrapper h1 {
-  font-family: font-bold;
-  font-size: 50px;
-  margin: 0;
-}
-
-.hero-wrapper p {
-  line-height: 2;
-  font-family: 'Kanit', sans-serif;
-  font-weight: 100;
-  font-size: 18px;
-}
-
-.work_contact {
+  overflow: hidden;
   width: 100%;
-  position: relative;
+  margin: 0;
+  background: url("img/hangersuit.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
-.work_step {
+.mov-suit::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(-45deg, rgba(0, 31, 61, 0) 10%, rgba(0, 31, 61, 0) 30%, rgba(0, 31, 61, 0.9) 70%, #002E59 100%);
+}
+
+.mov-suit a {
+  color: #fff;
+}
+
+.mov-suit .circle_bg {
+  position: absolute;
+  background: url("/img/mov-icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -350px -150px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.mov-suit .suit-icon {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #FEB404;
+  border-radius: 50%;
+}
+
+.mov-suit .suit-specs img.suit {
+  width: 75px;
+}
+
+.mov-suit .suit-specs img.table-size {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 80%;
+  height: auto;
+}
+
+.mov-suit img.img_right {
+  width: 35%;
+  top: 50px;
+  right: 100px;
+  position: absolute;
+}
+
+.mov-suit .quote-btn {
+  position: absolute;
+  text-align: center;
+  bottom: 170px;
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.mov-suit .quote-btn span {
+  position: absolute;
+  -webkit-transform: translate(75px, 100px);
+          transform: translate(75px, 100px);
+}
+
+.mov-suit .quote-btn svg {
+  position: relative;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-suit .quote-btn svg defs filter feFlood {
+  flood-color: transparent;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.mov-suit .quote-btn svg:hover {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-suit .quote-btn svg:hover defs filter feFlood {
+  flood-color: #FEB404;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-suit .quote-btn img {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-suit .quote-btn:hover img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-suit #suit_guide {
+  margin-top: 50px;
+}
+
+.mov-suit #suit_guide img {
+  width: 100%;
+  height: 100%;
+}
+
+.mov-suit .modal-overlay {
+  opacity: 0.7 !important;
+}
+
+.mov-g {
+  padding-top: 150px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  background: url("img/gloves.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 400px;
+}
+
+.mov-g .backdrop_hero {
+  position: absolute;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(-18.71%, #000000), color-stop(-0.84%, #000000), color-stop(28.02%, #000000), color-stop(69.32%, rgba(0, 31, 61, 0.987368)), color-stop(106.24%, #002E59));
+  background: linear-gradient(0deg, #000000 -18.71%, #000000 -0.84%, #000000 28.02%, rgba(0, 31, 61, 0.987368) 69.32%, #002E59 106.24%);
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.mov-g .backdrop_hero:before {
+  content: "";
+  position: absolute;
+  background: url("img/mov-icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -350px -120px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.mov-g .gloves-icon {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #FEB404;
+  border-radius: 50%;
+}
+
+.mov-g .gloves-specs img {
+  width: 100px;
+}
+
+.mov-g a {
+  color: #fff;
+}
+
+.mov-g img.img-blend {
+  width: 15%;
+  position: absolute;
+  top: 220px;
+  right: 220px;
+}
+
+.mov-g .quote-btn {
+  position: absolute;
+  text-align: center;
+  bottom: 170px;
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.mov-g .quote-btn span {
+  position: absolute;
+  -webkit-transform: translate(75px, 100px);
+          transform: translate(75px, 100px);
+}
+
+.mov-g .quote-btn svg {
+  position: relative;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-g .quote-btn svg defs feFlood {
+  flood-color: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-g .quote-btn svg:hover {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-g .quote-btn svg:hover defs filter feFlood {
+  flood-color: #FEB404;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-g .quote-btn img {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-g .quote-btn:hover img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.mov-g footer {
+  margin-top: 150px;
+  text-align: center;
+  font-size: 12px;
+  color: #727272;
+}
+
+.mov-g footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 20px;
-  border-radius: 25px;
-  width: 550px;
-  color: #C4C4C4;
+}
+
+.mov-g footer ul li {
+  margin-right: 20px;
+}
+
+.mov-g footer ul.footer-menu {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mov-g #gloves_guide {
+  margin-top: 50px;
+}
+
+.mov-g #gloves_guide img {
+  width: 100%;
+  height: 100%;
+}
+
+.facesense {
+  padding-top: 150px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.facesense .circle_bg {
+  position: absolute;
+  background: url("img/mov-icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -350px -150px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.facesense .main-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: url("img/faceCap.png");
+  background-size: cover;
+  background-position-x: 300px;
+  background-repeat: no-repeat;
+  z-index: -5;
+}
+
+.facesense .main-hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(271.62deg, rgba(1, 1, 1, 0.8) 30%, rgba(1, 1, 1, 0) 40%);
+  background-position-x: 300px;
+}
+
+.facesense .main-hero::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(5.74%, #010101), color-stop(58.03%, rgba(1, 1, 1, 0)), color-stop(100.28%, rgba(1, 1, 1, 0.64)));
+  background: linear-gradient(0deg, #010101 5.74%, rgba(1, 1, 1, 0) 58.03%, rgba(1, 1, 1, 0.64) 100.28%);
+}
+
+.facesense .backdrop_hero {
+  position: absolute;
+  background: linear-gradient(291.43deg, rgba(0, 0, 0, 0) -3.31%, rgba(0, 0, 0, 0) 10.7%, rgba(0, 0, 0, 0) 39.84%, rgba(0, 31, 61, 0.987368) 58.93%, #002E59 94.67%);
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.facesense a {
+  color: #fff;
+}
+
+.facesense .suit-icon {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #FEB404;
+  border-radius: 50%;
+}
+
+.facesense .suit-specs img.suit {
+  width: 40%;
+  mix-blend-mode: lighten;
+}
+
+.facesense .suit-specs img.table-size {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 80%;
+  height: auto;
+}
+
+.facesense img.img_right {
+  width: 35%;
+  top: 50px;
+  right: 100px;
+  position: absolute;
+}
+
+.facesense .quote-btn {
+  position: absolute;
+  text-align: center;
+  bottom: 170px;
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.facesense .quote-btn span {
+  position: absolute;
+  -webkit-transform: translate(75px, 100px);
+          transform: translate(75px, 100px);
+}
+
+.facesense .quote-btn svg {
+  position: relative;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.facesense .quote-btn svg defs filter feFlood {
+  flood-color: transparent;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-.work_step:hover {
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.facesense .quote-btn svg:hover {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.work_step .step-icon {
+.facesense .quote-btn svg:hover defs filter feFlood {
+  flood-color: #FEB404;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.facesense .quote-btn img {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.facesense .quote-btn:hover img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.facesense #suit_guide {
+  margin-top: 50px;
+}
+
+.facesense #suit_guide img {
+  width: 100%;
+  height: 100%;
+}
+
+.facesense .modal-overlay {
+  opacity: 0.7 !important;
+}
+
+.contact {
+  padding-top: 150px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.contact .circle_bg img {
+  width: 130%;
+  height: auto;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+}
+
+.contact .step-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.contact .step-wrapper .icon-step {
+  position: relative;
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  background: #17265A;
+  padding: 10px;
+  background: #fff;
+  margin-right: 10px;
   text-align: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  border-radius: 50%;
 }
 
-.work_step .step-icon .fa-solid {
-  font-size: 35px;
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
-  color: #3399FF;
+.contact .step-wrapper .icon-step img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.work_step .step-desc {
-  margin-left: 20px;
-  font-size: 17px;
-  -webkit-box-flex: 7;
-      -ms-flex: 7;
-          flex: 7;
+.contact .order-btn {
+  position: absolute;
+  top: 55%;
+  right: 24%;
+  background: #FEB404;
+  padding: 10px 20px;
+  border-radius: 25px;
 }
 
-.work_step .step-desc h6 {
-  font-family: 'Kanit', sans-serif;
-  color: #F7941C;
-}
-
-.work_step .step-desc p {
+.contact .main-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
-  font-size: 15px;
+  background: url("img/wiresensor.jpg");
+  background-size: cover;
+  background-position-x: -400px;
+  background-repeat: no-repeat;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  z-index: -5;
+}
+
+.contact .main-hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(271.62deg, rgba(1, 1, 1, 0.8) 30%, rgba(1, 1, 1, 0) 40%);
+  background-position-x: -400px;
+}
+
+.contact .main-hero::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(5.74%, #010101), color-stop(58.03%, rgba(1, 1, 1, 0)), color-stop(100.28%, rgba(1, 1, 1, 0.64)));
+  background: linear-gradient(0deg, #010101 5.74%, rgba(1, 1, 1, 0) 58.03%, rgba(1, 1, 1, 0.64) 100.28%);
+}
+
+.contact .backdrop_hero {
+  position: absolute;
+  background: linear-gradient(291.43deg, rgba(0, 0, 0, 0) -3.31%, rgba(0, 0, 0, 0) 10.7%, rgba(0, 0, 0, 0) 39.84%, rgba(0, 31, 61, 0.987368) 58.93%, #002E59 94.67%);
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.contact a {
+  color: #fff;
+}
+
+.contact .suit-icon {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #FEB404;
+  border-radius: 50%;
+}
+
+.contact .suit-specs img.suit {
+  width: 40%;
+  mix-blend-mode: lighten;
+}
+
+.contact .suit-specs img.table-size {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 80%;
+  height: auto;
+}
+
+.contact img.img_right {
+  width: 35%;
+  top: 50px;
+  right: 100px;
+  position: absolute;
+}
+
+.contact .quote-btn {
+  position: absolute;
+  text-align: center;
+  bottom: 170px;
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.contact .quote-btn span {
+  position: absolute;
+  -webkit-transform: translate(75px, 100px);
+          transform: translate(75px, 100px);
+}
+
+.contact .quote-btn svg {
+  position: relative;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contact .quote-btn svg defs filter feFlood {
+  flood-color: transparent;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.contact .quote-btn svg:hover {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contact .quote-btn svg:hover defs filter feFlood {
+  flood-color: #FEB404;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contact .quote-btn img {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contact .quote-btn:hover img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contact #suit_guide {
+  margin-top: 50px;
+}
+
+.contact #suit_guide img {
+  width: 100%;
+  height: 100%;
+}
+
+.contact .modal-overlay {
+  opacity: 0.7 !important;
 }
 
 .form-container {
@@ -776,13 +1401,14 @@ header .backDrop:before {
   position: absolute;
 }
 
-header .logo-header img {
+header #logo-header img {
   position: fixed;
   width: 15%;
   height: auto;
   margin: auto;
   left: 0;
   right: 0;
+  cursor: pointer;
 }
 
 header .burger {
@@ -954,6 +1580,7 @@ header .socmed .socmed-link i {
   position: fixed;
   padding: 150px 200px;
   z-index: 50;
+  display: none;
 }
 
 .nav-body .nav-body__item {
@@ -1174,6 +1801,7 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', 'sans-serif';
   color: #fff;
+  background: #000000;
 }
 
 h2 {
@@ -1189,7 +1817,7 @@ h5 {
   color: #FEB404;
 }
 
-p {
+p, span {
   font-family: 'Inter', 'sans-serif';
 }
 
