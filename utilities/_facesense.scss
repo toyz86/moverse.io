@@ -41,6 +41,10 @@
       left: 0;
       background: linear-gradient(271.62deg, rgba(1, 1, 1, 0.8) 30%, rgba(1, 1, 1, 0) 40%);
       background-position-x: 300px;
+
+      @media #{$small_mobile} {
+        background: linear-gradient(271.62deg, rgba(1, 1, 1, 0.8) 30%, rgba(1, 1, 1, 0) 80%) !important;
+      }
     }
   
     &::after {
@@ -51,7 +55,23 @@
       top: 0;
       left: 0;
       background: linear-gradient(0deg, #010101 5.74%, rgba(1, 1, 1, 0) 58.03%, rgba(1, 1, 1, 0.64) 100.28%);
-    }    
+    }   
+    
+    @media #{$medium_device} {
+      background-position-x: 50px !important;
+    }
+    
+    @media #{$tab_device} {
+      background-position-x: 0 !important;
+    }
+    
+    @media #{$large_mobile} {
+      background-position-x: -250px !important;
+    }
+    
+    @media #{$small_mobile} {
+      background-position-x: -500px !important;
+    }        
   }
 
   .backdrop_hero {
@@ -97,56 +117,7 @@
       position: absolute;
     }
   }
-  .quote-btn {
-    position: absolute;
-    text-align: center;
-    bottom: 170px;
-    width: 150px;
-    height: auto;
-    cursor: pointer;
-    
-    span {
-      position: absolute;
-      transform: translate(75px, 100px);
-    }
 
-    svg {
-      position: relative; 
-      transform: rotate(0deg);
-      transition: all 0.3s ease;
-      defs {
-        filter {
-          feFlood {
-            flood-color: transparent;
-            transition: all 0.5s ease;
-          }
-        }
-      }
-      &:hover {
-        transform: rotate(20deg);
-        transition: all 0.3s ease;
-        defs {
-          filter {
-            feFlood {
-              flood-color: #FEB404;
-              transition: all 0.3s ease;
-            }
-          }
-        }
-      }
-    }
-
-    img {
-      transition: all 0.3s ease;
-    }
-
-    &:hover {
-      img {
-        transform: rotate(45deg);
-        transition: all 0.3s ease;
-      }
-    }
-  }    
   #suit_guide {
     margin-top: 50px;
     img {

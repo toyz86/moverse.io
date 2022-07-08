@@ -34,45 +34,51 @@ header {
       cursor: pointer;
     }
   }
-  .burger {
-    position: fixed;
-    color: #fff;
-    cursor: pointer;
-
-    .menu-icon {
-      display: flex;
-
-      .nav-menu {
-        margin-right: 10px;
-        width: 13px;
-        height: 13px;
-        border-radius: 50%;
-        &:nth-child(1) {
-          background: #FEB404;
-        }
-        &:nth-child(2) {
-          background: #F7941C;
-        }
-        &:nth-child(3) {
-          background: #BB5D05;
-        }            
-      }
+  #innerLogo {
+    img {
+      position: fixed;
+      width: 15%;
+      height: auto;
+      margin: auto;
+      left: 0;
+      right: 0;
+      cursor: pointer;
     }
-    span {
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      color: #FEB404;
-      font-family: 'font-bold';
-    }
-  }
+  } 
 
   .socmed {
     position: fixed;
     right: 70px;
     display: flex;
+
     a {
       font-size: 25px;
-      background: #000;
+      // background: #000;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: #fff;
+    }
+
+    .socmed-link {
+      i {
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+
+  .socmed-home {
+    position: fixed;
+    right: 70px;
+    display: flex;
+    a {
+      font-size: 25px;
+      // background: #000;
       margin: 0;
       padding: 0;
       text-align: center;
@@ -88,84 +94,19 @@ header {
         top: 2px;
       }
     }
-  }
+  }    
 }
 
-.homepage {
-  width: 100%;
-  height: auto;
-  background: linear-gradient(341.86deg, rgba(0, 0, 0, 0) -57.23%, #000000 -32.28%, rgba(0, 0, 0, 0.96) 9.38%, rgba(0, 31, 61, 0.987368) 57.85%, #002E59 117.22%);
-  padding: 150px 150px 100px 150px;
-
-  .working-step {
-    justify-content: center;
-    display: flex;
-    color: #fff;
-
-    .step_list {
-      width: 130px;
-      height: 130px;
-      // padding: 10px;
-      border: 2px solid #9E9E9E;
-      border-radius: 50%;
-      text-align: center;
-      vertical-align: center;
-
-      span {
-        font-size: 50px;
-      }
-    }
-  }
-
-  .hero {
-    .list {
-      height: 100vh;
-      float: left;
-      overflow: hidden;
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-
-  .btn-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(109.81% 127.03% at 0% -25.98%, #0E4D65 0%, #002E59 37.57%, #000000 70.5%);
-  }
-
-  button {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    top: 50%;
-    padding: 10px 40px;
-    border: 1px solid rgba(144, 202, 249, 0.5);
-    border-radius: 5px;
-    // background-color: transparent;
-    background-color: $orange;
-    // color: rgb(144, 202, 249);
-    color: #021425;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    &:hover {
-      background: rgba(144, 202, 249, 0.08);
-      color: rgb(144, 202, 249);
-      // background: $orange;
-      border: 1px solid rgb(144, 202, 249);  
-    }
-    span {
-      text-transform: uppercase;
-    }    
-  }
+.nav-circle-body {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  left: 130px;
+  top: 50px;
+  border-radius: 50%;
+  background: $orange;
+  z-index: 50;
+  opacity: 0;
 }
 
 .product-active {
@@ -174,16 +115,20 @@ header {
 }
 
 .nav-body {
+  width: 100%;
+  height: 100%;
   position: fixed;
   padding: 150px 200px;
   z-index: 50;
   display: none;
+
   .nav-body__item {
     font-family: 'font-bold';
-    font-size: 50px;
+    font-size: 55px;
     overflow: hidden;
 
     .product-list {
+      width: fit-content;
       color: #fff;
       cursor: pointer;
       .fa-caret-down {
@@ -192,14 +137,40 @@ header {
     }
 
     .nav-item-down {
-      font-size: 25px;
-      transition: all .3s ease;
+      font-size: 35px;
+      // transition: all .3s ease;
       display: none;
+      margin-left: 30px;
     }
     
     a {
+      width: fit-content;
       color: #fff;
       text-decoration: none;
+    }
+  }
+
+  .socmed-navbody {
+    position: absolute;
+    display: flex;
+    bottom: 100px;
+    a {
+      font-size: 25px;
+      // background: #000;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: #fff;
+    }
+    .socmed-link {
+      i {
+        position: relative;
+        // top: 2px;
+      }
     }
   }
 }
@@ -334,13 +305,94 @@ $More-icon-color: #3e57ba;
   fill: $More-icon-color;
 }
 
-.nav-circle-body {
-  position: fixed;
-  width: 15px;
-  height: 15px;
-  left: 130px;
-  top: 50px;
-  border-radius: 50%;
-  background: $orange;
-  z-index: 50;
+// RESPONSSIVE
+
+@media #{$small_mobile} {
+  .More {
+    transform: scale(0.8);
+  }
+  .nav-body {
+    padding: 150px 35px 35px;
+  }
+  .nav-body__item {
+    a, .product-list {
+      font-size: 40px;
+    }
+  }
+  .nav-item-down {
+    a {
+      font-size: 30px;
+    }
+  }
+  .footer_mobile {
+    font-size: 11px;
+  }
+  &:checked ~ .More-dot--center {
+    &::before {
+      transform: scale(3) !important; 
+      background-color: #fff;
+    }
+    
+    &::after {
+      opacity: 0;
+      transform: scale(5) !important;
+    }
+  }
+  .nav-circle-body {
+    top: 25px;
+    left: 50px;
+  }
+}
+
+@media #{$large_mobile} {
+  header {
+    padding: 50px 50px
+  }
+  .nav-body {
+    padding: 130px 50px 20px;
+  }
+  .socmed {
+    right: 40px !important;
+  }
+}
+
+@media #{$tab_device} {
+  .nav-body {
+    padding: 120px 80px;
+  }
+}
+
+// GLobal Mobile
+@media screen and (max-width: 600px) {
+  .profile-page {
+    width: 100vw;
+    height: 100vh;
+  }
+  #logo-header {
+    img {
+      margin-right: 25px !important;
+      left: auto !important;
+      width: 35% !important;
+    }
+  }
+
+  #innerLogo {
+    img {
+      margin-right: 25px !important;
+      left: auto !important;
+      width: 35% !important;
+    }
+  }  
+  header {
+    padding: 25px 20px
+  }
+  footer {
+    .footer-menu {
+      justify-content: center;
+      margin-bottom: 10px !important;
+      li {
+        margin-right: 10px;
+      }
+    }
+  }
 }

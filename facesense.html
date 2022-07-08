@@ -4,27 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moverse | Mov-Face</title>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <title>Moverse</title>
 
   <link rel="stylesheet" href="style.css">
-	
-  <link rel = "icon" href ="icon-01.png" type = "image/x-icon"> 
+
+  <link rel = "icon" href ="img/moverse-icon.svg" type = "image/x-icon"> 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>  	
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollToPlugin.min.js"></script>
-
-  <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />	
+  <link rel="stylesheet" href="src/css/materialize.css">
 
 </head>
 <body>
-	<div id="loader" class="center">
-		<img src="/img/icon-01.png">
-	</div>  
+	<!-- LOADER -->
+	<div id="preloader">
+		<div class="spinner">
+			<div class="spinner__circle">
+				<div class="spinner__circle-gradient"></div>
+	
+				<div class="spinner__circle-inner"></div>
+			</div>
+		</div>
+	</div>
+  
 	<!-- HEADER -->
 	<header>
 		<div class="backDrop"></div>
@@ -44,10 +46,10 @@
 				<span>moverse</span>
 			</div>
 		</label>
-		<div id="logo-header">
+		<div id="innerLogo">
 			<img src="img/moverse-logo.png" alt="logo">
 		</div>
-		<div class="socmed">
+		<div class="hide-on-small-only socmed">
 			<a href="#">
 				<div class="socmed-link">
 					<i class="fa-brands fa-instagram"></i>
@@ -72,17 +74,17 @@
 			<li class="nav-body__item">
 				<div class="product-list">Our MovGear &nbsp<i class="fa-solid fa-caret-down"></i></div>					
 				<div class="nav-item-down">
-					<a href="/mov-suit.html">Mov-Suit</a>
-					<a href="/mov-g.html">Mov-G</a>
-					<a href="/facesense.html">Face-Sense</a>
+					<a href="mov-suit.html">Mov-Suit</a>
+					<a href="mov-g.html">Mov-G</a>
+					<a href="facesense.html">Face-Sense</a>
 				</div>
 			</li>
 			<li class="nav-body__item">
-				<a href="/activation.html">Project</a>
+				<a href="project.html">Project</a>
 			</li>      
 			<li class="nav-body__item">
-				<a href="/contact.html">Contact</a>
-			</li>      
+				<a href="contact.html">Contact</a>
+			</li>
 		</ul>
 	</div>	
 	<!-- END NAV MENU -->
@@ -93,7 +95,7 @@
     <div class="backdrop_hero"></div>
     <div class="container">
       <div class="row">
-        <div class="col s6">
+        <div class="col m6">
           <div class="suit-icon">
             <img class="responsive-img" src="img/face-capture.svg" alt="">
           </div>
@@ -103,50 +105,28 @@
             <p>
               Mov-Face is equipped with a smartphone and can digitally map the shape and contours of the face so that it can record detailed facial expressions.
             </p>
-            <div class="row suit-specs">
-              <img class="suit" src="img/face-detector.jpg" alt="">
-            </div>
           </div>
         </div>
-        <div class="col s6">
-					<div class="quote-btn">
-						<span>Get Quote</span>
-						<!-- <img src="img/half-moon-01.svg" alt=""> -->
-						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="220" viewBox="0 -10 250 250">
-							<defs>
-								<filter id="sofGlow" height="300%" width="300%" x="-75%" y="-75%">
-									<!-- Thicken out the original shape -->
-									<feMorphology operator="dilate" radius="5" in="SourceAlpha" result="thicken" />
-							
-									<!-- Use a gaussian blur to create the soft blurriness of the glow -->
-									<feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
-							
-									<!-- Change the colour -->
-									<feFlood flood-color="#FEB404" result="glowColor" />
-							
-									<!-- Color in the glows -->
-									<feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
-							
-									<!--	Layer the effects together -->
-									<feMerge>
-										<feMergeNode in="softGlow_colored"/>
-										<feMergeNode in="SourceGraphic"/>
-									</feMerge>
-							
-								</filter>
-
-								<style>.cls-1{fill:url(#linear-gradient);}</style>
-								<linearGradient id="linear-gradient" x1="-176.69" y1="402.93" x2="-135.99" y2="169.28" gradientTransform="matrix(1, 0, 0, -1, 262, 374.5)" gradientUnits="userSpaceOnUse">
-									<stop offset="0" stop-color="#feb404"/><stop offset="0.55" stop-color="#f7941c"/><stop offset="1" stop-color="#bb5d05"/>
-								</linearGradient>
-							</defs>
-							<path class="cls-1" filter="url(#sofGlow)" d="M214.18,115.65l-1.18-.48c-1.7-24.23-16.28-52.84-47.6-74.32C125.79,13.69,66.64,25,39.68,64.89S23,159.14,62.59,186.3a86.31,86.31,0,0,0,106.85-7.22c2.95-2,8.55-4.15,13.07-.55,6.31,5,4.43,10.36.57,15a14.51,14.51,0,0,1-1.2,1.27,105.1,105.1,0,0,1-130.34,8.31C2.65,169.62-10,102.53,23.27,53.29a106.62,106.62,0,0,1,148.8-28.45C201.7,45.16,216.6,79,214.18,115.65Z"/>
-						</svg>						
-					</div>   
-        </div>
       </div>
-      <footer class="row">
-        <ul class="col s6 footer-menu">
+			<div class="row">
+				<div class="col m6">
+					<div class="row suit-specs">
+						<img class="suit" src="img/face-detector.jpg" alt="">
+					</div>					
+				</div>
+				<div class="col m6">
+					<div class="quote-btn product-page">
+						<div class="btn-order">
+							<span>Get Quote</span>
+							<img src="img/btn-circle.svg">
+							<div class="btn-bg"></div>
+						</div>
+					</div>  
+				</div>
+			</div>
+			<!-- Show only DESKTOP up -->
+      <footer class="row footer_desktop">
+        <ul class="col s8 footer-menu">
           <li>Home</li>
           <li>Profile</li>
           <li>Mov-Suit</li>
@@ -154,87 +134,39 @@
           <li>FaceSense</li>
           <li>Contact</li>
         </ul>
-        <div class="col s6 right-align">
+        <div class="col s4 right-align">
           <span>Copyright © MMK Design Studio 2022</span>
         </div>
-      </footer>    
+      </footer>
+			
+			<!-- SHhow in mobile -->
+      <footer class="row footer_mobile">
+				<div class="col s12">
+					<ul class="footer-menu center-align">
+						<li>Home</li>
+						<li>Profile</li>
+						<li>Mov-Suit</li>
+						<li>Mov-G</li>
+						<li>FaceSense</li>
+						<li>Contact</li>
+					</ul>
+				</div>
+        <div class="col s12 center-align">
+          <span>Copyright © MMK Design Studio 2022</span>
+        </div>
+      </footer>			
     </div>
-
-
   </section>
 
-  <script>
-		document.onreadystatechange = function() {
-			if (document.readyState !== "complete") {
-				document.querySelector("body").style.visibility = "hidden";
-				document.querySelector("#loader").style.visibility = "visible";
-			} else {
-				document.querySelector("#loader").style.display = "none";
-				document.querySelector("body").style.visibility = "visible";
-			}
-		};
-        
-    $(document).ready(function() {
-      $('.modal').modal();
-
-      $('.quote-btn').click(function(){
-        document.location.href='/contact.html';
-      })
-      // BEGIN NAV MENU
-      $("#logo-header img").click(function() {
-        document.location.href='/';
-      })
-      $('.nav-body').css({'display': 'none'})
-      $('.nav-body__item a').css({'display': 'none'})
-      $('.nav-body__item .product-list').css({'display': 'none'})
-      // $('#logo-header').css({'display': 'none'})
-      $('.backDrop').css({'display': 'none'})
-
-      $('.product-list').click(function() {
-        $('.fa-caret-down').toggleClass('product-active');
-        if($('.fa-caret-down').hasClass('product-active')) {
-          $('.nav-item-down').css({'display': 'block' });
-          // console.log('drop active');
-        } else {
-          $('.nav-item-down').css({'display': 'none' });
-          // console.log('drop not active');
-        }
-      })
-
-      $('.More').click(function() {
-        const tl = gsap.timeline({ 
-          // defaults: { ease: "power1.in" }, 
-        })
-
-        $('input.More-checkbox').text($('#burger').val());
-
-        $("#burger").on('change', function() {
-          const tl = gsap.timeline({});
-          if ($(this).is(':checked')) {
-            $(this).attr('value', 'true');
-            gsap.to('.nav-body', { display: 'block' });
-            gsap.to('.nav-circle-body', 1, { scale: 200, opacity: 1, delay: 0.3})
-            gsap.fromTo('.nav-body__item a', 0.7, { display: 'none', opacity: 0, y:50 }, { display: 'block', opacity: 1, y: 0, delay: '0.7' })
-            gsap.fromTo('.nav-body__item .product-list', 0.7, { display: 'none', opacity: 0, y:50 }, { display: 'block', opacity: 1, y: 0, delay: '0.7' })
-            gsap.fromTo('.menu-title', {opacity: 1, y: 0}, {opacity: 0, y: -10})
-            console.log('check')
-          } else {
-            $(this).attr('value', 'false');
-            tl.to('.nav-body', { display: 'none' });
-            gsap.to('.nav-circle-body', 1, { scale: 1, opacity: 0, delay: 0.5 })
-            gsap.fromTo('.nav-body__item a', 0.5, { display: 'block', opacity: 1, y: 0 }, { display: 'none', opacity: 0, y: 50 })
-            gsap.fromTo('.nav-body__item .product-list', 0.5, { display: 'block', opacity: 1, y: 0 }, { display: 'none', opacity: 0, y: 50 })
-            gsap.fromTo('.menu-title', {opacity: 0, y: -10}, {opacity: 1, y: 0})
-            console.log('uncheck')
-          }
-          $('input.More-checkbox').text($('#burger').val());
-        });
-      })
-      // END NAV MENU      
-    })
-    
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- SCRIPT -->
+	<script src="src/js/gsap.min.js"></script>
+	<script src="src/js/ScrollTrigger.min.js"></script>
+	<script src="src/js/ScrollToPlugin.min.js"></script>
+	<script src="src/js/jquery.js"></script>
+	<script src="src/js/materialize.js"></script>
+	<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+	
+	<script src="main.js"></script>
 
 </body>
 </html>

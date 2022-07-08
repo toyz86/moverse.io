@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <title>Moverse</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel = "icon" href ="img/moverse-icon.svg" type = "image/x-icon"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />	
+  <link rel="stylesheet" href="src/css/materialize.css">
+
+</head>
+
+<body>
+	<!-- LOADER -->
+	<div id="preloader">
+		<div class="spinner">
+			<div class="spinner__circle">
+				<div class="spinner__circle-gradient"></div>
+	
+				<div class="spinner__circle-inner"></div>
+			</div>
+		</div>
+	</div>
+  
+	<!-- HEADER -->
+	<header>
+		<div class="backDrop"></div>
+		<label class="More">
+			<!-- <span class="More-text">More Options Toggle</span> -->
+			<div class="menu-dots">
+				<input class="More-checkbox" id="burger" type="checkbox" value="false">
+				<div class="More-dot More-dot--left"></div>
+				<div class="More-dot More-dot--center">
+					<svg class="More-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
+						<path d="M4.69,0L22,17.32,39.22,0,44,4.69,26.77,22,44,39.32,39.22,44,22,26.77,4.77,44,0,39.32,17.22,22,0,4.69Z"/>
+					</svg>
+				</div>
+				<div class="More-dot More-dot--right"></div>
+			</div>
+			<div class="menu-title">
+				<span>moverse</span>
+			</div>
+		</label>
+		<div id="innerLogo">
+			<img src="img/moverse-logo.png" alt="logo">
+		</div>
+		<div class="hide-on-small-only socmed">
+			<a href="#">
+				<div class="socmed-link">
+					<i class="fa-brands fa-instagram"></i>
+				</div>
+			</a>
+			<a href="#">
+				<div class="socmed-link">
+					<i class="fa-brands fa-whatsapp"></i>
+				</div>
+			</a>
+		</div>
+	</header>
+
+	<!-- BEGIN NAV MENU -->
+	<div class="nav-circle-body"></div>
+	
+	<div class="nav-body">
+		<ul class="nav-body__list">
+			<li class="nav-body__item">
+				<a href="/">Home</a>
+			</li>
+			<li class="nav-body__item">
+				<div class="product-list">Our MovGear &nbsp<i class="fa-solid fa-caret-down"></i></div>					
+				<div class="nav-item-down">
+					<a href="mov-suit.html">Mov-Suit</a>
+					<a href="mov-g.html">Mov-G</a>
+					<a href="facesense.html">Face-Sense</a>
+				</div>
+			</li>
+			<li class="nav-body__item">
+				<a href="#">Project</a>
+			</li>      
+			<li class="nav-body__item">
+				<a href="contact.html">Contact</a>
+			</li>      
+		</ul>
+	</div>	
+	<!-- END NAV MENU -->
+  <div class="our-project">
+    <div class="main-hero"></div>
+    <div class="backdrop_hero"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h2>Be a Part of <br><b class="heading-bold">The Movement</b></h2>
+        </div>
+      </div>
+
+      <!-- MASONRY PROJECT -->
+      <div class="projects-wrapper">
+        <div class="projects-list">
+          <div class="project-item">
+            <!-- Item Image -->
+            <img src="img/slider-1.jpg" alt="Item 1">
+          </div>
+          <div class="project-item">
+            <!-- Item Image -->
+            <img src="img/slider-2.jpg" alt="Item 2">
+          </div>
+          <div class="project-item">
+            <!-- Item Image -->
+            <img src="img/slider-3.jpg" alt="Item 3">
+          </div>
+          <div class="project-item">
+            <!-- Item Image -->
+            <img src="img/slider-4.jpg" alt="Item 4">
+          </div>
+          <div class="project-item">
+            <!-- Item Image -->
+            <img src="img/slider-5.jpg" alt="Item 5">
+          </div>
+        </div>
+			</div>
+      
+			<!-- SHOW ON TABLET UP -->
+      <div class="hide-on-med-and-down row address">
+        <div class="col s6">
+          <h2 class="collaborate gs_reveal">Let's<br><b class="heading-bold">Collabrate!</b></h2>			
+          <ul>
+            <li><b style="color: #FEB404;">MOVERSE</b></li>
+            <li>Jl. Kelapa Dua Raya No.01 Rt.04 Rw.03</li>
+            <li>Kelapa Dua, Kebon Jeruk</li>
+            <li>Jakarta Barat 11550</li> <br>
+            <li>Phone +62 21 2254 5010</li>
+            <li>Fax +62 21 2254 5011</li>
+            <li>Email ask@moverse.co.id</li>
+          </ul>
+        </div>
+        
+        <div class="col s6">
+					<div class="quote-btn">
+						<div class="btn-order">
+							<span>Get Quote</span>
+							<img src="img/btn-circle.svg">
+							<div class="btn-bg"></div>
+						</div>
+					</div>
+        </div>
+      </div>
+	
+			<!-- SHOW ON MOBILE ONLY -->
+      <div class="row hide-on-large-only address">
+        <div class="col m6">
+          <h2 class="collaborate gs_reveal">Let's<br><b class="heading-bold">Collabrate!</b></h2>			
+          <ul>
+            <li><b style="color: #FEB404;">MOVERSE</b></li>
+            <li>Jl. Kelapa Dua Raya No.01 Rt.04 Rw.03</li>
+            <li>Kelapa Dua, Kebon Jeruk</li>
+            <li>Jakarta Barat 11550</li> <br>
+            <li>Phone +62 21 2254 5010</li>
+            <li>Fax +62 21 2254 5011</li>
+            <li>Email ask@moverse.co.id</li>
+          </ul>
+        </div>
+        
+        <div class="col m6 quote-btn product-page btn-project">
+					<!-- <div class="quote-btn"> -->
+						<div class="btn-order">
+							<span>Get Quote</span>
+							<img src="img/btn-circle.svg">
+							<div class="btn-bg"></div>
+						</div>
+					<!-- </div> -->
+        </div>
+      </div>
+
+			<!-- Show only DESKTOP up -->
+      <footer class="row footer_desktop">
+        <ul class="col s8 footer-menu">
+          <li>Home</li>
+          <li>Profile</li>
+          <li>Mov-Suit</li>
+          <li>Mov-G</li>
+          <li>FaceSense</li>
+          <li>Contact</li>
+        </ul>
+        <div class="col s4 right-align">
+          <span>Copyright © MMK Design Studio 2022</span>
+        </div>
+      </footer>
+			
+			<!-- SHhow in mobile -->
+      <footer class="row footer_mobile">
+				<div class="col s12">
+					<ul class="footer-menu center-align">
+						<li>Home</li>
+						<li>Profile</li>
+						<li>Mov-Suit</li>
+						<li>Mov-G</li>
+						<li>FaceSense</li>
+						<li>Contact</li>
+					</ul>
+				</div>
+        <div class="col s12 center-align">
+          <span>Copyright © MMK Design Studio 2022</span>
+        </div>
+      </footer>			
+    </div>   
+  </div>
+
+  <!-- SCRIPT -->
+	<script src="src/js/gsap.min.js"></script>
+	<script src="src/js/ScrollTrigger.min.js"></script>
+	<script src="src/js/ScrollToPlugin.min.js"></script>
+	<script src="src/js/jquery.js"></script>
+	<script src="src/js/materialize.js"></script>
+  <script src="src/js/isotope.js"></script>
+	<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+	
+	<script src="main.js"></script>
+
+</body>
+</html>

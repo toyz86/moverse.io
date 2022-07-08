@@ -5,4 +5,16 @@ $grey: #C4C4C4;
 $dblue: #14385A;
 $navyblue: #001E3C;
 $navy2: #17265A;
-$moverse: #FEB404
+$moverse: #FEB404;
+
+$primaryColor: #FEB404;
+$secondaryColor: #070434;
+
+$medium_device : 'only screen and (min-width: 992px) and (max-width: 1200px)';
+$tab_device:'only screen and (min-width: 768px) and (max-width: 991px)';
+$large_mobile: 'only screen and (min-width: 601px) and (max-width: 767px)';
+$small_mobile:'(max-width: 600px)';
+$xs_mobile:'(max-width: 420px)';
+$xxs_mobile:'(max-width: 320px)';
+$sm_mobile:'only screen and (min-width: 421px) and (max-width: 600px)';
+$big_screen:'only screen and (min-width: 1200px) and (max-width: 1440px)';

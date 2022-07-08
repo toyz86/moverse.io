@@ -5,6 +5,7 @@
 @import "utilities/mov-g";
 @import "utilities/facesense";
 @import "utilities/contact";
+@import "utilities/project";
 @import "utilities/form";
 @import "utilities/footer";
 @import "utilities/menu";
@@ -55,7 +56,7 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', 'sans-serif';
   color: #fff;
-  background: #000000;
+  // background: #000000;
 }
 
 h2 {
@@ -75,28 +76,63 @@ p, span {
   font-family: 'Inter', 'sans-serif';
 }
 
-#loader {
-  top: 50%;
-  left: 0;
-  animation: spin 1s linear infinite;
-
-  img {
-    width: 50px;
-  }
-}
-
+// BEGIN LOADER
 @keyframes spin {
-  100% {
-      transform: rotate(360deg);
-  }
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
-.center {
-  position: absolute;
-  right: 0;
-  margin: auto;
+#preloader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: $secondaryColor;
+  z-index: 9999999999;
 }
 
+.spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	&__circle {
+		position: relative;
+		width: 54px;
+		height: 54px;
+		overflow: hidden;
+		background-color: $primaryColor;
+		border-radius: 100%;
+		animation: spin 1s infinite linear;
+
+		&-inner,
+		&-gradient {
+			position: absolute;
+			width: 44px;
+			height: 44px;
+			transform: translate(-50%, -50%);
+		}
+
+		&-inner {
+			top: 50%;
+			left: 50%;
+			background-color: $secondaryColor;
+			border-radius: 100%;
+		}
+
+		&-gradient {
+			top: -24px;
+			left: 6px;
+			background-color: $primaryColor;
+			background-image:    -moz-linear-gradient(0deg,$primaryColor 0%,$secondaryColor 50%);
+			background-image: -webkit-linear-gradient(0deg,$primaryColor 0%,$secondaryColor 50%);
+			background-image:         linear-gradient(0deg,$primaryColor 0%,$secondaryColor 50%);
+			transform: rotate(-45deg);
+		}
+	}
+}
+// END LOADER
 
 input.valid {
   color: #ffff;
@@ -165,33 +201,6 @@ p {
     }
   }
 
-  .preloader-wrapper.active {
-    position: absolute;
-  }
-
-  .preloader-wrapper.big {
-    width: 22px;
-    height: 22px;
-    top: 100.1rem;
-  }
-
-  .spinner-blue, .spinner-blue-only {
-    border-color: #90caf9;
-  }
-  
-  .modal-content {
-    h5 {
-      text-align: center;
-      color: orangered;
-      margin-bottom: 30px;
-      // font-family: font-bold;
-    }
-  }
-
-  .form-footer {
-    text-align: center;
-  }
-
   .suite-option {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -254,6 +263,7 @@ button.btn.modal-trigger {
     }
   }
 }
+
 #set-height   {
   display: block;
 }
@@ -277,4 +287,123 @@ button.btn.modal-trigger {
   transform: translateX(-5px);
   display: inline-block;
   transition: all 0.5s ease;
+}
+
+.address {
+  font-size: 14px;
+  margin-top: 100px;
+  color: #c3c3c3;
+
+  .collaborate {
+    margin-bottom: 100px;
+  }
+}
+.quote-btn {
+  text-align: center;
+  width: fit-content;
+  transform: translate(50%, 50%);
+  cursor: pointer;
+
+  &.product-page {
+    transform: translate(0, -20%);
+    &.btn-project {
+      bottom: 350px;
+      @media #{$tab_device} {
+        bottom: -150px;
+      }
+      @media #{$large_mobile} {
+        bottom: -150px;
+      }      
+    }
+  }
+
+  .btn-order {
+    display: flex;
+
+    span {
+      position: absolute;
+      transform: translate(75px, 105px);
+      font-size: 18px;
+      font-family: "Hellix-bold";
+      z-index: 1;
+    }
+
+    img {
+      transition: all 0.3s ease;
+    }
+
+    .btn-bg {
+      background: linear-gradient(136.42deg, #FEB404 2.52%, #F7941C 45.39%, #BB5D05 80.94%);
+      width: 220px;
+      height: 220px;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      opacity: 0;
+      border-radius: 50%;  
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+// GLobal Mobile
+@media screen and (max-width: 600px) {
+  .profile-page {
+    width: 100vw;
+    height: 100vh;
+  }
+  .footer_desktop {
+    display: none;
+  }
+  .footer_mobile {
+    display: block;
+    margin-top: 350px;
+    .footer-menu {
+      justify-content: center;
+    }
+  }
+  .address {
+    margin-top: 50px;
+    ul {
+      transform: translateY(250px);
+    }
+  }  
+  .quote-btn {
+    // transform: translate(0, 40%) !important;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+  }
+}
+
+// Tablets
+@media screen and (min-width: 601px) and (max-width: 991px) {
+  .footer_desktop {
+    display: none;
+  }
+  .footer_mobile {
+    display: block;
+    .footer-menu {
+      justify-content: center;
+    }
+  }
+  .quote-btn {
+    transform: translate(0, 70%);
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 50px;
+  }  
+}
+
+// desktop
+@media screen and (min-width: 992px) {
+  .footer_desktop {
+    display: block;
+  }  
+  .footer_mobile {
+    display: none;
+  }
 }

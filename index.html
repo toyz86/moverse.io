@@ -9,24 +9,22 @@
 	
 		<link rel="stylesheet" href="style.css">
 	
-		<link rel = "icon" href ="icon-01.png" type = "image/x-icon"> 
+		<link rel = "icon" href ="img/moverse-icon.svg" type = "image/x-icon"> 
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>  	
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollToPlugin.min.js"></script>
-
-		<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
-
-		<script src="src/js/smtp.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />	
+		<link rel="stylesheet" href="src/css/materialize.css">
 	
 	</head>
 <body>
-	<div id="loader" class="center">
-		<img src="/img/icon-01.png">
+	<!-- LOADER -->
+	<div id="preloader">
+		<div class="spinner">
+			<div class="spinner__circle">
+				<div class="spinner__circle-gradient"></div>
+	
+				<div class="spinner__circle-inner"></div>
+			</div>
+		</div>
 	</div>
 
 	<!-- HEADER -->
@@ -50,7 +48,7 @@
 		<div id="logo-header">
 			<img src="img/moverse-logo.png" alt="logo">
 		</div>
-		<div class="socmed">
+		<div class="hide-on-small-only socmed-home">
 			<a href="#">
 				<div class="socmed-link">
 					<i class="fa-brands fa-instagram"></i>
@@ -72,363 +70,224 @@
 			<li class="nav-body__item">
 				<a href="/">Home</a>
 			</li>
-			<li class="nav-body__item">
+			<li class="nav-body__item our-gear">
 				<div class="product-list">Our MovGear &nbsp<i class="fa-solid fa-caret-down"></i></div>					
 				<div class="nav-item-down">
-					<a href="/mov-suit.html">Mov-Suit</a>
-					<a href="/mov-g.html">Mov-G</a>
-					<a href="/facesense.html">Face-Sense</a>
+					<a href="mov-suit.html">Mov-Suit</a>
+					<a href="mov-g.html">Mov-G</a>
+					<a href="facesense.html">Face-Sense</a>
 				</div>
 			</li>
 			<li class="nav-body__item">
-				<a href="/activation.html">Project</a>
+				<a href="project.html">Project</a>
 			</li>      
 			<li class="nav-body__item">
-				<a href="/contact.html">Contact</a>
+				<a href="contact.html">Contact</a>
 			</li>      
 		</ul>
+		<!-- <div class="socmed-navbody">
+			<a href="#">
+				<div class="socmed-link">
+					<i class="fa-brands fa-instagram"></i>
+				</div>
+			</a>
+			<a href="#">
+				<div class="socmed-link">
+					<i class="fa-brands fa-whatsapp"></i>
+				</div>
+			</a>
+		</div>-->
 	</div>	
 	<!-- END NAV MENU -->
 
 	<!-- HOME SECTION -->
-	<main class="pofile-page">
-	<section class="bg-video-wrap comparisonSection">
-		<!-- Dashboard Slide 1 -->
-		<section class="beforeImage">
-			<div class="ring-wrapper">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 0 450 350" width="100%" height="100%" preserveAspectRatio="none">
-					<defs>
-						<filter id="glow">
-							<fegaussianblur class="blur" result="coloredBlur" stddeviation="3"></fegaussianblur>
-							<femerge>
-								<femergenode in="coloredBlur"></femergenode>
-								<femergenode in="coloredBlur"></femergenode>
-								<femergenode in="coloredBlur"></femergenode>
-								<femergenode in="SourceGraphic"></femergenode>
-							</femerge>
-						</filter>						
-						<linearGradient id="gradient">
-							<stop offset="0" style="stop-color:#FEB404"></stop>
-							<stop offset="0.5" style="stop-color:#F7941C"></stop>
-							<stop offset="1" style="stop-color:#C16005"></stop>
-						</linearGradient>
-					</defs>
-					<ellipse ry="110" rx="110" cy="110" cx="110" style="fill:none;stroke:url(#gradient);stroke-width:30;filter: url(#glow);"></ellipse>
-				</svg>
-			</div>
+	<main class="profile-page">
+		<section class="bg-video-wrap comparisonSection">
+			<!-- Dashboard Slide 1 -->
+			<section class="beforeImage">
+				<video src="img/Part Opening Website1.mp4" loop muted autoplay></video>
+				<!-- Overlay video -->
+				<div class="overlay"></div>
+
+				<div class="main-wrapper">
+					<img src="img/moverse-logo.png" alt="logo moverse">
+				</div>
+
+				<div class="main-desc">
+					<h5 class="heading-bold">Create your character's motion here.</h5>
+					<h5>We translate Your Movement <br> into Digital Realm.</p>
+				</div>
+
+				<div class="hide-on-med-and-down scroll-icon">
+					<div class="mouse"></div>
+					<span>scroll down</span>
+				</div>
+
+			</section>
 			
-			<video src="img/opening.mp4" loop muted autoplay></video>
-			<!-- Overlay video -->
-			<div class="overlay"></div>
+			<!-- Profile Slide 2 -->
+			<section class="comparisonImage afterImage" id="sec2">
+				<div class="overlay2"></div>
+				<!-- animation -->
+				<div class="character-wrapper">
+					<canvas id="hero-lightpass" />
+				</div>
 
-			<div class="main-wrapper">
-				<img src="img/moverse-logo.png" alt="logo moverse">
-			</div>
-
-			<div class="main-desc">
-				<h5 class="heading-bold">Create your character's here.</h5>
-				<h5>We translate Your Movement <br> into Digital Realm.</p>
-			</div>
-
-			<div class="scroll-icon">
-				<div class="mouse"></div>
-				<span>scroll down</span>
-			</div>
-
+				<div class="row profile">
+					<div class="col s7 offset-s5">
+						<h2>Start Your Mocap with <b class="heading-bold">MOVERSE</b></h2>
+						<p>
+							We provide the first complete and up-to-date motion capture suit in Indonesia. Moverse provides a wide range of motion capture solutions designed for a wide range of creators, from animator and indie game developer to digital content creator.
+							<br>
+							<br>
+							With Moverse, you can get a ready-to-use and cost-effective system for your projects, saving you time, money, and resources that could be focused on something else. We aim to be the most complete and updated provider of affordable motion capture equipment rental in Indonesia. 						
+						</p>
+					</div>
+				</div>
+				<img src="img/bg-profile.jpg" alt="after">
+			</section>		
 		</section>
-		
-		<!-- Profile Slide 2 -->
-		<section class="comparisonImage afterImage" id="sec2">
-			<div class="overlay2"></div>
-			<!-- animation -->
-			<div class="character-wrapper">
-				<canvas id="hero-lightpass" />
-			</div>
 
-			<div class="row profile">
-				<div class="col s7 offset-s5">
-					<h2>Start Your Mocap with <b class="heading-bold">MOVERSE</b></h2>
-					<p>
-						We provide the first complete and up-to-date motion capture suit in Indonesia. Moverse provides a wide range of motion capture solutions designed for a wide range of creators, from animator and indie game developer to digital content creator.
-						<br>
-						<br>
-						With Moverse, you can get a ready-to-use and cost-effective system for your projects, saving you time, money, and resources that could be focused on something else. We aim to be the most complete and updated provider of affordable motion capture equipment rental in Indonesia. 						
-					</p>
+		<!-- BEGIN PRODUCT SECTION -->
+		<div class="product-section row">
+			<div class="col s5 image-left">
+				<img src="img/suit-couple.png">
+			</div>
+			<div class="col s7">
+				<h2 class="gs_reveal">Our <b class="heading-bold">MovGear</b></h2>
+				<p class="gs_reveal">
+					Moverse offers three tiers of motion capture solutions. We call it MovGear. From the motion capture suit, to gloves, to face capture, with our MovGear, creators can capture all body movement more accurately and easily. This is great news for creators that work with character’s animation.
+					<br>
+					<br>
+					We are committed to supporting creators to make magic with the wide variety of products we provide.
+				</p>
+				<div class="product-option">
+					<a href="mov-suit.html" class="product-lists gs_reveal gs_reveal_fromLeft">
+						<h5>Mov-Suit</h5>
+						<span>Give Life to Your <br> Animation</span>
+						<div class="icon-product" style="margin: 20px;">
+							<img src="img/suit.svg" alt="">
+						</div>
+						<div class="logo-anim"></div>
+						<div class="image-option">
+							<img src="img/suitman_2.jpg">
+						</div>
+					</a>
+					<a href="mov-g.html" class="product-lists gs_reveal">
+						<h5>Mov-G</h5>
+						<span>Let Your Fingers Do the Magic</span>
+						<div class="icon-product">
+							<img src="img/gloves.svg" alt="">
+						</div>
+						<div class="logo-anim"></div>
+						<div class="image-option">
+							<img src="img/smartgloves.jpg">
+						</div>					
+					</a>
+					<a href="facesense.html" class="product-lists gs_reveal gs_reveal_fromRight">
+						<h5>FaceSense</h5>
+						<span>A High Sense of Facial Expression is in Your Range</span>
+						<div class="icon-product">
+							<img src="img/face-capture.svg" alt="">
+						</div>
+						<div class="logo-anim"></div>
+						<div class="image-option">
+							<img src="img/faceCap.png">
+						</div>						
+					</a>
 				</div>
 			</div>
-			<img src="img/bg-profile.jpg" alt="after">
-		</section>		
-  </section>
-	<!-- BEGIN PRODUCT SECTION -->
-	<div class="product-section row">
-		<div class="col s5 image-left">
-			<img src="/img/suit-couple.png">
 		</div>
-		<div class="col s7">
-			<h2 class="gs_reveal">Our <b class="heading-bold">MovGear</b></h2>
-			<p class="gs_reveal">
-				Moverse offers three tiers of motion capture solutions. We call it MovGear. From the motion capture suit, to gloves, to face capture, with our MovGear, creators can capture all body movement more accurately and easily. This is great news for creators that work with character’s animation.
-				<br>
-				<br>
-				We are committed to supporting creators to make magic with the wide variety of products we provide.
-			</p>
-			<div class="product-option">
-				<a href="/mov-suit.html" class="product-lists gs_reveal gs_reveal_fromLeft">
-					<h5>Mov-Suit</h5>
-					<span>Give Life to Your <br> Animation</span>
-					<div class="icon-product" style="margin: 20px;">
-						<img src="img/suit.svg" alt="">
-					</div>
-					<div class="logo-anim"></div>
-					<div class="image-option">
-						<img src="/img/suitman_2.jpg">
-					</div>
-				</a>
-				<a href="mov-g.html" class="product-lists gs_reveal">
-					<h5>Mov-G</h5>
-					<span>Let Your Fingers Do the Magic</span>
-					<div class="icon-product">
-						<img src="img/gloves.svg" alt="">
-					</div>
-					<div class="logo-anim"></div>
-					<div class="image-option">
-						<img src="/img/smartgloves.jpg">
-					</div>					
-				</a>
-				<a href="facesense.html" class="product-lists gs_reveal gs_reveal_fromRight">
-					<h5>FaceSense</h5>
-					<span>A High Sense of Facial Expression is in Your Range</span>
-					<div class="icon-product">
-						<img src="img/face-capture.svg" alt="">
-					</div>
-					<div class="logo-anim"></div>
-					<div class="image-option">
-						<img src="/img/faceCap.png">
-					</div>						
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="project-section">
-		<div class="container">
-			<h2 class="gs_reveal">Our <b class="heading-bold">Project</b></h2>
-			<!-- <img class="gs_reveal" src="/img/imghero.jpeg"> -->
+		<div class="project-section">
+			<div class="container">
+				<h2 class="gs_reveal">Our <b class="heading-bold">Project</b></h2>
 
-			<!-- SLIDER -->
-			<div class="slider gs_reveal">
-				<ul class="slides">
-					<li><img src="img/slider-1.jpg"></li>
-					<li><img src="img/slider-2.jpg"></li>
-					<li><img src="img/slider-3.jpg"></li>
-					<li><img src="img/slider-4.jpg"></li>
-					<li><img src="img/slider-5.jpg"></li>
-				</ul>
-			</div>		
-
-			<div class="viewAll">
-				<a href="#">
-					<span><i class="fa fa-plus" aria-hidden="true"></i> view</span>
-					<span class="circle-btn">all</span>
-				</a>
-			</div>
-
-			<h2 class="collaborate gs_reveal">Let's<br><b class="heading-bold">Collabrate!</b></h2>			
-			<div class="row address">
-				<div class="col s6">
-					<ul>
-						<li><b style="color: #FEB404;">MOVERSE</b></li>
-						<li>Jl. Kelapa Dua Raya No.01 Rt.04 Rw.03</li>
-						<li>Kelapa Dua, Kebon Jeruk</li>
-						<li>Jakarta Barat 11550</li> <br>
-						<li>Phone +62 21 2254 5010</li>
-						<li>Fax +62 21 2254 5011</li>
-						<li>Email ask@moverse.co.id</li>
+				<!-- SLIDER -->
+				<div class="slider gs_reveal">
+					<ul class="slides">
+						<li><img src="img/slider-1.jpg"></li>
+						<li><img src="img/slider-2.jpg"></li>
+						<li><img src="img/slider-3.jpg"></li>
+						<li><img src="img/slider-4.jpg"></li>
+						<li><img src="img/slider-5.jpg"></li>
 					</ul>
-				</div>
-				<div class="col s6">
-					<div class="quote-btn">
-						<span>Get Quote</span>
-						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="220" viewBox="0 -10 250 250">
-							<defs>
-								<filter id="sofGlow" height="300%" width="300%" x="-75%" y="-75%">
-									<!-- Thicken out the original shape -->
-									<feMorphology operator="dilate" radius="5" in="SourceAlpha" result="thicken" />
-							
-									<!-- Use a gaussian blur to create the soft blurriness of the glow -->
-									<feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
-							
-									<!-- Change the colour -->
-									<feFlood flood-color="#FEB404" result="glowColor" />
-							
-									<!-- Color in the glows -->
-									<feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
-							
-									<!--	Layer the effects together -->
-									<feMerge>
-										<feMergeNode in="softGlow_colored"/>
-										<feMergeNode in="SourceGraphic"/>
-									</feMerge>
-							
-								</filter>
+				</div>		
 
-								<style>.cls-1{fill:url(#linear-gradient);}</style>
-								<linearGradient id="linear-gradient" x1="-176.69" y1="402.93" x2="-135.99" y2="169.28" gradientTransform="matrix(1, 0, 0, -1, 262, 374.5)" gradientUnits="userSpaceOnUse">
-									<stop offset="0" stop-color="#feb404"/><stop offset="0.55" stop-color="#f7941c"/><stop offset="1" stop-color="#bb5d05"/>
-								</linearGradient>
-							</defs>
-							<path class="cls-1" filter="url(#sofGlow)" d="M214.18,115.65l-1.18-.48c-1.7-24.23-16.28-52.84-47.6-74.32C125.79,13.69,66.64,25,39.68,64.89S23,159.14,62.59,186.3a86.31,86.31,0,0,0,106.85-7.22c2.95-2,8.55-4.15,13.07-.55,6.31,5,4.43,10.36.57,15a14.51,14.51,0,0,1-1.2,1.27,105.1,105.1,0,0,1-130.34,8.31C2.65,169.62-10,102.53,23.27,53.29a106.62,106.62,0,0,1,148.8-28.45C201.7,45.16,216.6,79,214.18,115.65Z"/>
-						</svg>						
+				<div class="viewAll">
+					<a href="project.html">
+						<span><i class="fa fa-plus" aria-hidden="true"></i> view</span>
+						<span class="circle-btn">all</span>
+					</a>
+				</div>
+
+				<div class="row address">
+					<div class="col s6">
+						<h2 class="collaborate gs_reveal">Let's<br><b class="heading-bold">Collabrate!</b></h2>			
+						<ul>
+							<li><b style="color: #FEB404;">MOVERSE</b></li>
+							<li>Jl. Kelapa Dua Raya No.01 Rt.04 Rw.03</li>
+							<li>Kelapa Dua, Kebon Jeruk</li>
+							<li>Jakarta Barat 11550</li> <br>
+							<li>Phone +62 21 2254 5010</li>
+							<li>Fax +62 21 2254 5011</li>
+							<li>Email ask@moverse.co.id</li>
+						</ul>
+					</div>
+					<div class="col s6">
+						<div class="quote-btn">
+							<div class="btn-order">
+								<span>Get Quote</span>
+								<img src="img/btn-circle.svg">
+								<div class="btn-bg"></div>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<!-- Show only DESKTOP up -->
+				<footer class="row footer_desktop">
+					<ul class="col s8 footer-menu">
+						<li>Home</li>
+						<li>Profile</li>
+						<li>Mov-Suit</li>
+						<li>Mov-G</li>
+						<li>FaceSense</li>
+						<li>Contact</li>
+					</ul>
+					<div class="col s4 right-align">
+						<span>Copyright © MMK Design Studio 2022</span>
+					</div>
+				</footer>
+				
+				<!-- SHhow in mobile -->
+				<footer class="row footer_mobile">
+					<div class="col s12">
+						<ul class="footer-menu center-align">
+							<li>Home</li>
+							<li>Profile</li>
+							<li>Mov-Suit</li>
+							<li>Mov-G</li>
+							<li>FaceSense</li>
+							<li>Contact</li>
+						</ul>
+					</div>
+					<div class="col s12 center-align">
+						<span>Copyright © MMK Design Studio 2022</span>
+					</div>
+				</footer>			
 			</div>
-			<footer class="row">
-				<ul class="col s6 footer-menu">
-					<li>Home</li>
-					<li>Profile</li>
-					<li>Mov-Suit</li>
-					<li>Mov-G</li>
-					<li>FaceSense</li>
-					<li>Contact</li>
-				</ul>
-				<div class="col s6 right-align">
-					<span>Copyright © MMK Design Studio 2022</span>
-				</div>
-			</footer>
 		</div>
-	</div>
 
-</main>
+	</main>
 	
-	<script>
-		window.onscroll=function(){
-			if (window.pageYOffset >= 800) {
-				gsap.to(document.querySelector(".profile"), 1.5, { opacity: 1, y: 0,  ease: "Power1.easeOut" });
-			} else {
-				gsap.to(document.querySelector(".profile"), 1.5, { opacity: 0, y: 100 });
-			}
-			// console.log( 
-			// 	'top: '  + (window.pageYOffset || document.documentElement.scrollTop) + ' ' +
-			// 	'left: ' + (window.pageXOffset || document.documentElement.scrollLeft)
-			// );
-		}
-
-		$("#logo-header img").click(function() {
-        document.location.href='/';
-		})		
-
-		document.onreadystatechange = function() {
-			if (document.readyState !== "complete") {
-				document.querySelector("body").style.visibility = "hidden";
-				document.querySelector("#loader").style.visibility = "visible";
-			} else {
-				document.querySelector("#loader").style.display = "none";
-				document.querySelector("body").style.visibility = "visible";
-			}
-		};
-
-		function onSlide() {
-			console.log('click')
-			const vid = document.getElementById("myVideo");
-			vid.play()
-			gsap.utils.toArray(".comparisonSection").forEach(section => {
-				gsap.to(window, {scrollTo: section.offsetWidth, duration: 4});	
-			})
-		}
-
-		gsap.utils.toArray(".comparisonSection").forEach((section) => {
-
-			const canvas = document.getElementById("hero-lightpass");
-			const context = canvas.getContext("2d");
-
-			canvas.width = 1080;
-			canvas.height = 1920;
-
-			const frameCount = 225;
-			const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
-			);
-
-			const images = []
-			const airpods = {
-				frame: 0
-			};
-
-			for (let i = 0; i < frameCount; i++) {
-				const img = new Image();
-				img.src = currentFrame(i);
-				images.push(img);
-			}						
-			let tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: section,
-					start: "center center",
-					// makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
-					end: () => "+=" + section.offsetWidth, 
-					scrub: 1,
-					pin: true,
-					anticipatePin: 1,
-					// markers: true,
-					onLeave: onleavePage,
-					onEnter: onEnterPage,
-					onEnterBack: onEnterBack,
-					onSnapComplete: onSnapComplete,
-				},
-				defaults: {ease: "none"}
-			});
-
-			let tlAnim = gsap.timeline({});
-
-			tlAnim.to(airpods, {
-				frame: frameCount - 1,
-				snap: "frame",
-				scrollTrigger: {
-					scrub: 1,
-					trigger: section,
-					start: "center center",
-					// end: () => "+=" + section.offsetWidth,
-					end: () => section.offsetWidth + "+=1050",
-					// pin: true,
-					// markers: true,
-					// onLeave: onComplete,
-				},
-				onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
-			});		
-			
-			images[0].onload = render;
-			
-			function render() {
-				context.clearRect(0, 0, canvas.width, canvas.height);
-				context.drawImage(images[airpods.frame], 0, 0); 
-			}			
-			
-			function onSnapComplete() {
-				console.log('onSnapComplete');
-			}
-
-			function onleavePage() {
-				console.log('onLeave')
-				render(function() {
-					console.log('render')
-				})
-			};
-
-			function onEnterBack() {
-				console.log('onEnterBack')
-			}						
-
-			function onEnterPage() {
-				console.log('enter');
-			}
-			// animate the container one way...
-			tl.fromTo(section.querySelector(".afterImage"), { xPercent: 100, x: 0}, {xPercent: 0})
-			// ...and the image the opposite way (at the same time)
-			.fromTo(section.querySelector(".afterImage img"), {xPercent: -100, x: 0}, {xPercent: 0}, 0);
-			// tl.to(document.querySelector(".character-wrapper"), {xPercent: 10});
-			tl.fromTo(section.querySelector(".profile"), {xPercent: -100, x: 0, y: 0, autoAlpha: 0}, {xPercent:0, y: 0, autoAlpha: 1}, 0)
-			.set({}, {}, "+=0.2")
-		});		
-	</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="index.js"></script>
-
+	<!-- SCRIPT -->
+	<script src="src/js/gsap.min.js"></script>
+	<script src="src/js/ScrollTrigger.min.js"></script>
+	<script src="src/js/ScrollToPlugin.min.js"></script>
+	<script src="src/js/jquery.js"></script>
+	<script src="src/js/materialize.js"></script>
+	<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+	
+	<script src="main.js"></script>
 </body>
 </html>
