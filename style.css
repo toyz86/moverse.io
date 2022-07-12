@@ -429,9 +429,9 @@
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  right: 30px;
+  right: 20%;
   position: absolute;
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
 .project-section .viewAll a i.fa-plus {
