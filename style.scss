@@ -317,6 +317,17 @@ button.btn.modal-trigger {
     }
   }
 
+  &.mainpage {
+    @media #{$small_mobile} {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      transform: translateY(150px) !important;
+      bottom: auto;  
+    }
+  }
+
   .btn-order {
     display: flex;
 
@@ -405,5 +416,25 @@ button.btn.modal-trigger {
   }  
   .footer_mobile {
     display: none;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .show-on-desktop {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 600px), (min-width: 1200px) {
+  .show-on-mobile-and-tab {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .show-on-mobile-and-tab {
+    display: inline-flex !important;
+    flex-direction: column;
   }
 }

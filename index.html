@@ -85,24 +85,13 @@
 				<a href="contact.html">Contact</a>
 			</li>      
 		</ul>
-		<!-- <div class="socmed-navbody">
-			<a href="#">
-				<div class="socmed-link">
-					<i class="fa-brands fa-instagram"></i>
-				</div>
-			</a>
-			<a href="#">
-				<div class="socmed-link">
-					<i class="fa-brands fa-whatsapp"></i>
-				</div>
-			</a>
-		</div>-->
 	</div>	
 	<!-- END NAV MENU -->
 
 	<!-- HOME SECTION -->
 	<main class="profile-page">
-		<section class="bg-video-wrap comparisonSection">
+		<!-- Section not show in mobile -->
+		<section class="bg-video-wrap comparisonSection hide-on-small-only">
 			<!-- Dashboard Slide 1 -->
 			<section class="beforeImage">
 				<video src="img/Part Opening Website1.mp4" loop muted autoplay></video>
@@ -129,10 +118,10 @@
 			<section class="comparisonImage afterImage" id="sec2">
 				<div class="overlay2"></div>
 				<!-- animation -->
-				<div class="character-wrapper">
+				<div class="character-wrapper hide-on-small-only">
 					<canvas id="hero-lightpass" />
 				</div>
-
+				
 				<div class="row profile">
 					<div class="col s7 offset-s5">
 						<h2>Start Your Mocap with <b class="heading-bold">MOVERSE</b></h2>
@@ -148,29 +137,62 @@
 			</section>		
 		</section>
 
+		<!-- HERO SECTION ON MOBILE ONLY -->
+		<div class="hide-on-med-and-up">
+			<div class="mobile-hero">
+				<video src="img/Part Opening Website1.mp4" loop muted autoplay></video>
+				<!-- Overlay video -->
+				<div class="overlay"></div>
+	
+				<div class="main-wrapper">
+					<img src="img/moverse-logo.png" alt="logo moverse">
+				</div>
+	
+				<div class="main-desc">
+					<h5 class="heading-bold">Create your character's motion here.</h5>
+					<h5>We translate Your Movement <br> into Digital Realm.</p>
+				</div>			
+			</div>
+
+			<div class="top-profile-mb">
+				<div class="container">
+					<h2 class="gs_reveal">Start Your Mocap with <b class="heading-bold">MOVERSE</b></h2>
+					<p class="gs_reveal">
+						We provide the first complete and up-to-date motion capture suit in Indonesia. Moverse provides a wide range of motion capture solutions designed for a wide range of creators, from animator and indie game developer to digital content creator.
+						<br>
+						<br>
+						With Moverse, you can get a ready-to-use and cost-effective system for your projects, saving you time, money, and resources that could be focused on something else. We aim to be the most complete and updated provider of affordable motion capture equipment rental in Indonesia. 						
+					</p>
+				</div>
+			</div>
+		</div>
+
+
 		<!-- BEGIN PRODUCT SECTION -->
 		<div class="product-section row">
-			<div class="col s5 image-left">
+			<div class="col s5-col m5 image-left">
 				<img src="img/suit-couple.png">
 			</div>
-			<div class="col s7">
+			<div class="col s7-col m7 service-content">
 				<h2 class="gs_reveal">Our <b class="heading-bold">MovGear</b></h2>
 				<p class="gs_reveal">
 					Moverse offers three tiers of motion capture solutions. We call it MovGear. From the motion capture suit, to gloves, to face capture, with our MovGear, creators can capture all body movement more accurately and easily. This is great news for creators that work with character’s animation.
 					<br>
 					<br>
 					We are committed to supporting creators to make magic with the wide variety of products we provide.
-				</p>
-				<div class="product-option">
+				</p>	
+
+				<div class="product-option show-on-desktop">
 					<a href="mov-suit.html" class="product-lists gs_reveal gs_reveal_fromLeft">
 						<h5>Mov-Suit</h5>
 						<span>Give Life to Your <br> Animation</span>
 						<div class="icon-product" style="margin: 20px;">
 							<img src="img/suit.svg" alt="">
 						</div>
-						<div class="logo-anim"></div>
 						<div class="image-option">
-							<img src="img/suitman_2.jpg">
+							<div class="img-wrapper">
+								<img src="img/suitman.png">
+							</div>
 						</div>
 					</a>
 					<a href="mov-g.html" class="product-lists gs_reveal">
@@ -179,9 +201,10 @@
 						<div class="icon-product">
 							<img src="img/gloves.svg" alt="">
 						</div>
-						<div class="logo-anim"></div>
 						<div class="image-option">
-							<img src="img/smartgloves.jpg">
+							<div class="img-wrapper">
+								<img src="img/gloves.png">
+							</div>
 						</div>					
 					</a>
 					<a href="facesense.html" class="product-lists gs_reveal gs_reveal_fromRight">
@@ -190,14 +213,57 @@
 						<div class="icon-product">
 							<img src="img/face-capture.svg" alt="">
 						</div>
-						<div class="logo-anim"></div>
 						<div class="image-option">
-							<img src="img/faceCap.png">
+							<div class="img-wrapper">
+								<img src="img/faceCap-dika.png">
+							</div>
 						</div>						
 					</a>
-				</div>
+				</div>				
+			</div>
+
+			<div class="col s12 product-option show-on-mobile-and-tab">
+				<a href="mov-suit.html" class="product-lists gs_reveal gs_reveal_fromLeft">
+					<h5>Mov-Suit</h5>
+					<span>Give Life to Your <br> Animation</span>
+					<div class="icon-product" style="margin: 20px;">
+						<img src="img/suit.svg" alt="">
+					</div>
+					<div class="image-option">
+						<div class="img-wrapper">
+							<img src="img/suitman.png">
+						</div>
+					</div>
+				</a>
+
+				<a href="mov-g.html" class="product-lists gs_reveal">
+					<h5>Mov-G</h5>
+					<span>Let Your Fingers Do the Magic</span>
+					<div class="icon-product">
+						<img src="img/gloves.svg" alt="">
+					</div>
+					<div class="image-option">
+						<div class="img-wrapper">
+							<img src="img/gloves.png">
+						</div>
+					</div>					
+				</a>
+
+				<a href="facesense.html" class="product-lists gs_reveal gs_reveal_fromRight">
+					<h5>FaceSense</h5>
+					<span>A High Sense of Facial Expression is in Your Range</span>
+					<div class="icon-product">
+						<img src="img/face-capture.svg" alt="">
+					</div>
+					<div class="image-option">
+						<div class="img-wrapper">
+							<img src="img/faceCap-dika.png">
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
+
 		<div class="project-section">
 			<div class="container">
 				<h2 class="gs_reveal">Our <b class="heading-bold">Project</b></h2>
@@ -221,7 +287,7 @@
 				</div>
 
 				<div class="row address">
-					<div class="col s6">
+					<div class="col m6">
 						<h2 class="collaborate gs_reveal">Let's<br><b class="heading-bold">Collabrate!</b></h2>			
 						<ul>
 							<li><b style="color: #FEB404;">MOVERSE</b></li>
@@ -233,8 +299,8 @@
 							<li>Email ask@moverse.co.id</li>
 						</ul>
 					</div>
-					<div class="col s6">
-						<div class="quote-btn">
+					<div class="col m6">
+						<div class="quote-btn mainpage">
 							<div class="btn-order">
 								<span>Get Quote</span>
 								<img src="img/btn-circle.svg">
@@ -285,6 +351,7 @@
 	<script src="src/js/ScrollTrigger.min.js"></script>
 	<script src="src/js/ScrollToPlugin.min.js"></script>
 	<script src="src/js/jquery.js"></script>
+	<script src="src/js/isotope.js"></script>
 	<script src="src/js/materialize.js"></script>
 	<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
 	

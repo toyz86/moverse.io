@@ -64,22 +64,6 @@
     }
   }
 
-  footer {
-    margin-top: 150px;
-    text-align: center;
-    font-size: 12px;
-    color: rgb(114, 114, 114);
-    ul {
-      display: flex;
-      li {
-        margin-right: 20px;
-      }
-      &.footer-menu {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-    }
-  } 
   #gloves_guide {
     margin-top: 50px;
     img {

@@ -11,6 +11,27 @@
       width: 130%;
       height: auto;
       transform: translateY(-50px);
+
+      @media #{$small_mobile} {
+        width: 100%;
+        transform: translateY(0px);
+      }
+    }
+
+    @media #{$small_mobile} {
+      position: absolute;
+      width: 55%;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    @media #{$xs_mobile} {
+      width: 70%;
+    }
+
+    @media #{$xxs_mobile} {
+      width: 100%;
     }
   }
 
@@ -42,6 +63,14 @@
     background: $moverse;
     padding: 10px 20px;
     border-radius: 25px;
+
+    @media #{$small_mobile} {
+      top: 75%;
+      right: 30%;
+      left: 30%;
+      margin: auto;
+      text-align: center;
+    }
   }
 
   .main-hero {
@@ -65,7 +94,11 @@
       top: 0;
       left: 0;
       background: linear-gradient(271.62deg, rgba(1, 1, 1, 0.8) 30%, rgba(1, 1, 1, 0) 40%);
-      background-position-x: -400px;
+      // background-position-x: -400px;
+
+      // @media #{$tab_device}, #{$large_mobile} {
+      //   background-position-x: 0;
+      // }
     }
   
     &::after {

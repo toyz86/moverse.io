@@ -27,8 +27,8 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 	const canvas = document.getElementById("hero-lightpass");
 	const context = canvas.getContext("2d");
 
-	canvas.width = 1080;
-	canvas.height = 1920;
+	canvas.width = 563;
+	canvas.height = 1000;
 
 	const frameCount = 295;
 	const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
