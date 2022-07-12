@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Kanit:wght@100&display=swap");
 .bg-video-wrap {
   position: relative;
   overflow: hidden;
@@ -268,7 +268,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px;
+  padding: 10px 10px 20px;
   margin-right: 10px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(-24.94%, rgba(254, 180, 4, 0.94243)), color-stop(-24.94%, #00739F), color-stop(90%, rgba(0, 46, 89, 0)));
   background: linear-gradient(180deg, rgba(254, 180, 4, 0.94243) -24.94%, #00739F -24.94%, rgba(0, 46, 89, 0) 90%);
@@ -334,7 +334,7 @@
 }
 
 .product-section .product-option a.product-lists span {
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .product-section .product-option a.product-lists .logo-anim {
@@ -426,7 +426,11 @@
 }
 
 .project-section .viewAll {
-  float: right;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  right: 30px;
+  position: absolute;
   margin-top: 20px;
 }
 
@@ -630,13 +634,13 @@ html.is-animating .transition-fade {
   left: 0;
   right: 0;
   margin: auto;
-  width: 50%;
+  width: 60%;
   height: auto;
 }
 
 .mobile-hero .main-desc {
   margin: auto;
-  top: 450px;
+  bottom: 150px;
   left: 0;
   text-align: center;
   color: #fff;
@@ -651,7 +655,13 @@ html.is-animating .transition-fade {
   height: 100%;
   background: url("img/bg-profile.jpg") no-repeat center;
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-attachment: fixed;
+  -webkit-background-attachment: fixed;
+  -moz-background-attachment: fixed;
+  -o-background-attachment: fixed;
   padding: 50px 0;
   z-index: 1;
 }
@@ -2096,6 +2106,7 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', 'sans-serif';
   color: #fff;
+  background: #000000;
 }
 
 h2 {
@@ -2109,10 +2120,6 @@ h5 {
 .heading-bold {
   font-family: Hellix-bold;
   color: #FEB404;
-}
-
-p, span {
-  font-family: 'Inter', 'sans-serif';
 }
 
 @-webkit-keyframes spin {
@@ -2219,7 +2226,12 @@ p {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  font-weight: 100;
+  font-weight: 300;
+}
+
+span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
 }
 
 .modal {
@@ -2348,8 +2360,10 @@ button.btn.modal-trigger:hover {
 }
 
 .address {
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 100px;
+  font-family: 'Inter', 'sans-serif';
+  font-weight: 300;
   color: #c3c3c3;
 }
 

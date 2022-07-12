@@ -10,46 +10,38 @@
 // 	// );
 // }
 
-// BEGIN LOADER
-// document.onreadystatechange = function() {
-// 	if (document.readyState !== "complete") {
-// 		document.querySelector("body").style.visibility = "hidden";
-// 		document.querySelector("#loader").style.visibility = "visible";
-// 	} else {
-// 		document.querySelector("#loader").style.display = "none";
-// 		document.querySelector("body").style.visibility = "visible";
-// 	}
-// };
+
 
 // BEGIN ANIMATION ONSCROLL
 gsap.utils.toArray(".comparisonSection").forEach((section) => {
 
-	const canvas = document.getElementById("hero-lightpass");
-	const context = canvas.getContext("2d");
+	// const canvas = document.getElementById("hero-lightpass");
+	// const context = canvas.getContext("2d");
 
-	canvas.width = 563;
-	canvas.height = 1000;
+	// canvas.width = 563;
+	// canvas.height = 1000;
 
-	const frameCount = 295;
-	const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
-	);
+	// const frameCount = 295;
+	// const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
+	// );
 
-	const images = []
-	const airpods = {
-		frame: 0
-	};
+	// const images = []
+	// const airpods = {
+	// 	frame: 0
+	// };
 
-	for (let i = 0; i < frameCount; i++) {
-		const img = new Image();
-		img.src = currentFrame(i);
-		images.push(img);
-	}						
+	// for (let i = 0; i < frameCount; i++) {
+	// 	const img = new Image();
+	// 	img.src = currentFrame(i);
+	// 	images.push(img);
+	// }						
 	let tl = gsap.timeline({
 		scrollTrigger: {
 			trigger: section,
 			start: "center center",
 			// makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
-			end: () => "+=" + section.offsetWidth, 
+			// end: () => "+=" + section.offsetWidth, 
+			end: "bottom -300%",
 			scrub: 1,
 			pin: true,
 			anticipatePin: 1,
@@ -62,30 +54,30 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 		defaults: {ease: "none"}
 	});
 
-	let tlAnim = gsap.timeline({});
+	// let tlAnim = gsap.timeline({});
 
-	tlAnim.to(airpods, {
-		frame: frameCount - 1,
-		snap: "frame",
-		scrollTrigger: {
-			scrub: 1,
-			trigger: section,
-			start: "center center",
-			// end: () => "+=" + section.offsetWidth,
-			end: () => section.offsetWidth + "+=2050",
-			// pin: true,
-			// markers: true,
-			// onLeave: onComplete,
-		},
-		onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
-	});		
+	// tlAnim.to(airpods, {
+	// 	frame: frameCount - 1,
+	// 	snap: "frame",
+	// 	scrollTrigger: {
+	// 		scrub: 1,
+	// 		trigger: section,
+	// 		start: "center center",
+	// 		// end: () => "+=" + section.offsetWidth,
+	// 		end: () => section.offsetWidth + "+=2050",
+	// 		// pin: true,
+	// 		// markers: true,
+	// 		// onLeave: onComplete,
+	// 	},
+	// 	onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
+	// });		
 	
-	images[0].onload = render;
+	// images[0].onload = render;
 	
-	function render() {
-		context.clearRect(0, 0, canvas.width, canvas.height);
-		context.drawImage(images[airpods.frame], 0, 0); 
-	}			
+	// function render() {
+	// 	context.clearRect(0, 0, canvas.width, canvas.height);
+	// 	context.drawImage(images[airpods.frame], 0, 0); 
+	// }			
 	
 	function onSnapComplete() {
 		console.log('onSnapComplete');
@@ -110,8 +102,9 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 	// ...and the image the opposite way (at the same time)
 	.fromTo(section.querySelector(".afterImage img"), {xPercent: -100, x: 0}, {xPercent: 0}, 0);
 	// tl.to(document.querySelector(".character-wrapper"), {xPercent: 10});
-	tl.fromTo(section.querySelector(".profile"), {xPercent: -100, x: 0, y: 0, autoAlpha: 0}, {xPercent:0, y: 0, autoAlpha: 1}, 0)
-	.set({}, {}, "+=0.2")
+	tl.fromTo(section.querySelector(".profile"), {xPercent: -100, x: 0, y: 50, autoAlpha: 0}, {xPercent:0, y: 50, autoAlpha: 0}, 0)
+	tl.to(section.querySelector(".profile"), {autoAlpha: 1, y: 0})
+	.set({}, {}, "-=0.5")
 });		
 // END ANIMATION ONSCROLL
 
@@ -158,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 // END PARALLAX ITEM
+
 
 $(document).ready(function(){
 	// load guide in modal overlay
@@ -333,7 +327,7 @@ $(document).ready(function(){
 $(window).on('load',function(){
 	if($('#preloader').length){
 			var preLoder = $("#preloader");
-			preLoder.fadeOut(2000);
+			preLoder.fadeOut(1000);
 
 	};
 });	

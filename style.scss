@@ -11,8 +11,10 @@
 @import "utilities/menu";
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap');
+
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Kanit:wght@100&display=swap');
 
 
 @font-face {
@@ -56,7 +58,7 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', 'sans-serif';
   color: #fff;
-  // background: #000000;
+  background: #000000;
 }
 
 h2 {
@@ -72,9 +74,10 @@ h5 {
   color: #FEB404;
 }
 
-p, span {
-  font-family: 'Inter', 'sans-serif';
-}
+// p, span {
+//   font-family: 'Inter', 'sans-serif';
+//   font-weight: 400;
+// }
 
 // BEGIN LOADER
 @keyframes spin {
@@ -171,7 +174,12 @@ p {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  font-weight: 100;
+  font-weight: 300;
+}
+
+span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
 }
 
 .modal {
@@ -290,8 +298,10 @@ button.btn.modal-trigger {
 }
 
 .address {
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 100px;
+  font-family: 'Inter', 'sans-serif';
+  font-weight: 300;
   color: #c3c3c3;
 
   .collaborate {

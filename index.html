@@ -140,7 +140,7 @@
 		<!-- HERO SECTION ON MOBILE ONLY -->
 		<div class="hide-on-med-and-up">
 			<div class="mobile-hero">
-				<video src="img/Part Opening Website1.mp4" loop muted autoplay></video>
+				<video src="img/Part Opening Website1.mp4" autoplay="autoplay" loop="true" muted defaultmuted playsinline></video>
 				<!-- Overlay video -->
 				<div class="overlay"></div>
 	
@@ -356,5 +356,50 @@
 	<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
 	
 	<script src="main.js"></script>
+	<script>
+		const canvas = document.getElementById("hero-lightpass");
+		const context = canvas.getContext("2d");
+
+		canvas.width = 563;
+		canvas.height = 1000;
+
+		const frameCount = 295;
+		const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
+		);
+
+		const images = []
+		const airpods = {
+			frame: 0
+		};
+
+		for (let i = 0; i < frameCount; i++) {
+			const img = new Image();
+			img.src = currentFrame(i);
+			images.push(img);
+		}			
+
+		let tlAnim = gsap.timeline({});
+
+		tlAnim.to(airpods, {
+			frame: frameCount - 1,
+			snap: "frame",
+			scrollTrigger: {
+				scrub: 1,
+				trigger: document.getElementsByTagName('section'),
+				start: "top center",
+				end: "bottom -700%"
+				// end: () => section.offsetWidth + "+=2050",
+			},
+			onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
+		});		
+
+		images[0].onload = render;
+
+		function render() {
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.drawImage(images[airpods.frame], 0, 0); 
+		}		
+
+	</script>
 </body>
 </html>
