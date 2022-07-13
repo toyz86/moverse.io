@@ -29,6 +29,7 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 			onEnter: onEnterPage,
 			onEnterBack: onEnterBack,
 			onSnapComplete: onSnapComplete,
+			invalidateOnRefresh: true
 		},
 		defaults: {ease: "none"}
 	});
@@ -138,9 +139,9 @@ $(document).ready(function(){
 		}
 
 		if (y > 1500) {
-			$(".socmed-home").fadeOut()
+			gsap.to(".socmed-home", { opacity: 0 });
 		} else {
-			$(".socmed-home").fadeIn()
+			gsap.to(".socmed-home", { opacity: 1 });
 		}
 
 		if(y >= 10) {

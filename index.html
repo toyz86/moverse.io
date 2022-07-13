@@ -269,21 +269,23 @@
 
 				<!-- SLIDER -->
 				<div class="slider gs_reveal">
-					<ul class="slides">
-						<li><img src="img/slider-1.jpg"></li>
-						<li><img src="img/slider-2.jpg"></li>
-						<li><img src="img/slider-3.jpg"></li>
-						<li><img src="img/slider-4.jpg"></li>
-						<li><img src="img/slider-5.jpg"></li>
-					</ul>
+					<a href="project.html">
+						<ul class="slides">
+							<li><img src="img/slider-1.jpg"></li>
+							<li><img src="img/slider-2.jpg"></li>
+							<li><img src="img/slider-3.jpg"></li>
+							<li><img src="img/slider-4.jpg"></li>
+							<li><img src="img/slider-5.jpg"></li>
+						</ul>
+					</a>
 				</div>		
 
-				<div class="viewAll">
+				<!-- <div class="viewAll">
 					<a href="project.html">
 						<span><i class="fa fa-plus" aria-hidden="true"></i> view</span>
 						<span class="circle-btn">all</span>
 					</a>
-				</div>
+				</div> -->
 
 				<div class="row address">
 					<div class="col m6">
@@ -367,7 +369,7 @@
 		);
 
 		const images = []
-		const airpods = {
+		const character = {
 			frame: 0
 		};
 
@@ -379,15 +381,16 @@
 
 		let tlAnim = gsap.timeline({});
 
-		tlAnim.to(airpods, {
+		tlAnim.to(character, {
 			frame: frameCount - 1,
 			snap: "frame",
 			scrollTrigger: {
 				scrub: 1,
 				trigger: document.getElementsByTagName('section'),
 				start: "top center",
-				end: "bottom -700%"
+				end: "bottom -700%",
 				// end: () => section.offsetWidth + "+=2050",
+				invalidateOnRefresh: true
 			},
 			onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
 		});		
@@ -396,7 +399,7 @@
 
 		function render() {
 			context.clearRect(0, 0, canvas.width, canvas.height);
-			context.drawImage(images[airpods.frame], 0, 0); 
+			context.drawImage(images[character.frame], 0, 0); 
 		}		
 
 	</script>
