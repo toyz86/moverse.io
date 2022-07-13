@@ -10,31 +10,10 @@
 // 	// );
 // }
 
-
-
-// BEGIN ANIMATION ONSCROLL
-gsap.utils.toArray(".comparisonSection").forEach((section) => {
-
-	// const canvas = document.getElementById("hero-lightpass");
-	// const context = canvas.getContext("2d");
-
-	// canvas.width = 563;
-	// canvas.height = 1000;
-
-	// const frameCount = 295;
-	// const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
-	// );
-
-	// const images = []
-	// const airpods = {
-	// 	frame: 0
-	// };
-
-	// for (let i = 0; i < frameCount; i++) {
-	// 	const img = new Image();
-	// 	img.src = currentFrame(i);
-	// 	images.push(img);
-	// }						
+////////////////////////////////////
+////// BEGIN ANIMATION ONSCROLL ////
+////////////////////////////////////
+gsap.utils.toArray(".comparisonSection").forEach((section) => {			
 	let tl = gsap.timeline({
 		scrollTrigger: {
 			trigger: section,
@@ -53,31 +32,6 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 		},
 		defaults: {ease: "none"}
 	});
-
-	// let tlAnim = gsap.timeline({});
-
-	// tlAnim.to(airpods, {
-	// 	frame: frameCount - 1,
-	// 	snap: "frame",
-	// 	scrollTrigger: {
-	// 		scrub: 1,
-	// 		trigger: section,
-	// 		start: "center center",
-	// 		// end: () => "+=" + section.offsetWidth,
-	// 		end: () => section.offsetWidth + "+=2050",
-	// 		// pin: true,
-	// 		// markers: true,
-	// 		// onLeave: onComplete,
-	// 	},
-	// 	onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
-	// });		
-	
-	// images[0].onload = render;
-	
-	// function render() {
-	// 	context.clearRect(0, 0, canvas.width, canvas.height);
-	// 	context.drawImage(images[airpods.frame], 0, 0); 
-	// }			
 	
 	function onSnapComplete() {
 		console.log('onSnapComplete');
@@ -106,9 +60,11 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 	tl.to(section.querySelector(".profile"), {autoAlpha: 1, y: 0})
 	.set({}, {}, "-=0.5")
 });		
-// END ANIMATION ONSCROLL
 
-// BEGIN PARALLAX ITEM
+
+////////////////////////////////////
+////// BEGIN PARALLAX SCROLL ///////
+////////////////////////////////////
 function animateFrom(elem, direction) {
   direction = direction || 1;
   var x = 0,
@@ -150,9 +106,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
-// END PARALLAX ITEM
 
-
+////////////////////////////////////
+/////////// BEGIN JQUERY ///////////
+////////////////////////////////////
 $(document).ready(function(){
 	// load guide in modal overlay
 	$('.modal').modal();
@@ -168,6 +125,7 @@ $(document).ready(function(){
 	$(window).on('load', function() {
 		$("#logo-header").fadeOut();
 	})
+
 	$(document).scroll(function() {
 		const y = $(this).scrollTop();
 		const logoHeader = $("#logo-header");
@@ -192,6 +150,7 @@ $(document).ready(function(){
 		}
 	});
 
+
 	// BUTTON ROUTE TO CONTACT
 	$('.quote-btn').click(function(){
 		document.location.href='contact.html';
@@ -201,51 +160,49 @@ $(document).ready(function(){
 		document.location.href='/';
 	})		
 	
-	// BEGIN NAV MENU
-	$('.backDrop').css({'display': 'none'})
 
-	$('.product-list').click(function() {
-		$('.fa-caret-down').toggleClass('product-active');
-		if($('.fa-caret-down').hasClass('product-active')) {
-			// $('.nav-item-down').css({'display': 'block' });
-			$('.nav-item-down').slideDown();
-			// console.log('drop active');
-		} else {
-			// $('.nav-item-down').css({'display': 'none' });
-			$('.nav-item-down').slideUp();
-			// console.log('drop not active');
-		}
-	})
-	// $('input.More-checkbox').attr('value', 'false');
+////////////////////////////////////
+////////// BEGIN NAVBAR ////////////
+////////////////////////////////////
+	$('.backDrop').css({'display': 'none'})
+	$('input.More-checkbox').attr('value', 'false');
 	$('.More').click(function() {
 
 		$('input.More-checkbox').text($('#burger').val());
 
 		$("#burger").on('change', function() {
-			const tl = gsap.timeline({});
+			let tl = gsap.timeline({});
+
 			if ($(this).is(':checked')) {
 				$(this).attr('value', 'true');
 				gsap.to('.nav-body', { display: 'block' });
 				gsap.to('.nav-circle-body', 1, { scale: 200, opacity: 1, delay: 0.3})
 				gsap.fromTo('.nav-body__item a', 0.7, { display: 'none', opacity: 0, y:50 }, { display: 'block', opacity: 1, y: 0, delay: '0.7' })
 				gsap.fromTo('.nav-body__item .product-list', 0.7, { display: 'none', opacity: 0, y:50 }, { display: 'block', opacity: 1, y: 0, delay: '0.7' })
-				// gsap.fromTo('.socmed-navbody a', 0.7, { display: 'none', opacity: 0 }, { display: 'block', opacity: 1, delay: '0.7' })
 				gsap.fromTo('.menu-title', {opacity: 1, y: 0}, {opacity: 0, y: -10});
 				gsap.fromTo('.socmed-home', {opacity: 1}, {opacity: 0})
-				console.log('check')
+				// console.log('check')
 			} else {
 				$(this).attr('value', 'false');
 				tl.to('.nav-body', { display: 'none' });
 				gsap.to('.nav-circle-body', 1, { scale: 1, opacity: 0, delay: 0.5 })
 				gsap.fromTo('.nav-body__item a', 0.5, { display: 'block', opacity: 1, y: 0 }, { display: 'none', opacity: 0, y: 50 })
-				// gsap.fromTo('.socmed-navbody a', 0.5, { display: 'block', opacity: 1 }, { display: 'none', opacity: 0 })
 				gsap.fromTo('.nav-body__item .product-list', 0.5, { display: 'block', opacity: 1, y: 0 }, { display: 'none', opacity: 0, y: 50 })
 				gsap.fromTo('.menu-title', {opacity: 0, y: -10}, {opacity: 1, y: 0})
 				gsap.fromTo('.socmed-home', {opacity: 0}, {opacity: 1, delay: 0.7})
-				console.log('uncheck')
+				// console.log('uncheck')
 			}
 			$('input.More-checkbox').text($('#burger').val());
 		});
+	})
+
+	$('.product-list').click(function() {
+		$('.fa-caret-down').toggleClass('product-active');
+		if($('.fa-caret-down').hasClass('product-active')) {
+			$('.nav-item-down').slideDown();
+		} else {
+			$('.nav-item-down').slideUp();
+		}
 	})
 	// END NAV MENU
 
@@ -253,17 +210,16 @@ $(document).ready(function(){
   $(".quote-btn").mouseenter(function(){
     gsap.to(".btn-order img", 0.1, { rotation: 40, scale: 0.9, opacity:0, ease: Power2.easeInOut });
 		gsap.to(".btn-bg", 0.1, { scale: 0.8, opacity: 1, ease: Power2.easeInOut })
-		// gsap.to(".cls-1", 0.5, { opacity: 0, ease: Power2.easeInOut });
   });
   $(".quote-btn").mouseleave(function(){
     gsap.to(".btn-order img", 0.1, { rotation: 0, scale: 1, y: 0, opacity: 1, ease: Power2.easeInOut });
 		gsap.to(".btn-bg", 0.1, { scale: 1, opacity: 0, ease: Power2.easeInOut })
-		// gsap.to(".cls-1", 0.5, { opacity: 1, ease: Power2.easeInOut });
   });	
 	
-	/*-----------------
-			ISOTOPE
-	------------------*/
+////////////////////////////////////
+///////////// ISOTOPE //////////////
+////////////////////////////////////
+
 	// $('.projects-list').isotope({
 	// 	itemSelector: '.project-item',
 	// 	// percentPosition: true,
@@ -316,18 +272,17 @@ $(document).ready(function(){
 
   // Calling Isotope
   isotope();
-
-
 	
 });
 
-/*-----------------
-		preloader
-------------------*/
+////////////////////////////////////
+///////////// PRELOAD //////////////
+////////////////////////////////////
 $(window).on('load',function(){
-	if($('#preloader').length){
-			var preLoder = $("#preloader");
-			preLoder.fadeOut(1000);
-
-	};
+	// if($('#preloader').length){
+	// 	var preLoder = $("#preloader");
+	// 	preLoder.fadeOut(1000);
+	// };
+	// $('#preloader').hide();
+	$('#preloader').fadeOut(1000);
 });	
