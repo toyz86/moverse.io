@@ -1047,6 +1047,16 @@ html.is-animating .transition-fade {
   height: auto;
 }
 
+@media (max-width: 600px) {
+  .facesense .suit-specs img {
+    width: 55% !important;
+    -o-object-fit: cover;
+       object-fit: cover;
+    left: 20%;
+    position: relative;
+  }
+}
+
 .facesense img.img_right {
   width: 35%;
   top: 50px;
