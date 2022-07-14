@@ -358,49 +358,64 @@
 	
 	<script src="main.js"></script>
 	<script>
-		const canvas = document.getElementById("hero-lightpass");
-		const context = canvas.getContext("2d");
+		if(matchMedia('(min-width: 601px)').matches) {
+			const canvas = document.getElementById("hero-lightpass");
+			const context = canvas.getContext("2d");
+	
+			canvas.width = 563;
+			canvas.height = 1000;
+	
+			const frameCount = 295;
+			const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
+			);
+	
+			const images = []
+			const character = {
+				frame: 0
+			};
+	
+			for (let i = 0; i < frameCount; i++) {
+				const img = new Image();
+				img.src = currentFrame(i);
+				images.push(img);
+			}			
+	
+			let tlAnim = gsap.timeline({});
+	
+			tlAnim.to(character, {
+				frame: frameCount - 1,
+				snap: "frame",
+				scrollTrigger: {
+					scrub: 1,
+					trigger: document.getElementsByTagName('section'),
+					start: "top center",
+					end: "bottom -700%",
+					// end: () => section.offsetWidth + "+=2050",
+					invalidateOnRefresh: true
+				},
+				onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
+			});		
+	
+			images[0].onload = render;
+	
+			function render() {
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.drawImage(images[character.frame], 0, 0); 
+			}	
+		}
+		// function onWidthUpdated() {
+		// 	render();
+		// }
+		
+		// window.addEventListener('resize', function(event){
+		// 	if(window.innerWidth >= 601) {
+		// 		console.log('hore')
+		// 		render();
+		// 	}
+		// });
 
-		canvas.width = 563;
-		canvas.height = 1000;
 
-		const frameCount = 295;
-		const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
-		);
 
-		const images = []
-		const character = {
-			frame: 0
-		};
-
-		for (let i = 0; i < frameCount; i++) {
-			const img = new Image();
-			img.src = currentFrame(i);
-			images.push(img);
-		}			
-
-		let tlAnim = gsap.timeline({});
-
-		tlAnim.to(character, {
-			frame: frameCount - 1,
-			snap: "frame",
-			scrollTrigger: {
-				scrub: 1,
-				trigger: document.getElementsByTagName('section'),
-				start: "top center",
-				end: "bottom -700%",
-				// end: () => section.offsetWidth + "+=2050",
-				invalidateOnRefresh: true
-			},
-			onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
-		});		
-
-		images[0].onload = render;
-
-		function render() {
-			context.clearRect(0, 0, canvas.width, canvas.height);
-			context.drawImage(images[character.frame], 0, 0); 
-		}		
 
 	</script>
 </body>

@@ -25,7 +25,7 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 			pin: true,
 			anticipatePin: 1,
 			// markers: true,
-			onLeave: onleavePage,
+			// onLeave: onleavePage,
 			onEnter: onEnterPage,
 			onEnterBack: onEnterBack,
 			onSnapComplete: onSnapComplete,
@@ -38,12 +38,12 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 		console.log('onSnapComplete');
 	}
 
-	function onleavePage() {
-		console.log('onLeave')
-		render(function() {
-			console.log('render')
-		})
-	};
+	// function onleavePage() {
+	// 	console.log('onLeave')
+	// 	render(function() {
+	// 		console.log('render')
+	// 	})
+	// };
 
 	function onEnterBack() {
 		console.log('onEnterBack')
@@ -284,6 +284,6 @@ $(window).on('load',function(){
 	// 	var preLoder = $("#preloader");
 	// 	preLoder.fadeOut(1000);
 	// };
-	// $('#preloader').hide();
-	$('#preloader').fadeOut(1000);
+	$('#preloader').css({'opacity': '0','visibility': 'hidden'});
+	// $('#preloader').fadeOut(1000);
 });	
