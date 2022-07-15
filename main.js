@@ -55,7 +55,8 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 	// animate the container one way...
 	tl.fromTo(section.querySelector(".afterImage"), { xPercent: 100, x: 0}, {xPercent: 0})
 	// ...and the image the opposite way (at the same time)
-	.fromTo(section.querySelector(".afterImage img"), {xPercent: -100, x: 0}, {xPercent: 0}, 0);
+	.fromTo(section.querySelector(".afterImage img"), {xPercent: -100, x: 0}, {xPercent: 0}, 0)
+	.fromTo(section.querySelector(".beforeImage"), {xPercent: 0, x: 0}, {xPercent: -100}, 0);
 	// tl.to(document.querySelector(".character-wrapper"), {xPercent: 10});
 	tl.fromTo(section.querySelector(".profile"), {xPercent: -100, x: 0, y: 50, autoAlpha: 0}, {xPercent:0, y: 50, autoAlpha: 0}, 0)
 	tl.to(section.querySelector(".profile"), {autoAlpha: 1, y: 0})
@@ -284,6 +285,7 @@ $(window).on('load',function(){
 	// 	var preLoder = $("#preloader");
 	// 	preLoder.fadeOut(1000);
 	// };
-	$('#preloader').css({'opacity': '0','visibility': 'hidden'});
+	// $('#preloader').css({'opacity': '0','visibility': 'hidden'});
 	// $('#preloader').fadeOut(1000);
+	gsap.fromTo('#preloader', 0.5, { autoAlpha: 1, display: 'block' }, { autoAlpha: 0, display: 'none' })
 });	
