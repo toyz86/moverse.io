@@ -368,6 +368,8 @@
 			const frameCount = 295;
 			const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
 			);
+
+			
 	
 			const images = []
 			const character = {
@@ -378,7 +380,7 @@
 				const img = new Image();
 				img.src = currentFrame(i);
 				images.push(img);
-			}			
+			}
 	
 			let tlAnim = gsap.timeline({});
 	
@@ -391,13 +393,14 @@
 					start: "top center",
 					end: "bottom -700%",
 					// end: () => section.offsetWidth + "+=2050",
-					invalidateOnRefresh: true
+					invalidateOnRefresh: true,
+					overwrite:"all"
 				},
 				onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
 			});		
-	
+			
 			images[0].onload = render;
-	
+			
 			function render() {
 				context.clearRect(0, 0, canvas.width, canvas.height);
 				context.drawImage(images[character.frame], 0, 0); 

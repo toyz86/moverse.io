@@ -205,6 +205,10 @@ $More-icon-color: #3e57ba;
   font-family: 'font-bold';
   letter-spacing: 1.7px;
   color: $orange;
+
+  span {
+    font-size: 13px;
+  }
 }
 
 .More-checkbox {

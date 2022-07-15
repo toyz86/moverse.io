@@ -69,9 +69,28 @@ h5 {
   font-family: Hellix-bold;
 }
 
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+span {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+}
+
 .heading-bold {
   font-family: Hellix-bold;
   color: #FEB404;
+}
+
+footer {
+  span {
+    font-size: 12px;
+  }
 }
 
 // BEGIN LOADER
@@ -163,18 +182,6 @@ textarea.materialize-textarea {
 
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
-}
-
-p {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-  font-weight: 300;
-}
-
-span {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
 }
 
 .modal {

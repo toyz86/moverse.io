@@ -133,6 +133,12 @@
   color: #fff;
 }
 
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  .bg-video-wrap .afterImage .profile h2 {
+    width: 450px;
+  }
+}
+
 .bg-video-wrap .afterImage .profile img {
   -webkit-transform: translate(-100%, 0px);
           transform: translate(-100%, 0px);
@@ -492,8 +498,35 @@
   z-index: -1;
 }
 
+.project-section .slider:hover .slides img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0.6;
+}
+
 .project-section .slider .slides {
   background: none;
+}
+
+.project-section .slider .slides li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #000000;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.project-section .slider .slides img {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin: 0;
 }
 
 footer {
@@ -836,10 +869,46 @@ html.is-animating .transition-fade {
   overflow: hidden;
   width: 100%;
   margin: 0;
-  background: url("img/gloves.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: 400px;
+}
+
+.mov-g .hero-img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 50%;
+  top: 0;
+  right: 0;
+}
+
+.mov-g .hero-img img {
+  width: 100%;
+  height: 100%;
+  mask-image: -webkit-gradient(linear, left 10%, left bottom, from(black), to(rgba(0, 0, 0, 0)));
+  -webkit-mask-image: -webkit-gradient(linear, left 10%, left bottom, from(black), to(rgba(0, 0, 0, 0)));
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .mov-g .hero-img {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .mov-g .hero-img {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  .mov-g .hero-img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .mov-g .hero-img {
+    width: 100%;
+  }
 }
 
 .mov-g .backdrop_hero {
@@ -1887,6 +1956,10 @@ header .socmed-home .socmed-link i {
   color: #F7941C;
 }
 
+.menu-title span {
+  font-size: 13px;
+}
+
 .More-checkbox {
   position: absolute;
   top: auto;
@@ -2129,9 +2202,26 @@ h5 {
   font-family: Hellix-bold;
 }
 
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+span {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+}
+
 .heading-bold {
   font-family: Hellix-bold;
   color: #FEB404;
+}
+
+footer span {
+  font-size: 12px;
 }
 
 @-webkit-keyframes spin {
@@ -2232,18 +2322,6 @@ textarea.materialize-textarea {
 ::-webkit-calendar-picker-indicator {
   -webkit-filter: invert(1);
           filter: invert(1);
-}
-
-p {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-  font-weight: 300;
-}
-
-span {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
 }
 
 .modal {
