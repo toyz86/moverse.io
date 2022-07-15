@@ -96,12 +96,12 @@
 			<section class="beforeImage">
 				<video src="img/Part Opening Website1.mp4" loop muted autoplay></video>
 				<!-- Overlay video -->
-				<div class="overlay"></div>
-
+				
 				<div class="main-wrapper">
 					<img src="img/moverse-logo.png" alt="logo moverse">
 				</div>
-
+				
+				<div class="overlay"></div>
 				<div class="main-desc">
 					<h5 class="heading-bold">Create your character's motion here.</h5>
 					<h5>We translate Your Movement <br> into Digital Realm.</p>
@@ -182,7 +182,7 @@
 				</p>	
 
 				<div class="product-option show-on-desktop">
-					<a href="mov-suit.html" class="product-lists gs_reveal gs_reveal_fromLeft">
+					<a href="mov-suit.html" id="anim-left" class="product-lists gs_reveal gs_reveal_fromLeft">
 						<h5>Mov-Suit</h5>
 						<span>Give Life to Your <br> Animation</span>
 						<div class="icon-product" style="margin: 20px;">
@@ -206,7 +206,7 @@
 							</div>
 						</div>					
 					</a>
-					<a href="facesense.html" class="product-lists gs_reveal gs_reveal_fromRight">
+					<a href="facesense.html" id="anim-right" class="product-lists gs_reveal gs_reveal_fromRight">
 						<h5>FaceSense</h5>
 						<span>A High Sense of Facial Expression is in Your Range</span>
 						<div class="icon-product">
@@ -222,7 +222,7 @@
 			</div>
 
 			<div class="col s12 product-option show-on-mobile-and-tab">
-				<a href="mov-suit.html" class="product-lists gs_reveal gs_reveal_fromLeft">
+				<a href="mov-suit.html" id="anim-left" class="product-lists gs_reveal gs_reveal_fromLeft">
 					<h5>Mov-Suit</h5>
 					<span>Give Life to Your <br> Animation</span>
 					<div class="icon-product" style="margin: 20px;">
@@ -248,7 +248,7 @@
 					</div>					
 				</a>
 
-				<a href="facesense.html" class="product-lists gs_reveal gs_reveal_fromRight">
+				<a href="facesense.html" id="anim-right" class="product-lists gs_reveal gs_reveal_fromRight">
 					<h5>FaceSense</h5>
 					<span>A High Sense of Facial Expression is in Your Range</span>
 					<div class="icon-product">
@@ -358,7 +358,11 @@
 	
 	<script src="main.js"></script>
 	<script>
-		if(matchMedia('(min-width: 601px)').matches) {
+	ScrollTrigger.matchMedia({		
+		// This function only work on min width 601px
+		// https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.matchMedia()
+
+		"(min-width: 601px)": function() {
 			const canvas = document.getElementById("hero-lightpass");
 			const context = canvas.getContext("2d");
 	
@@ -369,8 +373,6 @@
 			const currentFrame = index => ( `img/caracter/${index.toString().padStart(4, '0')}.png`
 			);
 
-			
-	
 			const images = []
 			const character = {
 				frame: 0
@@ -404,21 +406,22 @@
 			function render() {
 				context.clearRect(0, 0, canvas.width, canvas.height);
 				context.drawImage(images[character.frame], 0, 0); 
-			}	
-		}
-		// function onWidthUpdated() {
-		// 	render();
-		// }
+			}				
+			// setup animations and ScrollTriggers for screens 960px wide or greater...
+			// These ScrollTriggers will be reverted/killed when the media query doesn't match anymore.
+		},
 		
-		// window.addEventListener('resize', function(event){
-		// 	if(window.innerWidth >= 601) {
-		// 		console.log('hore')
-		// 		render();
-		// 	}
-		// });
-
-
-
+	}); 
+	if (window.matchMedia("(max-width: 600px)").matches) {
+		const animLeft = document.getElementById('anim-left');
+		const animRight = document.getElementById('anim-right');
+		animLeft.classList.remove('gs_reveal_fromLeft');
+		animRight.classList.remove('gs_reveal_fromRight');
+	} else {
+		animLeft.classList.add('gs_reveal_fromLeft')
+		animRight.classList.add('gs_reveal_fromRight');
+  // Viewport is greater than 700 pixels wide
+	}
 
 	</script>
 </body>

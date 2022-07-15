@@ -1,16 +1,4 @@
-// window.onscroll=function(){
-// 	if (window.pageYOffset >= 800) {
-// 		gsap.to(document.querySelector(".profile"), 1.5, { opacity: 1, y: 0,  ease: "Power1.easeOut" });
-// 	} else {
-// 		gsap.to(document.querySelector(".profile"), 1.5, { opacity: 0, y: 100 });
-// 	}
-// 	// console.log( 
-// 	// 	'top: '  + (window.pageYOffset || document.documentElement.scrollTop) + ' ' +
-// 	// 	'left: ' + (window.pageXOffset || document.documentElement.scrollLeft)
-// 	// );
-// }
-
-// BEGIN HOVER NAVIGATION
+// BEGIN Magnetic Hover Burger
 
 var hoverMouse = function($el) {
   $el.each(function() {
@@ -94,7 +82,7 @@ var hoverMouse = function($el) {
 hoverMouse($('label'));
 
 ////////////////////////////////////
-////// BEGIN ANIMATION ONSCROLL ////
+//// BEGIN SLIDING PAGE ONSCROLL ///
 ////////////////////////////////////
 gsap.utils.toArray(".comparisonSection").forEach((section) => {			
 	let tl = gsap.timeline({
@@ -121,13 +109,6 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 	function onSnapComplete() {
 		console.log('onSnapComplete');
 	}
-
-	// function onleavePage() {
-	// 	console.log('onLeave')
-	// 	render(function() {
-	// 		console.log('render')
-	// 	})
-	// };
 
 	function onEnterBack() {
 		console.log('onEnterBack')
