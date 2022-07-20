@@ -58,8 +58,8 @@ var hoverMouse = function($el) {
 
     var onHover = function(x, y) {
       TweenMax.to($self, 0.4, {
-        x: x * 0.8,
-        y: y * 0.8,
+        x: x * 0.3,
+        y: y * 0.3,
         //scale: .9,
         rotation: x * 0.05,
         ease: Power2.easeOut
@@ -71,7 +71,7 @@ var hoverMouse = function($el) {
         y: 0,
         scale: 1,
         rotation: 0,
-        ease: Elastic.easeOut.config(1.2, 0.4)
+        // ease: Elastic.easeOut.config(1.2, 0.4)
       });
     };
 

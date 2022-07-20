@@ -88,6 +88,11 @@ span {
 }
 
 footer {
+  .footer-menu {
+    a {
+      color: #727272;
+    }
+  }
   span {
     font-size: 12px;
   }
@@ -383,6 +388,9 @@ button.btn.modal-trigger {
     margin-top: 350px;
     .footer-menu {
       justify-content: center;
+      a {
+        color: #727272;
+      }
     }
   }
   .address {
@@ -410,6 +418,7 @@ button.btn.modal-trigger {
     display: block;
     .footer-menu {
       justify-content: center;
+      color: #727272;
     }
   }
   .quote-btn {

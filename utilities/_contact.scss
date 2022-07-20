@@ -57,12 +57,22 @@
   }
 
   .order-btn {
-    position: absolute;
-    top: 55%;
-    right: 24%;
-    background: $moverse;
+    // position: absolute;
+    // top: 55%;
+    // right: 24%;
+    display: inline-block;
+    margin-top: 50px;
+    // background: $moverse;
+    border: 1px solid #fff;
     padding: 10px 20px;
     border-radius: 25px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $moverse;
+      transition: all 0.3s ease;
+      border-color: $moverse;
+    }
 
     @media #{$small_mobile} {
       top: 75%;
@@ -80,12 +90,14 @@
     width: 100%;
     height: 100%;
     margin: 0;
-    background: url('img/wiresensor.jpg');
-    background-size: cover;
-    background-position-x: -400px;
+    background: url(img/wiresensor.jpg);
+    background-size: 60%;
+    background-position: left top;
     background-repeat: no-repeat;
+    -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: -5;
+
     &::before {
       content: "";
       position: absolute;
@@ -108,7 +120,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: linear-gradient(0deg, #010101 5.74%, rgba(1, 1, 1, 0) 58.03%, rgba(1, 1, 1, 0.64) 100.28%);
+      background: linear-gradient(0deg, #010101 40%, rgba(1, 1, 1, 0) 58.03%, rgba(1, 1, 1, 0.8) 100.28%);
     }    
   }
 
