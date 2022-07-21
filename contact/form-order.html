@@ -206,7 +206,7 @@
 
       <div class="form-element inquiries">
         <!-- <a href="https://api.whatsapp.com/send?phone=6281377177701" target="_blank">If you have others inquiries reach us through&nbsp;<i class="fa-brands fa-whatsapp"></i></a> -->
-        <a href="/contact/social-link.html" target="_blank">If you have others inquiries reach us through&nbsp;<i class="fa-solid fa-arrow-right-long"></i></a>
+        <a href="social-link.html" target="_blank">If you have others inquiries reach us through&nbsp;<i class="fa-solid fa-arrow-right-long"></i></a>
       </div>
       <div class="row center">
         <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
@@ -220,14 +220,15 @@
   </div>
 
   <script>
+    document.getElementById('hero').style.backgroundPositionY = '0%';
     window.addEventListener('scroll', function(){
       var scrollPosition = window.pageYOffset;
       var bgParallax = document.getElementById('hero');
       var limit = bgParallax.offsetTop + bgParallax.offsetHeight;  
       if (scrollPosition > bgParallax.offsetTop && scrollPosition <= limit){
-        bgParallax.style.backgroundPositionY = (50 - 30 * scrollPosition/limit) + '%';    
+        bgParallax.style.backgroundPositionY = (0 - 30 * scrollPosition/limit) + '%';    
       } else{
-        bgParallax.style.backgroundPositionY = '50%';    
+        bgParallax.style.backgroundPositionY = '0%';    
       }
     });
 

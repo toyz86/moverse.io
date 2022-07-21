@@ -5,6 +5,10 @@ $(document).ready(function(){
 	});
 	$('.timepicker').timepicker();
 
+  $('#hero img').click(function() {
+    document.location.href='/';
+  })
+
   // if ( $('[type="date"]').prop('type') != 'date' ) {
   //   $('[type="date"]').datepicker();
   // }
