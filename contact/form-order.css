@@ -12,20 +12,27 @@ body {
   justify-content: center;
   background: #f7f7f7;
 }
-#hero {
-  height: 350px;
-}
-.hero_banner {
+/* #hero {
   width: 100%;
   height: 350px;
   position: relative;
-  background: url('banner.jpg');
+  display: block;
+  background: url('../img/hangersuit.jpg');
   background-size: cover;
   -webkit-background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-background-attachment: fixed;
-  background-position-y: -200px;
+} */
+
+#hero{
+  width: 100%;
+  height: 350px;
+  display: inline-flex;
+  background-image: url('../img/hangersuit.jpg');
+  background-position: center;  
+	background-repeat: no-repeat;	
+	background-size: cover;
+  text-align: center;
 }
 
 .hero_banner img {
@@ -34,7 +41,6 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
   margin: auto;
 }
 
@@ -54,6 +60,9 @@ form {
 @media only screen and (max-width: 600px) {
   form {
     padding: 10px;
+  }
+  #hero {
+    height: 220px;
   }
 }
 
@@ -213,8 +222,7 @@ input#__other_option__ {
     padding: 0 5px;
   }
   .hero_banner {
-    background-position-x: -250px;
-    background: url('m-banner.jpg');
+    background-position: center top;
   }
   .hero_banner img {
     width: 250px;
@@ -257,7 +265,7 @@ ul li {
 }
 
 .btn {
-  background: orange !important;
+  background: #FEB404 !important;
 }
 
 hr {
