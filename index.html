@@ -27,6 +27,12 @@
 		</div>
 	</div>
 
+	<!-- CURSOR -->
+  <div class="mouse-cursor cursor-outer" style="visibility: hidden;"></div>
+  <div class="mouse-cursor cursor-inner" style="visibility: hidden;">
+		<!-- <span>view<br>projects</span> -->
+	</div>
+
 	<!-- HEADER -->
 	<header>
 		<div class="backDrop"></div>
@@ -68,21 +74,25 @@
 	<div class="nav-body">
 		<ul class="nav-body__list">
 			<li class="nav-body__item">
-				<a href="/">Home</a>
+				<a data-magic-cursor="visible" data-text="Home" href="/">Home</a>
 			</li>
 			<li class="nav-body__item our-gear">
 				<div class="product-list">Our MovGear &nbsp<i class="fa-solid fa-caret-down"></i></div>					
 				<div class="nav-item-down">
-					<a href="mov-suit.html">Mov-Suit</a>
-					<a href="mov-g.html">Mov-G</a>
-					<a href="facesense.html">Face-Sense</a>
+					<a data-magic-cursor="visible" data-text="Mov-Suit" href="mov-suit.html">Mov-Suit</a>
+				</div>
+				<div class="nav-item-down">
+					<a data-magic-cursor="visible" data-text="Mov-G" href="mov-g.html">Mov-G</a>
+				</div>
+				<div class="nav-item-down">
+					<a data-magic-cursor="visible" data-text="Face-Sense" href="facesense.html">Face-Sense</a>
 				</div>
 			</li>
 			<li class="nav-body__item">
-				<a href="project.html">Project</a>
+				<a data-magic-cursor="visible" data-text="Project" href="project.html">Project</a>
 			</li>      
 			<li class="nav-body__item">
-				<a href="contact.html">Contact</a>
+				<a data-magic-cursor="visible" data-text="Contact" href="contact.html">Contact</a>
 			</li>      
 		</ul>
 	</div>	
@@ -94,7 +104,7 @@
 		<section class="bg-video-wrap comparisonSection hide-on-small-only">
 			<!-- Dashboard Slide 1 -->
 			<section class="beforeImage">
-				<video src="img/Part Opening Website1.mp4" loop muted autoplay></video>
+				<video src="img/Part Opening Website1_4.mp4" loop muted autoplay></video>
 				<!-- Overlay video -->
 				
 				<div class="main-wrapper">
@@ -182,7 +192,7 @@
 				</p>	
 
 				<div class="product-option show-on-desktop">
-					<a href="mov-suit.html" id="anim-left" class="product-lists gs_reveal gs_reveal_fromLeft">
+					<a href="mov-suit.html" class="product-lists gs_reveal gs_reveal_fromLeft">
 						<h5>Mov-Suit</h5>
 						<span>Give Life to Your <br> Animation</span>
 						<div class="icon-product" style="margin: 20px;">
@@ -206,7 +216,7 @@
 							</div>
 						</div>					
 					</a>
-					<a href="facesense.html" id="anim-right" class="product-lists gs_reveal gs_reveal_fromRight">
+					<a href="facesense.html" class="product-lists gs_reveal gs_reveal_fromRight">
 						<h5>FaceSense</h5>
 						<span>A High Sense of Facial Expression is in Your Range</span>
 						<div class="icon-product">
@@ -268,8 +278,8 @@
 				<h2 class="gs_reveal">Our <b class="heading-bold">Project</b></h2>
 
 				<!-- SLIDER -->
-				<div class="slider gs_reveal">
-					<a href="project.html">
+				<div class="slider gs_reveal" id="slide">
+					<a href="project.html" data-magic-cursor="visible">
 						<ul class="slides">
 							<li><img src="img/slider-1.jpg"></li>
 							<li><img src="img/slider-2.jpg"></li>
@@ -352,7 +362,7 @@
 	<script src="src/js/jquery.js"></script>
 	<script src="src/js/isotope.js"></script>
 	<script src="src/js/materialize.js"></script>
-	<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+	<!-- <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>   -->
 	
 	<script src="main.js"></script>
 	<script>
@@ -410,16 +420,15 @@
 		},
 		
 	}); 
-	if (window.matchMedia("(max-width: 600px)").matches) {
-		const animLeft = document.getElementById('anim-left');
-		const animRight = document.getElementById('anim-right');
-		animLeft.classList.remove('gs_reveal_fromLeft');
-		animRight.classList.remove('gs_reveal_fromRight');
-	} else {
-		animLeft.classList.add('gs_reveal_fromLeft')
-		animRight.classList.add('gs_reveal_fromRight');
-  // Viewport is greater than 700 pixels wide
-	}
+	// if (window.matchMedia("(max-width: 600px)").matches) {
+	// 	const animLeft = document.getElementById('anim-left');
+	// 	const animRight = document.getElementById('anim-right');
+	// 	animLeft.classList.remove('gs_reveal_fromLeft');
+	// 	animRight.classList.remove('gs_reveal_fromRight');
+	// } else {
+	// 	animLeft.classList.add('gs_reveal_fromLeft')
+	// 	animRight.classList.add('gs_reveal_fromRight');
+	// }
 
 	</script>
 </body>

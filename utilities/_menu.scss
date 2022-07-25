@@ -141,13 +141,35 @@ header {
       // transition: all .3s ease;
       display: none;
       margin-left: 30px;
+      overflow: hidden;
+      a {
+        width: fit-content;
+        color: #fff;
+        text-decoration: none;
+  
+        &:before {
+          content: attr(data-text);
+          position: absolute;
+          display: block;
+          color: #000;
+          transform: translate3d(0, 50px, 0);
+        }
+      }      
     }
-    
     a {
       width: fit-content;
       color: #fff;
       text-decoration: none;
+
+      &:before {
+        content: attr(data-text);
+        position: absolute;
+        display: block;
+        color: #000;
+        transform: translate3d(0, 80px, 0);
+      }
     }
+    
   }
 
   .socmed-navbody {

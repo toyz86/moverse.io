@@ -72,6 +72,12 @@
     width: 50%;  
     height: 100%;
     top: 0;
+
+    video {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
     .img_right {
       background: url("img/Movsuit.png") no-repeat;
       background-size: cover;

@@ -783,6 +783,12 @@ html.is-animating .transition-fade {
   top: 0;
 }
 
+.mov-suit .hero-wrapper video {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .mov-suit .hero-wrapper .img_right {
   background: url("img/Movsuit.png") no-repeat;
   background-size: cover;
@@ -1915,6 +1921,24 @@ header .socmed-home .socmed-link i {
   font-size: 35px;
   display: none;
   margin-left: 30px;
+  overflow: hidden;
+}
+
+.nav-body .nav-body__item .nav-item-down a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-body .nav-body__item .nav-item-down a:before {
+  content: attr(data-text);
+  position: absolute;
+  display: block;
+  color: #000;
+  -webkit-transform: translate3d(0, 50px, 0);
+          transform: translate3d(0, 50px, 0);
 }
 
 .nav-body .nav-body__item a {
@@ -1923,6 +1947,15 @@ header .socmed-home .socmed-link i {
   width: fit-content;
   color: #fff;
   text-decoration: none;
+}
+
+.nav-body .nav-body__item a:before {
+  content: attr(data-text);
+  position: absolute;
+  display: block;
+  color: #000;
+  -webkit-transform: translate3d(0, 80px, 0);
+          transform: translate3d(0, 80px, 0);
 }
 
 .nav-body .socmed-navbody {
@@ -2247,6 +2280,68 @@ footer .footer-menu a {
 
 footer span {
   font-size: 12px;
+}
+
+/* cursor follow */
+.mouse-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  visibility: hidden;
+  text-align: center;
+}
+
+.mouse-cursor span {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.cursor-outer {
+  margin-left: -3px;
+  margin-top: -3px;
+  width: 8px;
+  height: 8px;
+  background-color: #FEB404;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 10000000;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.cursor-outer.cursor-hover {
+  opacity: 0;
+}
+
+.cursor-inner {
+  opacity: 0;
+  margin-left: -3px;
+  margin-top: -3px;
+  width: 6px;
+  height: 6px;
+  z-index: 10000001;
+  background-color: #FEB404;
+  -webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cursor-inner.cursor-hover {
+  margin-left: -40px;
+  margin-top: -40px;
+  width: 120px;
+  height: 120px;
+  opacity: 0.7;
+  -webkit-transition: all 0.3s cubic-bezier(0.24, 0.65, 0.47, 1.14);
+  transition: all 0.3s cubic-bezier(0.24, 0.65, 0.47, 1.14);
 }
 
 @-webkit-keyframes spin {

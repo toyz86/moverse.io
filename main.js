@@ -1,5 +1,50 @@
-// BEGIN Magnetic Hover Burger
+// CURSOR FOLLOWER
+window.addEventListener("load", () => {
+  document.onmousemove = handleMouseMove;
+  const navLink = $(".nav-body__item a");
+  
+  document.querySelectorAll('[data-magic-cursor="visible"]').forEach((e, i) => {
+    e.addEventListener("mousemove", (fn) => {
+      let tl = gsap.timeline({});
+      console.log("focus");
+      fn.preventDefault();
+      document.querySelector(".cursor-outer").classList.add("cursor-hover");
+      document.querySelector(".cursor-inner").classList.add("cursor-hover");
+      $(".cursor-inner").css({ background: e.getAttribute("data-theme") });
+      $(".cursor-inner").css({ "mixBlendMode": "difference" })
+      $(".mouse-cursor span").css({ opacity: 1 });
 
+      tl.to(navLink[i], { y: '-100%' });
+      
+    });
+
+    e.addEventListener("mouseleave", (fn) => {
+      console.log("leave");
+      fn.preventDefault();
+      document.querySelector(".cursor-outer").classList.remove("cursor-hover");
+      document.querySelector(".cursor-inner").classList.remove("cursor-hover");
+
+      $(".cursor-inner").css({ background: "#F7941C" });
+      $(".cursor-inner").css({ "mixBlendMode": "unset" })
+      $(".mouse-cursor span").css({ opacity: 0 });
+      gsap.to(navLink[i], { y: 0 });
+
+    });
+  });
+
+  function handleMouseMove(event) {
+    $(".cursor-outer").css({
+      visibility: "visible",
+      transform: "translate(" + event.clientX + "px, " + event.clientY + "px)"
+    });
+    $(".cursor-inner").css({
+      visibility: "visible",
+      transform: "translate(" + event.clientX + "px, " + event.clientY + "px)"
+    });
+  }
+});
+
+// BEGIN Magnetic Hover Burger
 var hoverMouse = function($el) {
   $el.each(function() {
     var $self = $(this);
