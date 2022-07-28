@@ -1,11 +1,20 @@
 // CURSOR FOLLOWER
+gsap.config({
+  autoSleep: 60,
+  force3D: false,
+  nullTargetWarn: false,
+  trialWarn: false,
+  units: {left: "%", top: "%", rotation: "rad"}
+});
+
 window.addEventListener("load", () => {
   document.onmousemove = handleMouseMove;
   const navLink = $(".nav-body__item a");
+  const btn = $("#gloves-guide a.btn span");
   
   document.querySelectorAll('[data-magic-cursor="visible"]').forEach((e, i) => {
     e.addEventListener("mousemove", (fn) => {
-      let tl = gsap.timeline({});
+      // let tl = gsap.timeline({});
       console.log("focus");
       fn.preventDefault();
       document.querySelector(".cursor-outer").classList.add("cursor-hover");
@@ -14,7 +23,8 @@ window.addEventListener("load", () => {
       $(".cursor-inner").css({ "mixBlendMode": "difference" })
       $(".mouse-cursor span").css({ opacity: 1 });
 
-      tl.to(navLink[i], { y: '-100%' });
+      // gsap.to(navLink[i], { y: '-100%' });
+      gsap.to(btn, { y: '-50px' });
       
     });
 
@@ -27,7 +37,8 @@ window.addEventListener("load", () => {
       $(".cursor-inner").css({ background: "#F7941C" });
       $(".cursor-inner").css({ "mixBlendMode": "unset" })
       $(".mouse-cursor span").css({ opacity: 0 });
-      gsap.to(navLink[i], { y: 0 });
+      // gsap.to(navLink[i], { y: 0 });
+      gsap.to(btn, { y: 0 });
 
     });
   });
@@ -163,11 +174,11 @@ gsap.utils.toArray(".comparisonSection").forEach((section) => {
 		console.log('enter');
 	}
 	// animate the container one way...
-	tl.fromTo(section.querySelector(".afterImage"), { xPercent: 100, x: 0}, {xPercent: 0})
+	tl.fromTo(section.querySelector(".afterImage"), { xPercent: 100, x: 0}, {xPercent: -3, x:-3})
 	// ...and the image the opposite way (at the same time)
-	.fromTo(section.querySelector(".afterImage img"), {xPercent: -100, x: 0}, {xPercent: 0}, 0)
+	.fromTo(section.querySelector(".afterImage img"), {xPercent: -100, x: 0}, {xPercent: 3}, 0)
 	.fromTo(section.querySelector(".beforeImage"), {xPercent: 0, x: 0}, {xPercent: -100}, 0);
-	// tl.to(document.querySelector(".character-wrapper"), {xPercent: 10});
+	// tl.to(document.querySelector(".character-wrapper"), {xPercent: 10, x: 0}, 0);
 	tl.fromTo(section.querySelector(".profile"), {xPercent: -100, x: 0, y: 50, autoAlpha: 0}, {xPercent:0, y: 50, autoAlpha: 0}, 0)
 	tl.to(section.querySelector(".profile"), {autoAlpha: 1, y: 0})
 	.set({}, {}, "-=0.5")
@@ -233,12 +244,16 @@ $(document).ready(function(){
 		height: 500
 	});
 
+  // PARALLAX
+  $('.parallax').parallax();
+
 	// SHOW AND HIDE LOGO HEADER
 	$(window).on('load', function() {
 		$("#logo-header").fadeOut();
 	})
 
 	$(document).scroll(function() {
+    let tl = gsap.timeline({nullTargetWarn: false});
 		const y = $(this).scrollTop();
 		const logoHeader = $("#logo-header");
 		const logoInner = $("#innerLogo");
@@ -250,9 +265,9 @@ $(document).ready(function(){
 		}
 
 		if (y > 1500) {
-			gsap.to(".socmed-home", { opacity: 0 });
+			tl.to(".socmed-home", { opacity: 0 });
 		} else {
-			gsap.to(".socmed-home", { opacity: 1 });
+			tl.to(".socmed-home", { opacity: 1 });
 		}
 
 		if(y >= 10) {
@@ -283,7 +298,7 @@ $(document).ready(function(){
 		$('input.More-checkbox').text($('#burger').val());
 
 		$("#burger").on('change', function() {
-			let tl = gsap.timeline({});
+			let tl = gsap.timeline({nullTargetWarn: false});
 
 			if ($(this).is(':checked')) {
 				$(this).attr('value', 'true');
@@ -307,6 +322,16 @@ $(document).ready(function(){
 			$('input.More-checkbox').text($('#burger').val());
 		});
 	})
+
+  $('.nav-body__item a').mouseenter(function() {
+    console.log('i am onhover');
+    gsap.to(this, { y: -80 });
+  })
+
+  $('.nav-body__item a').mouseleave(function() {
+    gsap.to(this, { y: 0 });
+    console.log('i am onleave');
+  })
 
 	$('.product-list').click(function() {
 		$('.fa-caret-down').toggleClass('product-active');

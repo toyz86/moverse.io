@@ -1,5 +1,5 @@
 .mov-g {
-  padding-top: 150px;
+  // padding-top: 150px;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -9,6 +9,49 @@
   // background-size: 60%;
   // background-repeat: no-repeat;
   // background-position-x: right;
+
+  .hero-wrapper {
+    position: absolute;
+    width: 50%;  
+    height: 100%;
+    top: 0;
+
+    video {
+      position: absolute;
+      top: -100px;
+      // right: 0;
+    }
+  }
+
+
+  .parallax-container {
+    padding: 200px 0 100px;
+    position: relative;
+    overflow: hidden;
+    height: 800px;
+  }
+
+  .parallax {
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 800px;
+      background: linear-gradient(291.04deg, rgba(0, 0, 0, 0) -3.7%, rgba(0, 0, 0, 0.0161908) 20.7%, rgba(19, 19, 23, 0.987368) 55.83%, rgba(0, 31, 61, 0.987368) 90.01%);
+      top: 0;
+      z-index: 1;
+      left: 0;  
+    }
+  }
+
+  .gloves-wrapper {
+    text-align: center;
+    display: inline-block;
+
+    img {
+      width: 200px;
+    }
+  }
 
   .hero-img {
     position: absolute;
@@ -73,16 +116,16 @@
   .gloves-specs {
     margin-bottom: 50px;
     img {
-      width: 100px;
+      width: 80px;
     }
   }
 
   a {
     color: #fff;
 
-    &.modal-trigger {
-      margin-top: 100px !important;
-    }
+    // &.modal-trigger {
+    //   margin-top: 100px !important;
+    // }
   }
 
   img {

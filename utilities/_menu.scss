@@ -127,6 +127,27 @@ header {
     font-size: 55px;
     overflow: hidden;
 
+    a {
+      width: fit-content;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      // transition: all 0.2s ;
+
+      // &:hover {
+      //   transform: translate3d(0,-100%,0) !important;
+      //   transition: all 0.2s ;
+      // }
+
+      &:before {
+        content: attr(data-text);
+        position: absolute;
+        display: block;
+        color: #000;
+        transform: translate3d(0, 80px, 0);
+      }
+    }
+
     .product-list {
       width: fit-content;
       color: #fff;
@@ -142,6 +163,7 @@ header {
       display: none;
       margin-left: 30px;
       overflow: hidden;
+
       a {
         width: fit-content;
         color: #fff;
@@ -155,19 +177,6 @@ header {
           transform: translate3d(0, 50px, 0);
         }
       }      
-    }
-    a {
-      width: fit-content;
-      color: #fff;
-      text-decoration: none;
-
-      &:before {
-        content: attr(data-text);
-        position: absolute;
-        display: block;
-        color: #000;
-        transform: translate3d(0, 80px, 0);
-      }
     }
     
   }

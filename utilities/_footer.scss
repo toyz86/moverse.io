@@ -1,7 +1,13 @@
 .footer {
   width: 100%;
-  height: 10vh;
-  padding: 70px 150px;
-  position: absolute;
-  background: rgba($color: #000000, $alpha: 0.5);
+  height: 100%;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  position: relative;
+  // background: url('img/hangersuit.jpg');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  &.parallax-container {
+    height: 100%;
+  }
 }

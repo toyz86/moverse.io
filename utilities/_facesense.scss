@@ -1,5 +1,5 @@
 .facesense {
-  padding-top: 150px;
+  padding: 200px 0 100px;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -39,7 +39,7 @@
       height: 100%;
       top: 0;
       left: 0;
-      background: linear-gradient(0deg, #010101 30%, rgba(1, 1, 1, 0) 45%, rgba(1, 1, 1, 0) 100%);
+      // background: linear-gradient(0deg, #010101 30%, rgba(1, 1, 1, 0) 45%, rgba(1, 1, 1, 0) 100%);
       // background-position-x: 300px;
 
       @media #{$small_mobile} {
@@ -109,7 +109,7 @@
   .suit-specs {
     img {
       &.suit {
-        width: 40%;
+        width: 75%;
         mix-blend-mode: lighten;
       }
       &.table-size {

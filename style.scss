@@ -1,6 +1,7 @@
 // Utilities
 @import "utilities/variables";
 @import "utilities/home";
+@import "utilities/our-movgear";
 @import "utilities/mov-suit";
 @import "utilities/mov-g";
 @import "utilities/facesense";
@@ -63,6 +64,7 @@ body {
 
 h2 {
   font-family: Hellix-regular;
+  margin-top: 0 !important;
 }
 
 h5 {
@@ -71,13 +73,13 @@ h5 {
 
 p {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 2;
   font-weight: 300;
 }
 
 span {
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'Inter', sans-serif;
   font-weight: 300;
 }
@@ -156,9 +158,10 @@ footer {
   &.cursor-hover {
     margin-left: -40px;
     margin-top: -40px;
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     opacity: 0.7;
+    // background: #000;
     // mix-blend-mode: difference;
     transition: all 0.3s cubic-bezier(.24,.65,.47,1.14);
   }
@@ -277,9 +280,9 @@ textarea.materialize-textarea {
       background: $orange;
       border: 1px solid rgb(144, 202, 249);  
     }
-    span {
-      text-transform: uppercase;
-    }
+    // span {
+    //   text-transform: uppercase;
+    // }
   }
 
   .suite-option {
@@ -372,15 +375,16 @@ button.btn.modal-trigger {
 
 .address {
   font-size: 13px;
-  margin-top: 100px;
+  // margin-top: 100px;
   font-family: 'Inter', 'sans-serif';
   font-weight: 300;
   color: #c3c3c3;
 
-  .collaborate {
-    margin-bottom: 100px;
-  }
+  // .collaborate {
+  //   margin-bottom: 100px;
+  // }
 }
+
 .quote-btn {
   text-align: center;
   width: fit-content;
@@ -413,6 +417,7 @@ button.btn.modal-trigger {
 
   .btn-order {
     display: flex;
+    transform: scale(0.8);
 
     span {
       position: absolute;
@@ -440,6 +445,66 @@ button.btn.modal-trigger {
   }
 }
 
+a {
+  &.btn {
+    background: transparent;
+    display: inline-block;
+    border: 1px solid #fff;  
+    border-radius: 10px;
+    text-transform: capitalize;
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+      color: #000;
+      span {
+        transform: translate3d(0, -50px, 0);
+        transition: all 0.2s ease;
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+
+    &:before {
+      content: attr(data-text);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform: translate3d(0, 50px,0);
+    }
+  }  
+}
+
+.foo {
+  display: flex;
+  font-size: 13px;
+  color: #c3c3c3;
+  // margin-top: 100px;
+  bottom: 0;
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.foo-menu {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  a {
+    color: #c3c3c3;
+    margin-left: 20px;
+  }
+}
+
+// .footer {
+//   padding-top: 100px;
+// }
 // GLobal Mobile
 @media screen and (max-width: 600px) {
   .profile-page {
